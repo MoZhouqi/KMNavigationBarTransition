@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   s.name         = "KMNavigationBarTransition"
   s.version      = "0.0.1"
-  s.summary      = "A drop-in universal library makes transition animations smooth between different navigation bar styles while pushing or popping a view controller. And you don't need to write any line of code for it, it all happens automatically."
+  s.summary      = "A drop-in universal library makes transition animations smooth between different navigation bar styles while pushing or popping."
 
   s.description  = <<-DESC
                    A drop-in universal library makes transition animations smooth between different navigation bar styles while pushing or popping a view controller. And you don't need to write any line of code for it, it all happens automatically.
