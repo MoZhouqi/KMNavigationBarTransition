@@ -1,0 +1,355 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CDA372851C39087D00E39A6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA372841C39087D00E39A6D /* AppDelegate.swift */; };
+		CDA372881C39089200E39A6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDA372861C39089200E39A6D /* Main.storyboard */; };
+		CDA3728A1C39089900E39A6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDA372891C39089900E39A6D /* Assets.xcassets */; };
+		CDA3728D1C3908A000E39A6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDA3728B1C3908A000E39A6D /* LaunchScreen.storyboard */; };
+		CDA372951C39093E00E39A6D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA372901C39093E00E39A6D /* MainViewController.swift */; };
+		CDA372961C39093E00E39A6D /* NavigationBarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA372911C39093E00E39A6D /* NavigationBarData.swift */; };
+		CDA372971C39093E00E39A6D /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA372921C39093E00E39A6D /* NavigationController.swift */; };
+		CDA372981C39093E00E39A6D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA372931C39093E00E39A6D /* SettingsViewController.swift */; };
+		CDA372991C39093E00E39A6D /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA372941C39093E00E39A6D /* UIImage+Color.swift */; };
+		CDDFA1F71C3921BD00BFBA1B /* KMSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = CDDFA1F21C3921BD00BFBA1B /* KMSwizzle.m */; };
+		CDDFA1F81C3921BD00BFBA1B /* UINavigationController+KMNavigationBarTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = CDDFA1F41C3921BD00BFBA1B /* UINavigationController+KMNavigationBarTransition.m */; };
+		CDDFA1F91C3921BD00BFBA1B /* UIViewController+KMNavigationBarTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = CDDFA1F61C3921BD00BFBA1B /* UIViewController+KMNavigationBarTransition.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CDA3726F1C3907CE00E39A6D /* KMNavigationBarTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KMNavigationBarTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDA372841C39087D00E39A6D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Example/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		CDA372871C39089200E39A6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Example/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		CDA372891C39089900E39A6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Example/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		CDA3728C1C3908A000E39A6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Example/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		CDA3728E1C3908A500E39A6D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Example/Info.plist; sourceTree = SOURCE_ROOT; };
+		CDA372901C39093E00E39A6D /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = Example/MainViewController.swift; sourceTree = SOURCE_ROOT; };
+		CDA372911C39093E00E39A6D /* NavigationBarData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationBarData.swift; path = Example/NavigationBarData.swift; sourceTree = SOURCE_ROOT; };
+		CDA372921C39093E00E39A6D /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationController.swift; path = Example/NavigationController.swift; sourceTree = SOURCE_ROOT; };
+		CDA372931C39093E00E39A6D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Example/SettingsViewController.swift; sourceTree = SOURCE_ROOT; };
+		CDA372941C39093E00E39A6D /* UIImage+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Color.swift"; path = "Example/UIImage+Color.swift"; sourceTree = SOURCE_ROOT; };
+		CDDFA1F11C3921BD00BFBA1B /* KMSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMSwizzle.h; sourceTree = "<group>"; };
+		CDDFA1F21C3921BD00BFBA1B /* KMSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMSwizzle.m; sourceTree = "<group>"; };
+		CDDFA1F31C3921BD00BFBA1B /* UINavigationController+KMNavigationBarTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+KMNavigationBarTransition.h"; sourceTree = "<group>"; };
+		CDDFA1F41C3921BD00BFBA1B /* UINavigationController+KMNavigationBarTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+KMNavigationBarTransition.m"; sourceTree = "<group>"; };
+		CDDFA1F51C3921BD00BFBA1B /* UIViewController+KMNavigationBarTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+KMNavigationBarTransition.h"; sourceTree = "<group>"; };
+		CDDFA1F61C3921BD00BFBA1B /* UIViewController+KMNavigationBarTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+KMNavigationBarTransition.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CDA3726C1C3907CE00E39A6D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CDA372661C3907CE00E39A6D = {
+			isa = PBXGroup;
+			children = (
+				CDDFA1F01C3921BD00BFBA1B /* KMNavigationBarTransition */,
+				CDA372711C3907CE00E39A6D /* Example */,
+				CDA372701C3907CE00E39A6D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CDA372701C3907CE00E39A6D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CDA3726F1C3907CE00E39A6D /* KMNavigationBarTransition.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CDA372711C3907CE00E39A6D /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				CDA372861C39089200E39A6D /* Main.storyboard */,
+				CDA372901C39093E00E39A6D /* MainViewController.swift */,
+				CDA372931C39093E00E39A6D /* SettingsViewController.swift */,
+				CDA372921C39093E00E39A6D /* NavigationController.swift */,
+				CDA3729A1C39094600E39A6D /* Model */,
+				CDA3729B1C39094B00E39A6D /* Extension */,
+				CDA372841C39087D00E39A6D /* AppDelegate.swift */,
+				CDA372891C39089900E39A6D /* Assets.xcassets */,
+				CDA3728B1C3908A000E39A6D /* LaunchScreen.storyboard */,
+				CDA3728E1C3908A500E39A6D /* Info.plist */,
+			);
+			name = Example;
+			path = KMNavigationBarTransition;
+			sourceTree = "<group>";
+		};
+		CDA3729A1C39094600E39A6D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CDA372911C39093E00E39A6D /* NavigationBarData.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		CDA3729B1C39094B00E39A6D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CDA372941C39093E00E39A6D /* UIImage+Color.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		CDDFA1F01C3921BD00BFBA1B /* KMNavigationBarTransition */ = {
+			isa = PBXGroup;
+			children = (
+				CDDFA1F31C3921BD00BFBA1B /* UINavigationController+KMNavigationBarTransition.h */,
+				CDDFA1F41C3921BD00BFBA1B /* UINavigationController+KMNavigationBarTransition.m */,
+				CDDFA1F51C3921BD00BFBA1B /* UIViewController+KMNavigationBarTransition.h */,
+				CDDFA1F61C3921BD00BFBA1B /* UIViewController+KMNavigationBarTransition.m */,
+				CDDFA1F11C3921BD00BFBA1B /* KMSwizzle.h */,
+				CDDFA1F21C3921BD00BFBA1B /* KMSwizzle.m */,
+			);
+			path = KMNavigationBarTransition;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CDA3726E1C3907CE00E39A6D /* KMNavigationBarTransition */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDA372811C3907CE00E39A6D /* Build configuration list for PBXNativeTarget "KMNavigationBarTransition" */;
+			buildPhases = (
+				CDA3726B1C3907CE00E39A6D /* Sources */,
+				CDA3726C1C3907CE00E39A6D /* Frameworks */,
+				CDA3726D1C3907CE00E39A6D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KMNavigationBarTransition;
+			productName = KMNavigationBarTransition;
+			productReference = CDA3726F1C3907CE00E39A6D /* KMNavigationBarTransition.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CDA372671C3907CE00E39A6D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Zhouqi Mo";
+				TargetAttributes = {
+					CDA3726E1C3907CE00E39A6D = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = CDA3726A1C3907CE00E39A6D /* Build configuration list for PBXProject "KMNavigationBarTransition" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CDA372661C3907CE00E39A6D;
+			productRefGroup = CDA372701C3907CE00E39A6D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CDA3726E1C3907CE00E39A6D /* KMNavigationBarTransition */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CDA3726D1C3907CE00E39A6D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDA3728D1C3908A000E39A6D /* LaunchScreen.storyboard in Resources */,
+				CDA3728A1C39089900E39A6D /* Assets.xcassets in Resources */,
+				CDA372881C39089200E39A6D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CDA3726B1C3907CE00E39A6D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDA372851C39087D00E39A6D /* AppDelegate.swift in Sources */,
+				CDDFA1F71C3921BD00BFBA1B /* KMSwizzle.m in Sources */,
+				CDDFA1F81C3921BD00BFBA1B /* UINavigationController+KMNavigationBarTransition.m in Sources */,
+				CDA372971C39093E00E39A6D /* NavigationController.swift in Sources */,
+				CDA372951C39093E00E39A6D /* MainViewController.swift in Sources */,
+				CDA372981C39093E00E39A6D /* SettingsViewController.swift in Sources */,
+				CDDFA1F91C3921BD00BFBA1B /* UIViewController+KMNavigationBarTransition.m in Sources */,
+				CDA372961C39093E00E39A6D /* NavigationBarData.swift in Sources */,
+				CDA372991C39093E00E39A6D /* UIImage+Color.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CDA372861C39089200E39A6D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CDA372871C39089200E39A6D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CDA3728B1C3908A000E39A6D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CDA3728C1C3908A000E39A6D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CDA3727F1C3907CE00E39A6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CDA372801C3907CE00E39A6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CDA372821C3907CE00E39A6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mo.KMNavigationBarTransition;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CDA372831C3907CE00E39A6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mo.KMNavigationBarTransition;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CDA3726A1C3907CE00E39A6D /* Build configuration list for PBXProject "KMNavigationBarTransition" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDA3727F1C3907CE00E39A6D /* Debug */,
+				CDA372801C3907CE00E39A6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDA372811C3907CE00E39A6D /* Build configuration list for PBXNativeTarget "KMNavigationBarTransition" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDA372821C3907CE00E39A6D /* Debug */,
+				CDA372831C3907CE00E39A6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CDA372671C3907CE00E39A6D /* Project object */;
+}
