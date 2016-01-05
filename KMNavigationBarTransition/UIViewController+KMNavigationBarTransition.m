@@ -24,6 +24,7 @@
 #import "UIViewController+KMNavigationBarTransition.h"
 #import <objc/runtime.h>
 #import "KMSwizzle.h"
+#import "UINavigationBar+KMNavigationBarTransition.h"
 
 @implementation UIViewController (KMNavigationBarTransition)
 
@@ -119,7 +120,7 @@
 }
 
 - (void)setKm_prefersNavigationBarBackgroundViewHidden:(BOOL)hidden {
-    [[self.navigationController.navigationBar valueForKey:@"_backgroundView"]
+    [self.navigationController.navigationBar.km_backgroundView
      setHidden:hidden];
     objc_setAssociatedObject(self, @selector(km_prefersNavigationBarBackgroundViewHidden), @(hidden), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }

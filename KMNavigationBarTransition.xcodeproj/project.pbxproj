@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8FE376881C3B62B500F21754 /* UINavigationBar+KMNavigationBarTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE376871C3B62B500F21754 /* UINavigationBar+KMNavigationBarTransition.m */; };
 		CDA372851C39087D00E39A6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA372841C39087D00E39A6D /* AppDelegate.swift */; };
 		CDA372881C39089200E39A6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDA372861C39089200E39A6D /* Main.storyboard */; };
 		CDA3728A1C39089900E39A6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDA372891C39089900E39A6D /* Assets.xcassets */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8FE376861C3B62B500F21754 /* UINavigationBar+KMNavigationBarTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+KMNavigationBarTransition.h"; sourceTree = "<group>"; };
+		8FE376871C3B62B500F21754 /* UINavigationBar+KMNavigationBarTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+KMNavigationBarTransition.m"; sourceTree = "<group>"; };
 		CDA3726F1C3907CE00E39A6D /* KMNavigationBarTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KMNavigationBarTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA372841C39087D00E39A6D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Example/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		CDA372871C39089200E39A6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Example/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
@@ -110,6 +113,8 @@
 				CDDFA1F41C3921BD00BFBA1B /* UINavigationController+KMNavigationBarTransition.m */,
 				CDDFA1F51C3921BD00BFBA1B /* UIViewController+KMNavigationBarTransition.h */,
 				CDDFA1F61C3921BD00BFBA1B /* UIViewController+KMNavigationBarTransition.m */,
+				8FE376861C3B62B500F21754 /* UINavigationBar+KMNavigationBarTransition.h */,
+				8FE376871C3B62B500F21754 /* UINavigationBar+KMNavigationBarTransition.m */,
 				CDDFA1F11C3921BD00BFBA1B /* KMSwizzle.h */,
 				CDDFA1F21C3921BD00BFBA1B /* KMSwizzle.m */,
 			);
@@ -193,6 +198,7 @@
 				CDA372971C39093E00E39A6D /* NavigationController.swift in Sources */,
 				CDA372951C39093E00E39A6D /* MainViewController.swift in Sources */,
 				CDA372981C39093E00E39A6D /* SettingsViewController.swift in Sources */,
+				8FE376881C3B62B500F21754 /* UINavigationBar+KMNavigationBarTransition.m in Sources */,
 				CDDFA1F91C3921BD00BFBA1B /* UIViewController+KMNavigationBarTransition.m in Sources */,
 				CDA372961C39093E00E39A6D /* NavigationBarData.swift in Sources */,
 				CDA372991C39093E00E39A6D /* UIImage+Color.swift in Sources */,
