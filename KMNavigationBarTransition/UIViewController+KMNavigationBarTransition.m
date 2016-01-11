@@ -81,16 +81,9 @@
     if (!self.navigationController.navigationBar) {
         return;
     }
-    CGRect rect = self.navigationController.navigationBar.frame;
-    CGFloat offsetY = [self.view.window convertPoint:[UIApplication sharedApplication].statusBarFrame.origin toView:self.view].y;
-    
-    rect.origin = CGPointMake(0, offsetY);
-    CGSize statusBarSize = [[UIApplication sharedApplication] statusBarFrame].size;
-    CGFloat statusBarHeight = MIN(statusBarSize.width, statusBarSize.height);
-    rect.size.height += statusBarHeight;
-    
+    UIView *backgroundView = [self.navigationController.navigationBar valueForKey:@"_backgroundView"];
+    CGRect rect = [backgroundView.superview convertRect:backgroundView.frame toView:self.view];
     UINavigationBar *bar = [[UINavigationBar alloc] initWithFrame:rect];
-    
     bar.barStyle = self.navigationController.navigationBar.barStyle;
     if (bar.translucent != self.navigationController.navigationBar.translucent) {
         bar.translucent = self.navigationController.navigationBar.translucent;
