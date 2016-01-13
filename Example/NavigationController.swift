@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NavigationController: UINavigationController, UIGestureRecognizerDelegate {
+class NavigationController: UINavigationController {
 
     // MARK: View Life Cycle
     
@@ -17,4 +17,19 @@ class NavigationController: UINavigationController, UIGestureRecognizerDelegate 
         self.interactivePopGestureRecognizer?.delegate = self
     }
 
+}
+
+// MARK: Gesture Recognizer Delegate
+
+extension NavigationController: UIGestureRecognizerDelegate {
+    
+    func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
+        
+        // Ignore interactive pop gesture when there is only one view controller on the navigation stack
+        if viewControllers.count <= 1 {
+            return false
+        }
+        return true
+    }
+    
 }
