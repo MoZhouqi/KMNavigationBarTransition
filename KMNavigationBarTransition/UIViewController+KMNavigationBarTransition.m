@@ -70,8 +70,18 @@
             
             self.km_prefersNavigationBarBackgroundViewHidden = YES;
         }
+        [self km_resizeTransitionNavigationBarFrame];
     }
     [self km_viewWillLayoutSubviews];
+}
+
+- (void)km_resizeTransitionNavigationBarFrame {
+    if (!self.view.window) {
+        return;
+    }
+    UIView *backgroundView = [self.navigationController.navigationBar valueForKey:@"_backgroundView"];
+    CGRect rect = [backgroundView.superview convertRect:backgroundView.frame toView:self.view];
+    self.km_transitionNavigationBar.frame = rect;
 }
 
 - (void)km_addTransitionNavigationBarIfNeeded {
@@ -81,9 +91,7 @@
     if (!self.navigationController.navigationBar) {
         return;
     }
-    UIView *backgroundView = [self.navigationController.navigationBar valueForKey:@"_backgroundView"];
-    CGRect rect = [backgroundView.superview convertRect:backgroundView.frame toView:self.view];
-    UINavigationBar *bar = [[UINavigationBar alloc] initWithFrame:rect];
+    UINavigationBar *bar = [[UINavigationBar alloc] init];
     bar.barStyle = self.navigationController.navigationBar.barStyle;
     if (bar.translucent != self.navigationController.navigationBar.translucent) {
         bar.translucent = self.navigationController.navigationBar.translucent;
@@ -91,9 +99,9 @@
     bar.barTintColor = self.navigationController.navigationBar.barTintColor;
     [bar setBackgroundImage:[self.navigationController.navigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
     bar.shadowImage = self.navigationController.navigationBar.shadowImage;
-    
     [self.km_transitionNavigationBar removeFromSuperview];
     self.km_transitionNavigationBar = bar;
+    [self km_resizeTransitionNavigationBarFrame];
     if (!self.navigationController.navigationBarHidden) {
         [self.view addSubview:self.km_transitionNavigationBar];
     }
