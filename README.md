@@ -1,7 +1,7 @@
 KMNavigationBarTransition
 ============
 
-A drop-in universal library makes transition animations smooth between different navigation bar styles while pushing or popping a view controller. And you don't need to write any line of code for it, it all happens automatically.
+A drop-in universal library makes transition animations smooth between different navigation bar styles while pushing or popping a view controller for all orientations. And you don't need to write any line of code for it, it all happens automatically.
 
 The library can "capture" the background state of the navigation bar in the disappeared view controller. So what you only need to care about is the background state of the navigation bar in the *current* view controller, without handling the various background states while pushing or popping.
 
