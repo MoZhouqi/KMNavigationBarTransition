@@ -24,5 +24,6 @@
 #import <UIKit/UIKit.h>
 
 @interface UINavigationController (KMNavigationBarTransition)
-
+// By default this is white, it is related to issue with transparent navigationBar
+- (UIColor *)km_containerViewBackgroundColor;
 @end
