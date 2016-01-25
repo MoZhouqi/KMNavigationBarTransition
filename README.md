@@ -33,7 +33,7 @@ Simply add the following line to your Podfile:
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '7.0' 
 
-pod 'KMNavigationBarTransition', '~> 0.0.3' 
+pod 'KMNavigationBarTransition', '~> 0.0.4' 
 ```
 
 Then, run the following command:
