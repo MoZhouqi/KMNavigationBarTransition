@@ -24,6 +24,7 @@
 #import "UIViewController+KMNavigationBarTransition.h"
 #import <objc/runtime.h>
 #import "KMSwizzle.h"
+#import "UINavigationController+KMNavigationBarTransition.h"
 
 @implementation UIViewController (KMNavigationBarTransition)
 
@@ -59,9 +60,9 @@
     UIViewController *toViewController = [tc viewControllerForKey:UITransitionContextToViewControllerKey];
     
     if ([self isEqual:self.navigationController.viewControllers.lastObject] && [toViewController isEqual:self]) {
-        [tc containerView].backgroundColor = [UIColor whiteColor];
-        
-        if (!self.navigationController.navigationBar.translucent) {
+        if (self.navigationController.navigationBar.translucent) {
+            [tc containerView].backgroundColor = [self.navigationController km_containerViewBackgroundColor];
+        } else {
             fromViewController.view.clipsToBounds = NO;
             toViewController.view.clipsToBounds = NO;
         }

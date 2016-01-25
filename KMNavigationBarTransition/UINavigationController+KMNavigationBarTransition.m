@@ -49,6 +49,10 @@
     });
 }
 
+- (UIColor *)km_containerViewBackgroundColor {
+    return [UIColor whiteColor];
+}
+
 - (void)km_pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
     UIViewController *disappearingViewController = self.viewControllers.lastObject;
     if (!disappearingViewController) {
