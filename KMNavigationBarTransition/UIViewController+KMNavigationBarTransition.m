@@ -62,12 +62,10 @@
     if ([self isEqual:self.navigationController.viewControllers.lastObject] && [toViewController isEqual:self]) {
         if (self.navigationController.navigationBar.translucent) {
             [tc containerView].backgroundColor = [self.navigationController km_containerViewBackgroundColor];
-            
         } else {
             fromViewController.view.clipsToBounds = NO;
             toViewController.view.clipsToBounds = NO;
         }
-        
         if (!self.km_transitionNavigationBar) {
             [self km_addTransitionNavigationBarIfNeeded];
             
