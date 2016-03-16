@@ -64,26 +64,27 @@
 }
 
 - (UIViewController *)km_popViewControllerAnimated:(BOOL)animated {
+    if (self.viewControllers.count < 2) {
+        return [self km_popViewControllerAnimated:animated];
+    }
     UIViewController *disappearingViewController = self.viewControllers.lastObject;
     [disappearingViewController km_addTransitionNavigationBarIfNeeded];
-    if (self.viewControllers.count >= 2) {
-        UIViewController *appearingViewController = self.viewControllers[self.viewControllers.count - 2];
-        if (appearingViewController.km_transitionNavigationBar) {
-            UINavigationBar *appearingNavigationBar = appearingViewController.km_transitionNavigationBar;
-            self.navigationBar.barTintColor = appearingNavigationBar.barTintColor;
-            [self.navigationBar setBackgroundImage:[appearingNavigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
-            self.navigationBar.shadowImage = appearingNavigationBar.shadowImage;
-        }
+    UIViewController *appearingViewController = self.viewControllers[self.viewControllers.count - 2];
+    if (appearingViewController.km_transitionNavigationBar) {
+        UINavigationBar *appearingNavigationBar = appearingViewController.km_transitionNavigationBar;
+        self.navigationBar.barTintColor = appearingNavigationBar.barTintColor;
+        [self.navigationBar setBackgroundImage:[appearingNavigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
+        self.navigationBar.shadowImage = appearingNavigationBar.shadowImage;
     }
     disappearingViewController.km_prefersNavigationBarBackgroundViewHidden = YES;
     return [self km_popViewControllerAnimated:animated];
 }
 
 - (NSArray<UIViewController *> *)km_popToViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    UIViewController *disappearingViewController = self.viewControllers.lastObject;
-    if (!disappearingViewController) {
+    if (![self.viewControllers containsObject:viewController] || self.viewControllers.count < 2) {
         return [self km_popToViewController:viewController animated:animated];
     }
+    UIViewController *disappearingViewController = self.viewControllers.lastObject;
     [disappearingViewController km_addTransitionNavigationBarIfNeeded];
     if (viewController.km_transitionNavigationBar) {
         UINavigationBar *appearingNavigationBar = viewController.km_transitionNavigationBar;
@@ -96,10 +97,10 @@
 }
 
 - (NSArray<UIViewController *> *)km_popToRootViewControllerAnimated:(BOOL)animated {
-    UIViewController *disappearingViewController = self.viewControllers.lastObject;
-    if (!disappearingViewController) {
+    if (self.viewControllers.count < 2) {
         return [self km_popToRootViewControllerAnimated:animated];
     }
+    UIViewController *disappearingViewController = self.viewControllers.lastObject;
     [disappearingViewController km_addTransitionNavigationBarIfNeeded];
     UIViewController *rootViewController = self.viewControllers.firstObject;
     if (rootViewController.km_transitionNavigationBar) {
