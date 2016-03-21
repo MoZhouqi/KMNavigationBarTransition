@@ -5,9 +5,11 @@ Pod::Spec.new do |s|
   s.summary      = "A drop-in universal library makes transition animations smooth between different navigation bar styles while pushing or popping."
 
   s.description  = <<-DESC
-                   A drop-in universal library makes transition animations smooth between different navigation bar styles while pushing or popping a view controller. And you don't need to write any line of code for it, it all happens automatically.
+                   A drop-in universal library helps you to manage the navigation bar styles and makes transition animations smooth between different navigation bar styles while pushing or popping a view controller for all orientations. And you don't need to write any line of code for it, it all happens automatically. 
 
-                   The library can "capture" the background state of the navigation bar in the disappeared view controller. So what you only need to care about is the background state of the navigation bar in the *current* view controller, without handling the various background states while pushing or popping.
+                   The design concept of the library is that what you only need to care about is the background style of the navigation bar in the *current* view controller, without handling the various background styles while pushing or popping.
+
+                   The library can capture the background style of the navigation bar in the disappearing view controller when pushing, and when you pop back to the view controller, the navigation bar will restore the previous style, so you don't need to consider the background style after popping. And you also don't need to consider it after pushing, because it is the view controller to be pushed that needs to be considered.
                    DESC
 
   s.homepage     = "https://github.com/MoZhouqi/KMNavigationBarTransition"
