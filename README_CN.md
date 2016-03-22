@@ -71,7 +71,7 @@ $ gem install cocoapods
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '7.0' 
 
-pod 'KMNavigationBarTransition', '~> 0.0.4' 
+pod 'KMNavigationBarTransition', '~> 0.0.5' 
 ```
 
 然后在终端运行以下命令:
