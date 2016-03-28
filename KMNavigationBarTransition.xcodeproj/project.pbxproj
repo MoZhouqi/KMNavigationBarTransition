@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3038F47C1CA9F278005FF9CD /* KMNavigationBarTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = 3038F47B1CA9F278005FF9CD /* KMNavigationBarTransition.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3038F4801CA9F278005FF9CD /* KMNavigationBarTransition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3038F4791CA9F278005FF9CD /* KMNavigationBarTransition.framework */; };
+		3038F4811CA9F278005FF9CD /* KMNavigationBarTransition.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3038F4791CA9F278005FF9CD /* KMNavigationBarTransition.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3038F4861CA9F27D005FF9CD /* UINavigationController+KMNavigationBarTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = CDDFA1F31C3921BD00BFBA1B /* UINavigationController+KMNavigationBarTransition.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3038F4871CA9F282005FF9CD /* UIViewController+KMNavigationBarTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = CDDFA1F51C3921BD00BFBA1B /* UIViewController+KMNavigationBarTransition.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3038F4881CA9F287005FF9CD /* KMSwizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = CDDFA1F11C3921BD00BFBA1B /* KMSwizzle.h */; };
 		CDA372851C39087D00E39A6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA372841C39087D00E39A6D /* AppDelegate.swift */; };
 		CDA372881C39089200E39A6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDA372861C39089200E39A6D /* Main.storyboard */; };
 		CDA3728A1C39089900E39A6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDA372891C39089900E39A6D /* Assets.xcassets */; };
@@ -21,8 +27,35 @@
 		CDDFA1F91C3921BD00BFBA1B /* UIViewController+KMNavigationBarTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = CDDFA1F61C3921BD00BFBA1B /* UIViewController+KMNavigationBarTransition.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3038F47E1CA9F278005FF9CD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CDA372671C3907CE00E39A6D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3038F4781CA9F278005FF9CD;
+			remoteInfo = KMNavigationBarTransition;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3038F4851CA9F278005FF9CD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3038F4811CA9F278005FF9CD /* KMNavigationBarTransition.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		CDA3726F1C3907CE00E39A6D /* KMNavigationBarTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KMNavigationBarTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3038F4791CA9F278005FF9CD /* KMNavigationBarTransition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KMNavigationBarTransition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3038F47B1CA9F278005FF9CD /* KMNavigationBarTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KMNavigationBarTransition.h; sourceTree = "<group>"; };
+		3038F47D1CA9F278005FF9CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDA3726F1C3907CE00E39A6D /* KMNavigationBarTransitionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KMNavigationBarTransitionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA372841C39087D00E39A6D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Example/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		CDA372871C39089200E39A6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Example/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		CDA372891C39089900E39A6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Example/Assets.xcassets; sourceTree = SOURCE_ROOT; };
@@ -42,21 +75,39 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		CDA3726C1C3907CE00E39A6D /* Frameworks */ = {
+		3038F4751CA9F278005FF9CD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CDA3726C1C3907CE00E39A6D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3038F4801CA9F278005FF9CD /* KMNavigationBarTransition.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3038F47A1CA9F278005FF9CD /* KMNavigationBarTransition */ = {
+			isa = PBXGroup;
+			children = (
+				3038F47B1CA9F278005FF9CD /* KMNavigationBarTransition.h */,
+				3038F47D1CA9F278005FF9CD /* Info.plist */,
+			);
+			path = KMNavigationBarTransition;
+			sourceTree = "<group>";
+		};
 		CDA372661C3907CE00E39A6D = {
 			isa = PBXGroup;
 			children = (
 				CDDFA1F01C3921BD00BFBA1B /* KMNavigationBarTransition */,
 				CDA372711C3907CE00E39A6D /* Example */,
+				3038F47A1CA9F278005FF9CD /* KMNavigationBarTransition */,
 				CDA372701C3907CE00E39A6D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,7 +115,8 @@
 		CDA372701C3907CE00E39A6D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CDA3726F1C3907CE00E39A6D /* KMNavigationBarTransition.app */,
+				CDA3726F1C3907CE00E39A6D /* KMNavigationBarTransitionDemo.app */,
+				3038F4791CA9F278005FF9CD /* KMNavigationBarTransition.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -118,14 +170,29 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		3038F4761CA9F278005FF9CD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3038F47C1CA9F278005FF9CD /* KMNavigationBarTransition.h in Headers */,
+				3038F4881CA9F287005FF9CD /* KMSwizzle.h in Headers */,
+				3038F4861CA9F27D005FF9CD /* UINavigationController+KMNavigationBarTransition.h in Headers */,
+				3038F4871CA9F282005FF9CD /* UIViewController+KMNavigationBarTransition.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		CDA3726E1C3907CE00E39A6D /* KMNavigationBarTransition */ = {
+		3038F4781CA9F278005FF9CD /* KMNavigationBarTransition */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CDA372811C3907CE00E39A6D /* Build configuration list for PBXNativeTarget "KMNavigationBarTransition" */;
+			buildConfigurationList = 3038F4821CA9F278005FF9CD /* Build configuration list for PBXNativeTarget "KMNavigationBarTransition" */;
 			buildPhases = (
-				CDA3726B1C3907CE00E39A6D /* Sources */,
-				CDA3726C1C3907CE00E39A6D /* Frameworks */,
-				CDA3726D1C3907CE00E39A6D /* Resources */,
+				3038F4741CA9F278005FF9CD /* Sources */,
+				3038F4751CA9F278005FF9CD /* Frameworks */,
+				3038F4761CA9F278005FF9CD /* Headers */,
+				3038F4771CA9F278005FF9CD /* Resources */,
 			);
 			buildRules = (
 			);
@@ -133,7 +200,26 @@
 			);
 			name = KMNavigationBarTransition;
 			productName = KMNavigationBarTransition;
-			productReference = CDA3726F1C3907CE00E39A6D /* KMNavigationBarTransition.app */;
+			productReference = 3038F4791CA9F278005FF9CD /* KMNavigationBarTransition.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CDA3726E1C3907CE00E39A6D /* KMNavigationBarTransitionDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDA372811C3907CE00E39A6D /* Build configuration list for PBXNativeTarget "KMNavigationBarTransitionDemo" */;
+			buildPhases = (
+				CDA3726B1C3907CE00E39A6D /* Sources */,
+				CDA3726C1C3907CE00E39A6D /* Frameworks */,
+				CDA3726D1C3907CE00E39A6D /* Resources */,
+				3038F4851CA9F278005FF9CD /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3038F47F1CA9F278005FF9CD /* PBXTargetDependency */,
+			);
+			name = KMNavigationBarTransitionDemo;
+			productName = KMNavigationBarTransition;
+			productReference = CDA3726F1C3907CE00E39A6D /* KMNavigationBarTransitionDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -146,6 +232,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Zhouqi Mo";
 				TargetAttributes = {
+					3038F4781CA9F278005FF9CD = {
+						CreatedOnToolsVersion = 7.3;
+					};
 					CDA3726E1C3907CE00E39A6D = {
 						CreatedOnToolsVersion = 7.2;
 					};
@@ -164,12 +253,20 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CDA3726E1C3907CE00E39A6D /* KMNavigationBarTransition */,
+				CDA3726E1C3907CE00E39A6D /* KMNavigationBarTransitionDemo */,
+				3038F4781CA9F278005FF9CD /* KMNavigationBarTransition */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3038F4771CA9F278005FF9CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CDA3726D1C3907CE00E39A6D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -183,6 +280,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3038F4741CA9F278005FF9CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CDA3726B1C3907CE00E39A6D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -200,6 +304,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3038F47F1CA9F278005FF9CD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3038F4781CA9F278005FF9CD /* KMNavigationBarTransition */;
+			targetProxy = 3038F47E1CA9F278005FF9CD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CDA372861C39089200E39A6D /* Main.storyboard */ = {
@@ -221,6 +333,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3038F4831CA9F278005FF9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = KMNavigationBarTransition/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jakemarsh.KMNavigationBarTransition;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3038F4841CA9F278005FF9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = KMNavigationBarTransition/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jakemarsh.KMNavigationBarTransition;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		CDA3727F1C3907CE00E39A6D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -331,6 +485,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3038F4821CA9F278005FF9CD /* Build configuration list for PBXNativeTarget "KMNavigationBarTransition" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3038F4831CA9F278005FF9CD /* Debug */,
+				3038F4841CA9F278005FF9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		CDA3726A1C3907CE00E39A6D /* Build configuration list for PBXProject "KMNavigationBarTransition" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -340,7 +502,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CDA372811C3907CE00E39A6D /* Build configuration list for PBXNativeTarget "KMNavigationBarTransition" */ = {
+		CDA372811C3907CE00E39A6D /* Build configuration list for PBXNativeTarget "KMNavigationBarTransitionDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CDA372821C3907CE00E39A6D /* Debug */,
