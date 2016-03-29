@@ -13,6 +13,9 @@
 		3038F4861CA9F27D005FF9CD /* UINavigationController+KMNavigationBarTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = CDDFA1F31C3921BD00BFBA1B /* UINavigationController+KMNavigationBarTransition.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3038F4871CA9F282005FF9CD /* UIViewController+KMNavigationBarTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = CDDFA1F51C3921BD00BFBA1B /* UIViewController+KMNavigationBarTransition.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3038F4881CA9F287005FF9CD /* KMSwizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = CDDFA1F11C3921BD00BFBA1B /* KMSwizzle.h */; };
+		3038F48B1CAA3BFA005FF9CD /* UIViewController+KMNavigationBarTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = CDDFA1F61C3921BD00BFBA1B /* UIViewController+KMNavigationBarTransition.m */; };
+		3038F48C1CAA3BFD005FF9CD /* UINavigationController+KMNavigationBarTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = CDDFA1F41C3921BD00BFBA1B /* UINavigationController+KMNavigationBarTransition.m */; };
+		3038F48D1CAA3BFF005FF9CD /* KMSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = CDDFA1F21C3921BD00BFBA1B /* KMSwizzle.m */; };
 		CDA372851C39087D00E39A6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA372841C39087D00E39A6D /* AppDelegate.swift */; };
 		CDA372881C39089200E39A6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDA372861C39089200E39A6D /* Main.storyboard */; };
 		CDA3728A1C39089900E39A6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDA372891C39089900E39A6D /* Assets.xcassets */; };
@@ -284,6 +287,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3038F48C1CAA3BFD005FF9CD /* UINavigationController+KMNavigationBarTransition.m in Sources */,
+				3038F48D1CAA3BFF005FF9CD /* KMSwizzle.m in Sources */,
+				3038F48B1CAA3BFA005FF9CD /* UIViewController+KMNavigationBarTransition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
