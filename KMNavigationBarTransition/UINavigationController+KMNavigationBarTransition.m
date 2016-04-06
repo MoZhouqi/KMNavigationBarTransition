@@ -59,7 +59,9 @@
         return [self km_pushViewController:viewController animated:animated];
     }
     [disappearingViewController km_addTransitionNavigationBarIfNeeded];
-    disappearingViewController.km_prefersNavigationBarBackgroundViewHidden = YES;
+    if (animated) {
+        disappearingViewController.km_prefersNavigationBarBackgroundViewHidden = YES;
+    }
     return [self km_pushViewController:viewController animated:animated];
 }
 
@@ -76,7 +78,9 @@
         [self.navigationBar setBackgroundImage:[appearingNavigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
         self.navigationBar.shadowImage = appearingNavigationBar.shadowImage;
     }
-    disappearingViewController.km_prefersNavigationBarBackgroundViewHidden = YES;
+    if (animated) {
+        disappearingViewController.km_prefersNavigationBarBackgroundViewHidden = YES;
+    }
     return [self km_popViewControllerAnimated:animated];
 }
 
@@ -92,7 +96,9 @@
         [self.navigationBar setBackgroundImage:[appearingNavigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
         self.navigationBar.shadowImage = appearingNavigationBar.shadowImage;
     }
-    disappearingViewController.km_prefersNavigationBarBackgroundViewHidden = YES;
+    if (animated) {
+        disappearingViewController.km_prefersNavigationBarBackgroundViewHidden = YES;
+    }
     return [self km_popToViewController:viewController animated:animated];
 }
 
@@ -109,7 +115,9 @@
         [self.navigationBar setBackgroundImage:[appearingNavigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
         self.navigationBar.shadowImage = appearingNavigationBar.shadowImage;
     }
-    disappearingViewController.km_prefersNavigationBarBackgroundViewHidden = YES;
+    if (animated) {
+        disappearingViewController.km_prefersNavigationBarBackgroundViewHidden = YES;
+    }
     return [self km_popToRootViewControllerAnimated:animated];
 }
 
