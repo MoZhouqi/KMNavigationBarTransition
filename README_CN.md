@@ -5,15 +5,15 @@ KMNavigationBarTransition
 
 ## 效果图
 
-### 之前
-
-![KMNavigationBarTransition](https://raw.githubusercontent.com/MoZhouqi/KMNavigationBarTransition/master/Screenshots/Before1.gif)
-![KMNavigationBarTransition](https://raw.githubusercontent.com/MoZhouqi/KMNavigationBarTransition/master/Screenshots/Before2.gif)
-
 ### 现在
 
 ![KMNavigationBarTransition](https://raw.githubusercontent.com/MoZhouqi/KMNavigationBarTransition/master/Screenshots/Now1.gif)
 ![KMNavigationBarTransition](https://raw.githubusercontent.com/MoZhouqi/KMNavigationBarTransition/master/Screenshots/Now2.gif)
+
+### 之前
+
+![KMNavigationBarTransition](https://raw.githubusercontent.com/MoZhouqi/KMNavigationBarTransition/master/Screenshots/Before1.gif)
+![KMNavigationBarTransition](https://raw.githubusercontent.com/MoZhouqi/KMNavigationBarTransition/master/Screenshots/Before2.gif)
 
 ## 介绍
 
