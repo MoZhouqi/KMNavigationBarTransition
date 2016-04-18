@@ -103,7 +103,7 @@
     [self.km_transitionNavigationBar removeFromSuperview];
     self.km_transitionNavigationBar = bar;
     [self km_resizeTransitionNavigationBarFrame];
-    if (!self.navigationController.navigationBarHidden) {
+    if (!self.navigationController.navigationBarHidden && !self.navigationController.navigationBar.hidden) {
         [self.view addSubview:self.km_transitionNavigationBar];
     }
 }
