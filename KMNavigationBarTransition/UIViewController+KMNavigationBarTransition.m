@@ -47,8 +47,12 @@
         [self.navigationController.navigationBar setBackgroundImage:[self.km_transitionNavigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
         [self.navigationController.navigationBar setShadowImage:self.km_transitionNavigationBar.shadowImage];
         
-        [self.km_transitionNavigationBar removeFromSuperview];
-        self.km_transitionNavigationBar = nil;
+        UIViewController *transitionViewController = self.navigationController.km_transitionContextToViewController;
+        if (!transitionViewController || [transitionViewController isEqual:self]) {
+            [self.km_transitionNavigationBar removeFromSuperview];
+            self.km_transitionNavigationBar = nil;
+            self.navigationController.km_transitionContextToViewController = nil;
+        }
     }
     self.km_prefersNavigationBarBackgroundViewHidden = NO;
     [self km_viewDidAppear:animated];
@@ -71,6 +75,9 @@
             self.km_prefersNavigationBarBackgroundViewHidden = YES;
         }
         [self km_resizeTransitionNavigationBarFrame];
+    }
+    if (self.km_transitionNavigationBar) {
+        [self.view bringSubviewToFront:self.km_transitionNavigationBar];
     }
     [self km_viewWillLayoutSubviews];
 }

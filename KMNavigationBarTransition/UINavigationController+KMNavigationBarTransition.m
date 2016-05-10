@@ -23,6 +23,7 @@
 
 #import "UINavigationController+KMNavigationBarTransition.h"
 #import "UIViewController+KMNavigationBarTransition.h"
+#import "KMWeakObjectContainer.h"
 #import <objc/runtime.h>
 #import "KMSwizzle.h"
 
@@ -58,8 +59,11 @@
     if (!disappearingViewController) {
         return [self km_pushViewController:viewController animated:animated];
     }
+    if (!self.km_transitionContextToViewController || !disappearingViewController.km_transitionNavigationBar) {
     [disappearingViewController km_addTransitionNavigationBarIfNeeded];
+    }
     if (animated) {
+        self.km_transitionContextToViewController = viewController;
         disappearingViewController.km_prefersNavigationBarBackgroundViewHidden = YES;
     }
     return [self km_pushViewController:viewController animated:animated];
@@ -119,6 +123,14 @@
         disappearingViewController.km_prefersNavigationBarBackgroundViewHidden = YES;
     }
     return [self km_popToRootViewControllerAnimated:animated];
+}
+
+- (UIViewController *)km_transitionContextToViewController {
+    return km_objc_getAssociatedWeakObject(self, _cmd);
+}
+
+- (void)setKm_transitionContextToViewController:(UIViewController *)viewController {
+    km_objc_setAssociatedWeakObject(self, @selector(km_transitionContextToViewController), viewController);
 }
 
 @end

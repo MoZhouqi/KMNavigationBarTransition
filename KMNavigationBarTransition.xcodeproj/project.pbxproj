@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD633F6B1CC87E6C006F2BAE /* UINavigationController+KMNavigationBarTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = CDDFA1F41C3921BD00BFBA1B /* UINavigationController+KMNavigationBarTransition.m */; };
+		CD633F6C1CC87E6E006F2BAE /* UIViewController+KMNavigationBarTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = CDDFA1F61C3921BD00BFBA1B /* UIViewController+KMNavigationBarTransition.m */; };
 		CDA372851C39087D00E39A6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA372841C39087D00E39A6D /* AppDelegate.swift */; };
 		CDA372881C39089200E39A6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDA372861C39089200E39A6D /* Main.storyboard */; };
 		CDA3728A1C39089900E39A6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDA372891C39089900E39A6D /* Assets.xcassets */; };
@@ -16,9 +18,8 @@
 		CDA372971C39093E00E39A6D /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA372921C39093E00E39A6D /* NavigationController.swift */; };
 		CDA372981C39093E00E39A6D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA372931C39093E00E39A6D /* SettingsViewController.swift */; };
 		CDA372991C39093E00E39A6D /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA372941C39093E00E39A6D /* UIImage+Color.swift */; };
+		CDC1BA0E1CE1DFE8006BE1B6 /* KMWeakObjectContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC1BA0D1CE1DFE8006BE1B6 /* KMWeakObjectContainer.m */; };
 		CDDFA1F71C3921BD00BFBA1B /* KMSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = CDDFA1F21C3921BD00BFBA1B /* KMSwizzle.m */; };
-		CDDFA1F81C3921BD00BFBA1B /* UINavigationController+KMNavigationBarTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = CDDFA1F41C3921BD00BFBA1B /* UINavigationController+KMNavigationBarTransition.m */; };
-		CDDFA1F91C3921BD00BFBA1B /* UIViewController+KMNavigationBarTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = CDDFA1F61C3921BD00BFBA1B /* UIViewController+KMNavigationBarTransition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,8 @@
 		CDA372921C39093E00E39A6D /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationController.swift; path = Example/NavigationController.swift; sourceTree = SOURCE_ROOT; };
 		CDA372931C39093E00E39A6D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Example/SettingsViewController.swift; sourceTree = SOURCE_ROOT; };
 		CDA372941C39093E00E39A6D /* UIImage+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Color.swift"; path = "Example/UIImage+Color.swift"; sourceTree = SOURCE_ROOT; };
+		CDC1BA0C1CE1DFE8006BE1B6 /* KMWeakObjectContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMWeakObjectContainer.h; sourceTree = "<group>"; };
+		CDC1BA0D1CE1DFE8006BE1B6 /* KMWeakObjectContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMWeakObjectContainer.m; sourceTree = "<group>"; };
 		CDDFA1F11C3921BD00BFBA1B /* KMSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMSwizzle.h; sourceTree = "<group>"; };
 		CDDFA1F21C3921BD00BFBA1B /* KMSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMSwizzle.m; sourceTree = "<group>"; };
 		CDDFA1F31C3921BD00BFBA1B /* UINavigationController+KMNavigationBarTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+KMNavigationBarTransition.h"; sourceTree = "<group>"; };
@@ -110,6 +113,8 @@
 				CDDFA1F41C3921BD00BFBA1B /* UINavigationController+KMNavigationBarTransition.m */,
 				CDDFA1F51C3921BD00BFBA1B /* UIViewController+KMNavigationBarTransition.h */,
 				CDDFA1F61C3921BD00BFBA1B /* UIViewController+KMNavigationBarTransition.m */,
+				CDC1BA0C1CE1DFE8006BE1B6 /* KMWeakObjectContainer.h */,
+				CDC1BA0D1CE1DFE8006BE1B6 /* KMWeakObjectContainer.m */,
 				CDDFA1F11C3921BD00BFBA1B /* KMSwizzle.h */,
 				CDDFA1F21C3921BD00BFBA1B /* KMSwizzle.m */,
 			);
@@ -189,11 +194,12 @@
 			files = (
 				CDA372851C39087D00E39A6D /* AppDelegate.swift in Sources */,
 				CDDFA1F71C3921BD00BFBA1B /* KMSwizzle.m in Sources */,
-				CDDFA1F81C3921BD00BFBA1B /* UINavigationController+KMNavigationBarTransition.m in Sources */,
+				CD633F6B1CC87E6C006F2BAE /* UINavigationController+KMNavigationBarTransition.m in Sources */,
 				CDA372971C39093E00E39A6D /* NavigationController.swift in Sources */,
 				CDA372951C39093E00E39A6D /* MainViewController.swift in Sources */,
 				CDA372981C39093E00E39A6D /* SettingsViewController.swift in Sources */,
-				CDDFA1F91C3921BD00BFBA1B /* UIViewController+KMNavigationBarTransition.m in Sources */,
+				CDC1BA0E1CE1DFE8006BE1B6 /* KMWeakObjectContainer.m in Sources */,
+				CD633F6C1CC87E6E006F2BAE /* UIViewController+KMNavigationBarTransition.m in Sources */,
 				CDA372961C39093E00E39A6D /* NavigationBarData.swift in Sources */,
 				CDA372991C39093E00E39A6D /* UIImage+Color.swift in Sources */,
 			);

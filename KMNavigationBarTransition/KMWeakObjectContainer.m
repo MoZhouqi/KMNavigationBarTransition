@@ -1,5 +1,5 @@
 //
-//  UINavigationController+KMNavigationBarTransition.h
+//  KMWeakObjectContainer.m
 //
 //  Copyright (c) 2016 Zhouqi Mo (https://github.com/MoZhouqi)
 //
@@ -21,12 +21,25 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
+#import "KMWeakObjectContainer.h"
+#import <objc/runtime.h>
 
-@interface UINavigationController (KMNavigationBarTransition)
+@interface KMWeakObjectContainer : NSObject
+@property (nonatomic, weak) id object;
+@end
 
-@property (nonatomic, weak) UIViewController *km_transitionContextToViewController;
+@implementation KMWeakObjectContainer
 
-// By default this is white, it is related to issue with transparent navigationBar
-- (UIColor *)km_containerViewBackgroundColor;
+void km_objc_setAssociatedWeakObject(id container, void *key, id value)
+{
+    KMWeakObjectContainer *wrapper = [[KMWeakObjectContainer alloc] init];
+    wrapper.object = value;
+    objc_setAssociatedObject(container, key, wrapper, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+id km_objc_getAssociatedWeakObject(id container, void *key)
+{
+    return [(KMWeakObjectContainer *)objc_getAssociatedObject(container, key) object];
+}
+
 @end
