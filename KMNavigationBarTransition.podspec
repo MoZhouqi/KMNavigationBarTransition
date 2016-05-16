@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "KMNavigationBarTransition"
-  s.version      = "0.0.7"
+  s.version      = "0.0.8"
   s.summary      = "A drop-in universal library makes transition animations smooth between different navigation bar styles while pushing or popping."
 
   s.description  = <<-DESC
