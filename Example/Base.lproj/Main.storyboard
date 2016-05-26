@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="22n-Re-G8c">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="22n-Re-G8c">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -111,7 +111,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Switch Cell" id="2qY-tx-Rj2" userLabel="Prefers Navigation Bar Hidden Cell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Switch Cell0" id="2qY-tx-Rj2" userLabel="Prefers Navigation Bar Hidden Cell">
                                         <rect key="frame" x="0.0" y="201.5" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2qY-tx-Rj2" id="6K5-kb-4FE">
@@ -140,8 +140,37 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Switch Cell" id="nSi-3S-0aU" userLabel="Shdow Image Hidden Cell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Switch Cell1" id="oUs-vw-DfS" userLabel="Prefers Status Bar Black Style">
                                         <rect key="frame" x="0.0" y="245.5" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oUs-vw-DfS" id="zcM-99-Xkg">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prefers Status Bar Black Style" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLM-yy-deP">
+                                                    <rect key="frame" x="15" y="12" width="227.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="P6b-2j-8IQ">
+                                                    <rect key="frame" x="534" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="prefersStatusBarStyle:" destination="CWl-bv-lDg" eventType="valueChanged" id="Wc4-kU-sYk"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="P6b-2j-8IQ" secondAttribute="trailing" constant="9" id="9Pd-wr-08v"/>
+                                                <constraint firstItem="aLM-yy-deP" firstAttribute="top" secondItem="zcM-99-Xkg" secondAttribute="topMargin" constant="4" id="Ag3-IL-DNf"/>
+                                                <constraint firstItem="aLM-yy-deP" firstAttribute="leading" secondItem="zcM-99-Xkg" secondAttribute="leadingMargin" constant="7" id="BjB-1z-uU2"/>
+                                                <constraint firstItem="P6b-2j-8IQ" firstAttribute="centerY" secondItem="zcM-99-Xkg" secondAttribute="centerY" id="SDL-Xl-nB9"/>
+                                                <constraint firstItem="aLM-yy-deP" firstAttribute="centerY" secondItem="zcM-99-Xkg" secondAttribute="centerY" id="x3e-bf-2TX"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Switch Cell2" id="nSi-3S-0aU" userLabel="Shdow Image Hidden Cell">
+                                        <rect key="frame" x="0.0" y="289.5" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nSi-3S-0aU" id="6Uz-8b-Y3U">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -169,12 +198,33 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Push Cell" id="ENv-Bi-Oxc" userLabel="Push Cell">
+                                        <rect key="frame" x="0.0" y="333.5" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ENv-Bi-Oxc" id="L1d-RA-qzb">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Push Cell" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qXU-H3-dJU">
+                                                    <rect key="frame" x="15" y="12" width="71.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="qXU-H3-dJU" firstAttribute="leading" secondItem="L1d-RA-qzb" secondAttribute="leadingMargin" constant="7" id="1qE-Ba-r3C"/>
+                                                <constraint firstItem="qXU-H3-dJU" firstAttribute="top" secondItem="L1d-RA-qzb" secondAttribute="topMargin" constant="4" id="CAg-Nh-Mao"/>
+                                                <constraint firstItem="qXU-H3-dJU" firstAttribute="centerY" secondItem="L1d-RA-qzb" secondAttribute="centerY" id="m3L-v0-oXO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Global Naivgation Bar Style" id="Fo7-pF-Eux">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Switch Cell" id="IdI-hZ-RLv" userLabel="Translucent Cell">
-                                        <rect key="frame" x="0.0" y="339.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="427.5" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IdI-hZ-RLv" id="etN-bo-4XB">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -221,6 +271,7 @@
                         <outlet property="nextNavigatioBarBackgroundImageColorText" destination="wqy-Ca-ERL" id="H61-5L-v9v"/>
                         <outlet property="nextNavigationBarPrefersHiddenSwitch" destination="e6R-dl-FjW" id="KtH-V6-n1S"/>
                         <outlet property="nextNavigationBarPrefersShadowImageHiddenSwitch" destination="TYn-4O-edW" id="AzY-es-Nqz"/>
+                        <outlet property="nextNavigationBarPrefersStatusBarBlackStyleSwitch" destination="P6b-2j-8IQ" id="Ytq-XQ-wsn"/>
                         <outlet property="nextNavigationBarTintColorText" destination="uCO-FO-YFd" id="7PX-vx-oks"/>
                         <segue destination="t1n-FL-Ws1" kind="show" identifier="Set Style" id="LZ6-ly-Epj"/>
                     </connections>
