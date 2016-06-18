@@ -47,6 +47,10 @@
         KMSwizzleMethod([self class],
                         @selector(popToRootViewControllerAnimated:),
                         @selector(km_popToRootViewControllerAnimated:));
+        
+        KMSwizzleMethod([self class],
+                        @selector(setViewControllers:animated:),
+                        @selector(km_setViewControllers:animated:));
     });
 }
 
@@ -125,6 +129,17 @@
         disappearingViewController.km_prefersNavigationBarBackgroundViewHidden = YES;
     }
     return [self km_popToRootViewControllerAnimated:animated];
+}
+
+- (void)km_setViewControllers:(NSArray<UIViewController *> *)viewControllers animated:(BOOL)animated {
+    UIViewController *disappearingViewController = self.viewControllers.lastObject;
+    if (animated && disappearingViewController && ![disappearingViewController isEqual:viewControllers.lastObject]) {
+        [disappearingViewController km_addTransitionNavigationBarIfNeeded];
+        if (disappearingViewController.km_transitionNavigationBar) {
+            disappearingViewController.km_prefersNavigationBarBackgroundViewHidden = YES;
+        }
+    }
+    return [self km_setViewControllers:viewControllers animated:animated];
 }
 
 - (UIViewController *)km_transitionContextToViewController {
