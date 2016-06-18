@@ -64,7 +64,9 @@
     }
     if (animated) {
         self.km_transitionContextToViewController = viewController;
-        disappearingViewController.km_prefersNavigationBarBackgroundViewHidden = YES;
+        if (disappearingViewController.km_transitionNavigationBar) {
+            disappearingViewController.km_prefersNavigationBarBackgroundViewHidden = YES;
+        }
     }
     return [self km_pushViewController:viewController animated:animated];
 }
