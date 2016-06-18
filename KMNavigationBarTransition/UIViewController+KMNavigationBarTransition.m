@@ -92,7 +92,7 @@
 }
 
 - (void)km_addTransitionNavigationBarIfNeeded {
-    if (!self.view.window) {
+    if (!self.isViewLoaded || !self.view.window) {
         return;
     }
     if (!self.navigationController.navigationBar) {
