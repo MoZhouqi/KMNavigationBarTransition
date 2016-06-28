@@ -98,6 +98,7 @@
     if (!self.navigationController.navigationBar) {
         return;
     }
+    [self km_adjustScrollViewContentOffsetIfNeeded];
     UINavigationBar *bar = [[UINavigationBar alloc] init];
     bar.barStyle = self.navigationController.navigationBar.barStyle;
     if (bar.translucent != self.navigationController.navigationBar.translucent) {
@@ -111,6 +112,23 @@
     [self km_resizeTransitionNavigationBarFrame];
     if (!self.navigationController.navigationBarHidden && !self.navigationController.navigationBar.hidden) {
         [self.view addSubview:self.km_transitionNavigationBar];
+    }
+}
+
+- (void)km_adjustScrollViewContentOffsetIfNeeded {
+    if ([self.view isKindOfClass:[UIScrollView class]]) {
+        UIScrollView *scrollView = (UIScrollView *)self.view;
+        const CGFloat topContentOffsetY = -scrollView.contentInset.top;
+        const CGFloat bottomContentOffsetY = scrollView.contentSize.height - (CGRectGetHeight(scrollView.bounds) - scrollView.contentInset.bottom);
+        
+        CGPoint adjustedContentOffset = scrollView.contentOffset;
+        if (adjustedContentOffset.y > bottomContentOffsetY) {
+            adjustedContentOffset.y = bottomContentOffsetY;
+        }
+        if (adjustedContentOffset.y < topContentOffsetY) {
+            adjustedContentOffset.y = topContentOffsetY;
+        }
+        [scrollView setContentOffset:adjustedContentOffset animated:NO];
     }
 }
 
