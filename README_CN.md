@@ -25,7 +25,7 @@ KMNavigationBarTransition
 
 使用本库时不用 import 任何头文件，全部通过 [Method Swizzling](http://nshipster.com/method-swizzling/) 在底层做了处理。
 
-推荐在所有 view controller 基类的 `viewDidLoad` 里设置默认的导航栏背景样式，当需要改变时，一般也只需要在*当前* view controller 的 `viewDidLoad` 里去操作。
+推荐在所有 view controller 基类的 `viewDidLoad` 里设置默认的导航栏背景样式，当需要改变时，一般也只需要在*当前* view controller 的 `viewDidLoad` 里去设置，但是如果你需要支持 3D Touch 的 peek 和 pop 手势，你可以在 `viewWillAppear:` 里去设置。
 
 下面是一些设置导航栏背景样式的建议，具体的用法可以参见 Example。
 
