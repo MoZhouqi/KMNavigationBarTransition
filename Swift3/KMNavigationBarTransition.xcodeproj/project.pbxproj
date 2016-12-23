@@ -1,0 +1,478 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D8C558841E0CBAD500882D86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C558831E0CBAD500882D86 /* AppDelegate.swift */; };
+		D8C558891E0CBAD500882D86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8C558871E0CBAD500882D86 /* Main.storyboard */; };
+		D8C5588B1E0CBAD500882D86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8C5588A1E0CBAD500882D86 /* Assets.xcassets */; };
+		D8C5588E1E0CBAD500882D86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8C5588C1E0CBAD500882D86 /* LaunchScreen.storyboard */; };
+		D8C558991E0CBAD600882D86 /* KMNavigationBarTransitionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C558981E0CBAD600882D86 /* KMNavigationBarTransitionUITests.swift */; };
+		D8C558A51E0CBB7000882D86 /* KMSwizzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C558A41E0CBB7000882D86 /* KMSwizzle.swift */; };
+		D8C558A81E0CBD6600882D86 /* KMWeakObjectContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C558A71E0CBD6600882D86 /* KMWeakObjectContainer.swift */; };
+		D8C558AA1E0CC12D00882D86 /* UINavigationController+KMNavigationBarTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C558A91E0CC12D00882D86 /* UINavigationController+KMNavigationBarTransition.swift */; };
+		D8C558AC1E0CCA5100882D86 /* UIViewController+KMNavigationBarTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C558AB1E0CCA5100882D86 /* UIViewController+KMNavigationBarTransition.swift */; };
+		D8C558B21E0CF19400882D86 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C558AD1E0CF19400882D86 /* MainViewController.swift */; };
+		D8C558B31E0CF19400882D86 /* NavigationBarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C558AE1E0CF19400882D86 /* NavigationBarData.swift */; };
+		D8C558B41E0CF19400882D86 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C558AF1E0CF19400882D86 /* NavigationController.swift */; };
+		D8C558B51E0CF19400882D86 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C558B01E0CF19400882D86 /* SettingsViewController.swift */; };
+		D8C558B61E0CF19400882D86 /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C558B11E0CF19400882D86 /* UIImage+Color.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D8C558951E0CBAD600882D86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8C558781E0CBAD500882D86 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8C5587F1E0CBAD500882D86;
+			remoteInfo = KMNavigationBarTransition;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D8C558801E0CBAD500882D86 /* KMNavigationBarTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KMNavigationBarTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8C558831E0CBAD500882D86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D8C558881E0CBAD500882D86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D8C5588A1E0CBAD500882D86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D8C5588D1E0CBAD500882D86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D8C5588F1E0CBAD500882D86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8C558941E0CBAD600882D86 /* KMNavigationBarTransitionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KMNavigationBarTransitionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8C558981E0CBAD600882D86 /* KMNavigationBarTransitionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMNavigationBarTransitionUITests.swift; sourceTree = "<group>"; };
+		D8C5589A1E0CBAD600882D86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8C558A41E0CBB7000882D86 /* KMSwizzle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMSwizzle.swift; sourceTree = "<group>"; };
+		D8C558A71E0CBD6600882D86 /* KMWeakObjectContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMWeakObjectContainer.swift; sourceTree = "<group>"; };
+		D8C558A91E0CC12D00882D86 /* UINavigationController+KMNavigationBarTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+KMNavigationBarTransition.swift"; sourceTree = "<group>"; };
+		D8C558AB1E0CCA5100882D86 /* UIViewController+KMNavigationBarTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+KMNavigationBarTransition.swift"; sourceTree = "<group>"; };
+		D8C558AD1E0CF19400882D86 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		D8C558AE1E0CF19400882D86 /* NavigationBarData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarData.swift; sourceTree = "<group>"; };
+		D8C558AF1E0CF19400882D86 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		D8C558B01E0CF19400882D86 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		D8C558B11E0CF19400882D86 /* UIImage+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D8C5587D1E0CBAD500882D86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8C558911E0CBAD600882D86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D8C558771E0CBAD500882D86 = {
+			isa = PBXGroup;
+			children = (
+				D8C558821E0CBAD500882D86 /* KMNavigationBarTransition */,
+				D8C558971E0CBAD600882D86 /* KMNavigationBarTransitionUITests */,
+				D8C558811E0CBAD500882D86 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D8C558811E0CBAD500882D86 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D8C558801E0CBAD500882D86 /* KMNavigationBarTransition.app */,
+				D8C558941E0CBAD600882D86 /* KMNavigationBarTransitionUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D8C558821E0CBAD500882D86 /* KMNavigationBarTransition */ = {
+			isa = PBXGroup;
+			children = (
+				D8C558A31E0CBB3100882D86 /* Classes */,
+				D8C558AD1E0CF19400882D86 /* MainViewController.swift */,
+				D8C558AE1E0CF19400882D86 /* NavigationBarData.swift */,
+				D8C558AF1E0CF19400882D86 /* NavigationController.swift */,
+				D8C558B01E0CF19400882D86 /* SettingsViewController.swift */,
+				D8C558B11E0CF19400882D86 /* UIImage+Color.swift */,
+				D8C558831E0CBAD500882D86 /* AppDelegate.swift */,
+				D8C558871E0CBAD500882D86 /* Main.storyboard */,
+				D8C5588A1E0CBAD500882D86 /* Assets.xcassets */,
+				D8C5588C1E0CBAD500882D86 /* LaunchScreen.storyboard */,
+				D8C5588F1E0CBAD500882D86 /* Info.plist */,
+			);
+			path = KMNavigationBarTransition;
+			sourceTree = "<group>";
+		};
+		D8C558971E0CBAD600882D86 /* KMNavigationBarTransitionUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D8C558981E0CBAD600882D86 /* KMNavigationBarTransitionUITests.swift */,
+				D8C5589A1E0CBAD600882D86 /* Info.plist */,
+			);
+			path = KMNavigationBarTransitionUITests;
+			sourceTree = "<group>";
+		};
+		D8C558A31E0CBB3100882D86 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D8C558A41E0CBB7000882D86 /* KMSwizzle.swift */,
+				D8C558A71E0CBD6600882D86 /* KMWeakObjectContainer.swift */,
+				D8C558A91E0CC12D00882D86 /* UINavigationController+KMNavigationBarTransition.swift */,
+				D8C558AB1E0CCA5100882D86 /* UIViewController+KMNavigationBarTransition.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D8C5587F1E0CBAD500882D86 /* KMNavigationBarTransition */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8C5589D1E0CBAD600882D86 /* Build configuration list for PBXNativeTarget "KMNavigationBarTransition" */;
+			buildPhases = (
+				D8C5587C1E0CBAD500882D86 /* Sources */,
+				D8C5587D1E0CBAD500882D86 /* Frameworks */,
+				D8C5587E1E0CBAD500882D86 /* Resources */,
+				D8C558A61E0CBC1600882D86 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KMNavigationBarTransition;
+			productName = KMNavigationBarTransition;
+			productReference = D8C558801E0CBAD500882D86 /* KMNavigationBarTransition.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D8C558931E0CBAD600882D86 /* KMNavigationBarTransitionUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8C558A01E0CBAD600882D86 /* Build configuration list for PBXNativeTarget "KMNavigationBarTransitionUITests" */;
+			buildPhases = (
+				D8C558901E0CBAD600882D86 /* Sources */,
+				D8C558911E0CBAD600882D86 /* Frameworks */,
+				D8C558921E0CBAD600882D86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D8C558961E0CBAD600882D86 /* PBXTargetDependency */,
+			);
+			name = KMNavigationBarTransitionUITests;
+			productName = KMNavigationBarTransitionUITests;
+			productReference = D8C558941E0CBAD600882D86 /* KMNavigationBarTransitionUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D8C558781E0CBAD500882D86 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "伯驹 黄";
+				TargetAttributes = {
+					D8C5587F1E0CBAD500882D86 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+					D8C558931E0CBAD600882D86 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D8C5587F1E0CBAD500882D86;
+					};
+				};
+			};
+			buildConfigurationList = D8C5587B1E0CBAD500882D86 /* Build configuration list for PBXProject "KMNavigationBarTransition" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D8C558771E0CBAD500882D86;
+			productRefGroup = D8C558811E0CBAD500882D86 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D8C5587F1E0CBAD500882D86 /* KMNavigationBarTransition */,
+				D8C558931E0CBAD600882D86 /* KMNavigationBarTransitionUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D8C5587E1E0CBAD500882D86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8C5588E1E0CBAD500882D86 /* LaunchScreen.storyboard in Resources */,
+				D8C5588B1E0CBAD500882D86 /* Assets.xcassets in Resources */,
+				D8C558891E0CBAD500882D86 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8C558921E0CBAD600882D86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D8C558A61E0CBC1600882D86 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D8C5587C1E0CBAD500882D86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8C558B21E0CF19400882D86 /* MainViewController.swift in Sources */,
+				D8C558B31E0CF19400882D86 /* NavigationBarData.swift in Sources */,
+				D8C558A81E0CBD6600882D86 /* KMWeakObjectContainer.swift in Sources */,
+				D8C558B51E0CF19400882D86 /* SettingsViewController.swift in Sources */,
+				D8C558B41E0CF19400882D86 /* NavigationController.swift in Sources */,
+				D8C558841E0CBAD500882D86 /* AppDelegate.swift in Sources */,
+				D8C558B61E0CF19400882D86 /* UIImage+Color.swift in Sources */,
+				D8C558AC1E0CCA5100882D86 /* UIViewController+KMNavigationBarTransition.swift in Sources */,
+				D8C558AA1E0CC12D00882D86 /* UINavigationController+KMNavigationBarTransition.swift in Sources */,
+				D8C558A51E0CBB7000882D86 /* KMSwizzle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8C558901E0CBAD600882D86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8C558991E0CBAD600882D86 /* KMNavigationBarTransitionUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D8C558961E0CBAD600882D86 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D8C5587F1E0CBAD500882D86 /* KMNavigationBarTransition */;
+			targetProxy = D8C558951E0CBAD600882D86 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D8C558871E0CBAD500882D86 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D8C558881E0CBAD500882D86 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D8C5588C1E0CBAD500882D86 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D8C5588D1E0CBAD500882D86 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D8C5589B1E0CBAD600882D86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D8C5589C1E0CBAD600882D86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D8C5589E1E0CBAD600882D86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = KMNavigationBarTransition/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.huangboju.bundle.KMNavigationBarTransition;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		D8C5589F1E0CBAD600882D86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = KMNavigationBarTransition/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.huangboju.bundle.KMNavigationBarTransition;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		D8C558A11E0CBAD600882D86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = KMNavigationBarTransitionUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.huangboju.bundle.KMNavigationBarTransitionUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = KMNavigationBarTransition;
+			};
+			name = Debug;
+		};
+		D8C558A21E0CBAD600882D86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = KMNavigationBarTransitionUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.huangboju.bundle.KMNavigationBarTransitionUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = KMNavigationBarTransition;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D8C5587B1E0CBAD500882D86 /* Build configuration list for PBXProject "KMNavigationBarTransition" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8C5589B1E0CBAD600882D86 /* Debug */,
+				D8C5589C1E0CBAD600882D86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8C5589D1E0CBAD600882D86 /* Build configuration list for PBXNativeTarget "KMNavigationBarTransition" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8C5589E1E0CBAD600882D86 /* Debug */,
+				D8C5589F1E0CBAD600882D86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8C558A01E0CBAD600882D86 /* Build configuration list for PBXNativeTarget "KMNavigationBarTransitionUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8C558A11E0CBAD600882D86 /* Debug */,
+				D8C558A21E0CBAD600882D86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D8C558781E0CBAD500882D86 /* Project object */;
+}
