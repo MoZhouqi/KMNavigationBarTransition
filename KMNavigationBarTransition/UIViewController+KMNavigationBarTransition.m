@@ -63,7 +63,7 @@
     UIViewController *fromViewController = [tc viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *toViewController = [tc viewControllerForKey:UITransitionContextToViewControllerKey];
     
-    if ([self isEqual:self.navigationController.viewControllers.lastObject] && [toViewController isEqual:self]) {
+    if ([self isEqual:self.navigationController.viewControllers.lastObject] && [toViewController isEqual:self] && self.navigationController.km_transitionContextToViewController) {
         if (self.navigationController.navigationBar.translucent) {
             [tc containerView].backgroundColor = [self.navigationController km_containerViewBackgroundColor];
         }
