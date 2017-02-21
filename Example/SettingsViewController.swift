@@ -21,7 +21,7 @@ class SettingsViewController: UITableViewController {
     // MARK: Properties
     
     var colorsData: (colorsArray: [NavigationBarBackgroundViewColor], selectedIndex: Int?)!
-    var configurationBlock: ((color: NavigationBarBackgroundViewColor) -> Void)!
+    var configurationBlock: ((_ color: NavigationBarBackgroundViewColor) -> Void)!
     var titleText = ""
     
     // MARK: View Life Cycle
@@ -36,18 +36,18 @@ class SettingsViewController: UITableViewController {
 
 extension SettingsViewController {
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return colorsData.colorsArray.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.TableViewCell.Identifier, forIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TableViewCell.Identifier, for: indexPath)
         cell.textLabel?.text = colorsData.colorsArray[indexPath.row].rawValue
-        cell.accessoryType = (indexPath.row == colorsData.selectedIndex) ? .Checkmark : .None
+        cell.accessoryType = (indexPath.row == colorsData.selectedIndex) ? .checkmark : .none
         
         return cell
     }
@@ -58,14 +58,14 @@ extension SettingsViewController {
 
 extension SettingsViewController {
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let selectedIndex = colorsData.selectedIndex {
-            tableView.cellForRowAtIndexPath(NSIndexPath(forRow: selectedIndex, inSection: 0))?.accessoryType = .None
+            tableView.cellForRow(at: IndexPath(row: selectedIndex, section: 0))?.accessoryType = .none
         }
         colorsData.selectedIndex = indexPath.row
-        tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = .Checkmark
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        configurationBlock?(color: colorsData.colorsArray[indexPath.row])
+        tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+        tableView.deselectRow(at: indexPath, animated: true)
+        configurationBlock?(colorsData.colorsArray[indexPath.row])
     }
     
 }
