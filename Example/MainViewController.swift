@@ -40,17 +40,17 @@ class MainViewController: UITableViewController {
         
         nextNavigationBarTintColorText.text = nextNavigationBarData.barTintColor.rawValue
         nextNavigatioBarBackgroundImageColorText.text = nextNavigationBarData.backgroundImageColor.rawValue
-        nextNavigationBarPrefersHiddenSwitch.on = nextNavigationBarData.prefersHidden
-        nextNavigationBarPrefersShadowImageHiddenSwitch.on = nextNavigationBarData.prefersShadowImageHidden
+        nextNavigationBarPrefersHiddenSwitch.isOn = nextNavigationBarData.prefersHidden
+        nextNavigationBarPrefersShadowImageHiddenSwitch.isOn = nextNavigationBarData.prefersShadowImageHidden
         
         navigationController?.navigationBar.barTintColor = currentNavigationBarData.barTintColor.toUIColor
-        navigationController?.navigationBar.setBackgroundImage(currentNavigationBarData.backgroundImageColor.toUIImage, forBarMetrics: .Default)
+        navigationController?.navigationBar.setBackgroundImage(currentNavigationBarData.backgroundImageColor.toUIImage, for: .default)
         navigationController?.navigationBar.shadowImage = (currentNavigationBarData.prefersShadowImageHidden) ? UIImage() : nil
         
         title = "Title " + "\(navigationController!.viewControllers.count)"
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(currentNavigationBarData.prefersHidden, animated: animated)
     }
@@ -61,16 +61,16 @@ class MainViewController: UITableViewController {
 
 extension MainViewController {
     
-    @IBAction func nextNavigationBarPrefersShadowImageHidden(sender: UISwitch) {
-        nextNavigationBarData.prefersShadowImageHidden = sender.on
+    @IBAction func nextNavigationBarPrefersShadowImageHidden(_ sender: UISwitch) {
+        nextNavigationBarData.prefersShadowImageHidden = sender.isOn
     }
     
-    @IBAction func nextNavigationBarPrefersHidden(sender: UISwitch) {
-        nextNavigationBarData.prefersHidden = sender.on
+    @IBAction func nextNavigationBarPrefersHidden(_ sender: UISwitch) {
+        nextNavigationBarData.prefersHidden = sender.isOn
     }
     
-    @IBAction func navigationBarTranslucent(sender: UISwitch) {
-        navigationController?.navigationBar.translucent = sender.on
+    @IBAction func navigationBarTranslucent(_ sender: UISwitch) {
+        navigationController?.navigationBar.isTranslucent = sender.isOn
     }
     
 }
@@ -79,7 +79,7 @@ extension MainViewController {
 
 extension  MainViewController {
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return navigationController?.viewControllers.first == self ? 2 : 1
     }
     
@@ -89,10 +89,10 @@ extension  MainViewController {
 
 extension  MainViewController {
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch (indexPath.section, indexPath.row) {
         case (0, 0), (0, 1):
-            performSegueWithIdentifier(Constants.Segue.SetStyleIdentifier, sender: self)
+            performSegue(withIdentifier: Constants.Segue.SetStyleIdentifier, sender: self)
         default:
             break
         }
@@ -104,11 +104,11 @@ extension  MainViewController {
 
 extension MainViewController {
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             switch identifier {
             case Constants.Segue.SetStyleIdentifier:
-                guard let settingsViewController = segue.destinationViewController as? SettingsViewController else {
+                guard let settingsViewController = segue.destination as? SettingsViewController else {
                     return
                 }
                 guard let selectedIndexPath = tableView.indexPathForSelectedRow else {
@@ -117,19 +117,19 @@ extension MainViewController {
                 
                 var colorsArray = [NavigationBarBackgroundViewColor]()
                 var selectedIndex: Int?
-                var block: ((color: NavigationBarBackgroundViewColor) -> Void)?
+                var block: ((_ color: NavigationBarBackgroundViewColor) -> Void)?
                 
                 switch (selectedIndexPath.section, selectedIndexPath.row) {
                 case (0, 0):
                     colorsArray = NavigationBarData.BarTintColorArray
-                    selectedIndex = colorsArray.indexOf(NavigationBarBackgroundViewColor(rawValue: nextNavigationBarTintColorText.text!)!)
+                    selectedIndex = colorsArray.index(of: NavigationBarBackgroundViewColor(rawValue: nextNavigationBarTintColorText.text!)!)
                     block = {
                         self.nextNavigationBarData.barTintColor = $0
                         self.nextNavigationBarTintColorText.text = $0.rawValue
                     }
                 case (0, 1):
                     colorsArray = NavigationBarData.BackgroundImageColorArray
-                    selectedIndex = colorsArray.indexOf(NavigationBarBackgroundViewColor(rawValue: nextNavigatioBarBackgroundImageColorText.text!)!)
+                    selectedIndex = colorsArray.index(of: NavigationBarBackgroundViewColor(rawValue: nextNavigatioBarBackgroundImageColorText.text!)!)
                     block = {
                         self.nextNavigationBarData.backgroundImageColor = $0
                         self.nextNavigatioBarBackgroundImageColorText.text = $0.rawValue
@@ -139,10 +139,10 @@ extension MainViewController {
                 }
                 settingsViewController.colorsData = (colorsArray, selectedIndex)
                 settingsViewController.configurationBlock = block
-                settingsViewController.titleText = tableView.cellForRowAtIndexPath(selectedIndexPath)?.textLabel?.text ?? ""
+                settingsViewController.titleText = tableView.cellForRow(at: selectedIndexPath)?.textLabel?.text ?? ""
                 
             case Constants.Segue.ShowNextIdentifier:
-                guard let viewController = segue.destinationViewController as? MainViewController else {
+                guard let viewController = segue.destination as? MainViewController else {
                     return
                 }
                 viewController.currentNavigationBarData = nextNavigationBarData
