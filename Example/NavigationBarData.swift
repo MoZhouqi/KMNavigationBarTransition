@@ -18,6 +18,7 @@ struct NavigationBarData {
     var prefersHidden = false
     var prefersShadowImageHidden = false
 
+    var prefersStatusBarBlackStyle = false
 }
 
 enum NavigationBarBackgroundViewColor: String {

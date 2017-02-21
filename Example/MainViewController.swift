@@ -28,6 +28,7 @@ class MainViewController: UITableViewController {
     @IBOutlet weak var nextNavigatioBarBackgroundImageColorText: UILabel!
     @IBOutlet weak var nextNavigationBarPrefersHiddenSwitch: UISwitch!
     @IBOutlet weak var nextNavigationBarPrefersShadowImageHiddenSwitch: UISwitch!
+    @IBOutlet weak var nextNavigationBarPrefersStatusBarBlackStyleSwitch: UISwitch!
     
     // MARK: View Life Cycle
     
@@ -42,11 +43,13 @@ class MainViewController: UITableViewController {
         nextNavigatioBarBackgroundImageColorText.text = nextNavigationBarData.backgroundImageColor.rawValue
         nextNavigationBarPrefersHiddenSwitch.on = nextNavigationBarData.prefersHidden
         nextNavigationBarPrefersShadowImageHiddenSwitch.on = nextNavigationBarData.prefersShadowImageHidden
-        
+        nextNavigationBarPrefersStatusBarBlackStyleSwitch.on = nextNavigationBarData.prefersStatusBarBlackStyle
+
         navigationController?.navigationBar.barTintColor = currentNavigationBarData.barTintColor.toUIColor
         navigationController?.navigationBar.setBackgroundImage(currentNavigationBarData.backgroundImageColor.toUIImage, forBarMetrics: .Default)
         navigationController?.navigationBar.shadowImage = (currentNavigationBarData.prefersShadowImageHidden) ? UIImage() : nil
-        
+        navigationController?.navigationBar.barStyle = (currentNavigationBarData.prefersStatusBarBlackStyle) ? .Black : .Default
+
         title = "Title " + "\(navigationController!.viewControllers.count)"
     }
     
@@ -72,6 +75,9 @@ extension MainViewController {
     @IBAction func navigationBarTranslucent(sender: UISwitch) {
         navigationController?.navigationBar.translucent = sender.on
     }
+    @IBAction func prefersStatusBarStyle(sender: UISwitch) {
+        nextNavigationBarData.prefersStatusBarBlackStyle = sender.on
+    }
     
 }
 
@@ -93,6 +99,8 @@ extension  MainViewController {
         switch (indexPath.section, indexPath.row) {
         case (0, 0), (0, 1):
             performSegueWithIdentifier(Constants.Segue.SetStyleIdentifier, sender: self)
+        case (0,5):
+            performSegueWithIdentifier(Constants.Segue.ShowNextIdentifier, sender: self)
         default:
             break
         }
