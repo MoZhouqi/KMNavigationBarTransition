@@ -16,6 +16,7 @@
 		CDA372971C39093E00E39A6D /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA372921C39093E00E39A6D /* NavigationController.swift */; };
 		CDA372981C39093E00E39A6D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA372931C39093E00E39A6D /* SettingsViewController.swift */; };
 		CDA372991C39093E00E39A6D /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA372941C39093E00E39A6D /* UIImage+Color.swift */; };
+		CDAA3BB31E5CB40E00666BB0 /* UIViewController+KMNavigationBarTransition_internal.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAA3BB21E5CB40E00666BB0 /* UIViewController+KMNavigationBarTransition_internal.h */; };
 		CDC01B971E5CA42000F6F3E2 /* KMNavigationBarTransition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC01B901E5CA42000F6F3E2 /* KMNavigationBarTransition.framework */; };
 		CDC01B981E5CA42000F6F3E2 /* KMNavigationBarTransition.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CDC01B901E5CA42000F6F3E2 /* KMNavigationBarTransition.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CDC01B9D1E5CA46400F6F3E2 /* KMNavigationBarTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = CDC01B9C1E5CA46400F6F3E2 /* KMNavigationBarTransition.h */; };
@@ -66,6 +67,7 @@
 		CDA372921C39093E00E39A6D /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationController.swift; path = Example/NavigationController.swift; sourceTree = SOURCE_ROOT; };
 		CDA372931C39093E00E39A6D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Example/SettingsViewController.swift; sourceTree = SOURCE_ROOT; };
 		CDA372941C39093E00E39A6D /* UIImage+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Color.swift"; path = "Example/UIImage+Color.swift"; sourceTree = SOURCE_ROOT; };
+		CDAA3BB21E5CB40E00666BB0 /* UIViewController+KMNavigationBarTransition_internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+KMNavigationBarTransition_internal.h"; sourceTree = "<group>"; };
 		CDC01B901E5CA42000F6F3E2 /* KMNavigationBarTransition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KMNavigationBarTransition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDC01B9C1E5CA46400F6F3E2 /* KMNavigationBarTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMNavigationBarTransition.h; sourceTree = "<group>"; };
 		CDC01B9E1E5CA46900F6F3E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				CDC01BA81E5CA82800F6F3E2 /* UINavigationController+KMNavigationBarTransition_Internal.h */,
 				CDDFA1F31C3921BD00BFBA1B /* UINavigationController+KMNavigationBarTransition.h */,
 				CDDFA1F41C3921BD00BFBA1B /* UINavigationController+KMNavigationBarTransition.m */,
+				CDAA3BB21E5CB40E00666BB0 /* UIViewController+KMNavigationBarTransition_internal.h */,
 				CDDFA1F51C3921BD00BFBA1B /* UIViewController+KMNavigationBarTransition.h */,
 				CDDFA1F61C3921BD00BFBA1B /* UIViewController+KMNavigationBarTransition.m */,
 				CDC1BA0C1CE1DFE8006BE1B6 /* KMWeakObjectContainer.h */,
@@ -178,6 +181,7 @@
 			files = (
 				CDC01BAA1E5CA82800F6F3E2 /* UINavigationController+KMNavigationBarTransition_Internal.h in Headers */,
 				CDC01B9D1E5CA46400F6F3E2 /* KMNavigationBarTransition.h in Headers */,
+				CDAA3BB31E5CB40E00666BB0 /* UIViewController+KMNavigationBarTransition_internal.h in Headers */,
 				CDC01B9F1E5CA48400F6F3E2 /* UINavigationController+KMNavigationBarTransition.h in Headers */,
 				CDC01BA11E5CA48900F6F3E2 /* UIViewController+KMNavigationBarTransition.h in Headers */,
 				CDC01BA31E5CA48D00F6F3E2 /* KMWeakObjectContainer.h in Headers */,
@@ -531,6 +535,7 @@
 				CDC01B9B1E5CA42000F6F3E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
