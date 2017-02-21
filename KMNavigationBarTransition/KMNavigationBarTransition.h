@@ -1,5 +1,5 @@
 //
-//  KMWeakObjectContainer.h
+//  KMNavigationBarTransition.h
 //
 //  Copyright (c) 2017 Zhouqi Mo (https://github.com/MoZhouqi)
 //
@@ -21,8 +21,14 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-extern void km_objc_setAssociatedWeakObject(id container, void *key, id value);
-extern id km_objc_getAssociatedWeakObject(id container, void *key);
+//! Project version number for KMNavigationBarTransition.
+FOUNDATION_EXPORT double KMNavigationBarTransitionVersionNumber;
 
+//! Project version string for KMNavigationBarTransition.
+FOUNDATION_EXPORT const unsigned char KMNavigationBarTransitionVersionString[];
+
+// In this header, you should import all the public headers of your framework using statements like #import <KMNavigationBarTransition/PublicHeader.h>
+
+#import <KMNavigationBarTransition/UINavigationController+KMNavigationBarTransition.h>

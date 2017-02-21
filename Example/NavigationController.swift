@@ -3,7 +3,7 @@
 //  KMNavigationBarTransition
 //
 //  Created by Zhouqi Mo on 1/1/16.
-//  Copyright © 2016 Zhouqi Mo. All rights reserved.
+//  Copyright © 2017 Zhouqi Mo. All rights reserved.
 //
 
 import UIKit

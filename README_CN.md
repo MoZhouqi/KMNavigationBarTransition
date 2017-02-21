@@ -59,23 +59,42 @@ KMNavigationBarTransition
 
 ### CocoaPods
 
-可以用以下命令来安装最新版的 CocoaPods:
+你可以用以下命令来安装最新版的 CocoaPods：
 
 ```bash
 $ gem install cocoapods
 ```
 
-在 podfile 中加入以下代码:
+在 `podfile` 中添加以下代码：
 
 ```ruby
 pod 'KMNavigationBarTransition'
 ```
 
-然后在终端运行以下命令:
+然后在终端运行以下命令：
 
 ```bash
 $ pod install
 ```
+
+### Carthage
+
+Carthage 是一个去中心化的包管理器工具。
+
+你可以通过 [Homebrew](http://brew.sh/) 用以下命令来安装 Carthage：
+
+```bash
+$ brew update
+$ brew install carthage
+```
+
+在 `Cartfile` 中添加以下代码：
+
+```ogdl
+github "MoZhouqi/KMNavigationBarTransition"
+```
+
+运行 `carthage update` 命令来编译 framework 并且把编译好的 `KMNavigationBarTransition.framework` 文件拖入到 Xcode 工程中。
 
 ## 基本要求
 

@@ -1,7 +1,7 @@
 //
 //  UINavigationController+KMNavigationBarTransition.h
 //
-//  Copyright (c) 2016 Zhouqi Mo (https://github.com/MoZhouqi)
+//  Copyright (c) 2017 Zhouqi Mo (https://github.com/MoZhouqi)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -25,8 +25,7 @@
 
 @interface UINavigationController (KMNavigationBarTransition)
 
-@property (nonatomic, weak) UIViewController *km_transitionContextToViewController;
-
 // By default this is white, it is related to issue with transparent navigationBar
 - (UIColor *)km_containerViewBackgroundColor;
+
 @end

@@ -1,7 +1,7 @@
 //
 //  UINavigationController+KMNavigationBarTransition.m
 //
-//  Copyright (c) 2016 Zhouqi Mo (https://github.com/MoZhouqi)
+//  Copyright (c) 2017 Zhouqi Mo (https://github.com/MoZhouqi)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -22,6 +22,7 @@
 //  THE SOFTWARE.
 
 #import "UINavigationController+KMNavigationBarTransition.h"
+#import "UINavigationController+KMNavigationBarTransition_Internal.h"
 #import "UIViewController+KMNavigationBarTransition.h"
 #import "KMWeakObjectContainer.h"
 #import <objc/runtime.h>

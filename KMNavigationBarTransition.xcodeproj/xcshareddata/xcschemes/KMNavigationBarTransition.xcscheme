@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9F176CFD1E5C3EB800F58F41"
-               BuildableName = "KMNavigationBarTransitionFramework.framework"
-               BlueprintName = "KMNavigationBarTransitionFramework"
+               BlueprintIdentifier = "CDC01B8F1E5CA42000F6F3E2"
+               BuildableName = "KMNavigationBarTransition.framework"
+               BlueprintName = "KMNavigationBarTransition"
                ReferencedContainer = "container:KMNavigationBarTransition.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9F176CFD1E5C3EB800F58F41"
-            BuildableName = "KMNavigationBarTransitionFramework.framework"
-            BlueprintName = "KMNavigationBarTransitionFramework"
+            BlueprintIdentifier = "CDC01B8F1E5CA42000F6F3E2"
+            BuildableName = "KMNavigationBarTransition.framework"
+            BlueprintName = "KMNavigationBarTransition"
             ReferencedContainer = "container:KMNavigationBarTransition.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9F176CFD1E5C3EB800F58F41"
-            BuildableName = "KMNavigationBarTransitionFramework.framework"
-            BlueprintName = "KMNavigationBarTransitionFramework"
+            BlueprintIdentifier = "CDC01B8F1E5CA42000F6F3E2"
+            BuildableName = "KMNavigationBarTransition.framework"
+            BlueprintName = "KMNavigationBarTransition"
             ReferencedContainer = "container:KMNavigationBarTransition.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
