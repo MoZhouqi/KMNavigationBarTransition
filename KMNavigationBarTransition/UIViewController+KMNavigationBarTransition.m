@@ -99,7 +99,7 @@
         return;
     }
     [self km_adjustScrollViewContentOffsetIfNeeded];
-    UINavigationBar *bar = [self.navigationController.navigationBar km_AppearanceCopy];
+    UINavigationBar *bar = [self.navigationController.navigationBar km_appearanceCopy];
     [self.km_transitionNavigationBar removeFromSuperview];
     self.km_transitionNavigationBar = bar;
     [self km_resizeTransitionNavigationBarFrame];

@@ -29,6 +29,6 @@
 - (void)km_updateAppearanceFromNavigationBar:(UINavigationBar *)navigationBar;
 
 // Return a new UINavigationBar instance copy from current navigation bar
-- (UINavigationBar *)km_AppearanceCopy;
+- (UINavigationBar *)km_appearanceCopy;
 
 @end

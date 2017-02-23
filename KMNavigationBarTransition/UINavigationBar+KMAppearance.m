@@ -35,7 +35,7 @@
     self.shadowImage = navigationBar.shadowImage;
 }
 
-- (UINavigationBar *)km_AppearanceCopy {
+- (UINavigationBar *)km_appearanceCopy {
     UINavigationBar *navigationBar = [[UINavigationBar alloc] init];
     navigationBar.barStyle = self.barStyle;
     navigationBar.translucent = self.translucent;
