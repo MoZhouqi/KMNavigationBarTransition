@@ -26,6 +26,7 @@
 #import "KMSwizzle.h"
 #import "UINavigationController+KMNavigationBarTransition.h"
 #import "UINavigationController+KMNavigationBarTransition_Internal.h"
+#import "UINavigationBar+KMAppearance.h"
 
 @implementation UIViewController (KMNavigationBarTransition)
 
@@ -44,9 +45,7 @@
 
 - (void)km_viewDidAppear:(BOOL)animated {
     if (self.km_transitionNavigationBar) {
-        self.navigationController.navigationBar.barTintColor = self.km_transitionNavigationBar.barTintColor;
-        [self.navigationController.navigationBar setBackgroundImage:[self.km_transitionNavigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
-        [self.navigationController.navigationBar setShadowImage:self.km_transitionNavigationBar.shadowImage];
+        [self.navigationController.navigationBar km_updateAppearanceFromNavigationBar:self.km_transitionNavigationBar];
         
         UIViewController *transitionViewController = self.navigationController.km_transitionContextToViewController;
         if (!transitionViewController || [transitionViewController isEqual:self]) {
@@ -100,14 +99,7 @@
         return;
     }
     [self km_adjustScrollViewContentOffsetIfNeeded];
-    UINavigationBar *bar = [[UINavigationBar alloc] init];
-    bar.barStyle = self.navigationController.navigationBar.barStyle;
-    if (bar.translucent != self.navigationController.navigationBar.translucent) {
-        bar.translucent = self.navigationController.navigationBar.translucent;
-    }
-    bar.barTintColor = self.navigationController.navigationBar.barTintColor;
-    [bar setBackgroundImage:[self.navigationController.navigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
-    bar.shadowImage = self.navigationController.navigationBar.shadowImage;
+    UINavigationBar *bar = [self.navigationController.navigationBar km_AppearanceCopy];
     [self.km_transitionNavigationBar removeFromSuperview];
     self.km_transitionNavigationBar = bar;
     [self km_resizeTransitionNavigationBarFrame];

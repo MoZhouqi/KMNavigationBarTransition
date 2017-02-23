@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F91A0D61E5F37B70092C166 /* UINavigationBar+KMAppearance.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F91A0D41E5F37B70092C166 /* UINavigationBar+KMAppearance.h */; };
+		9F91A0D71E5F37B70092C166 /* UINavigationBar+KMAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F91A0D51E5F37B70092C166 /* UINavigationBar+KMAppearance.m */; };
 		CDA372851C39087D00E39A6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA372841C39087D00E39A6D /* AppDelegate.swift */; };
 		CDA372881C39089200E39A6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDA372861C39089200E39A6D /* Main.storyboard */; };
 		CDA3728A1C39089900E39A6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDA372891C39089900E39A6D /* Assets.xcassets */; };
@@ -56,6 +58,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9F91A0D41E5F37B70092C166 /* UINavigationBar+KMAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+KMAppearance.h"; sourceTree = "<group>"; };
+		9F91A0D51E5F37B70092C166 /* UINavigationBar+KMAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+KMAppearance.m"; sourceTree = "<group>"; };
 		CDA3726F1C3907CE00E39A6D /* KMNavigationBarTransition-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KMNavigationBarTransition-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA372841C39087D00E39A6D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Example/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		CDA372871C39089200E39A6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Example/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
@@ -162,6 +166,8 @@
 				CDAA3BB21E5CB40E00666BB0 /* UIViewController+KMNavigationBarTransition_internal.h */,
 				CDDFA1F51C3921BD00BFBA1B /* UIViewController+KMNavigationBarTransition.h */,
 				CDDFA1F61C3921BD00BFBA1B /* UIViewController+KMNavigationBarTransition.m */,
+				9F91A0D41E5F37B70092C166 /* UINavigationBar+KMAppearance.h */,
+				9F91A0D51E5F37B70092C166 /* UINavigationBar+KMAppearance.m */,
 				CDC1BA0C1CE1DFE8006BE1B6 /* KMWeakObjectContainer.h */,
 				CDC1BA0D1CE1DFE8006BE1B6 /* KMWeakObjectContainer.m */,
 				CDDFA1F11C3921BD00BFBA1B /* KMSwizzle.h */,
@@ -181,6 +187,7 @@
 			files = (
 				CDC01B9D1E5CA46400F6F3E2 /* KMNavigationBarTransition.h in Headers */,
 				CDC01BAA1E5CA82800F6F3E2 /* UINavigationController+KMNavigationBarTransition_Internal.h in Headers */,
+				9F91A0D61E5F37B70092C166 /* UINavigationBar+KMAppearance.h in Headers */,
 				CDAA3BB31E5CB40E00666BB0 /* UIViewController+KMNavigationBarTransition_internal.h in Headers */,
 				CDC01B9F1E5CA48400F6F3E2 /* UINavigationController+KMNavigationBarTransition.h in Headers */,
 				CDC01BA11E5CA48900F6F3E2 /* UIViewController+KMNavigationBarTransition.h in Headers */,
@@ -309,6 +316,7 @@
 				CDC01BA41E5CA48F00F6F3E2 /* KMWeakObjectContainer.m in Sources */,
 				CDC01BA61E5CA49300F6F3E2 /* KMSwizzle.m in Sources */,
 				CDC01BA71E5CA67A00F6F3E2 /* UINavigationController+KMNavigationBarTransition.m in Sources */,
+				9F91A0D71E5F37B70092C166 /* UINavigationBar+KMAppearance.m in Sources */,
 				CDC01BA21E5CA48B00F6F3E2 /* UIViewController+KMNavigationBarTransition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

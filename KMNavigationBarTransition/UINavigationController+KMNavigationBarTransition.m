@@ -25,6 +25,7 @@
 #import "UINavigationController+KMNavigationBarTransition_Internal.h"
 #import "UIViewController+KMNavigationBarTransition.h"
 #import "UIViewController+KMNavigationBarTransition_internal.h"
+#import "UINavigationBar+KMAppearance.h"
 #import "KMWeakObjectContainer.h"
 #import <objc/runtime.h>
 #import "KMSwizzle.h"
@@ -85,10 +86,7 @@
     [disappearingViewController km_addTransitionNavigationBarIfNeeded];
     UIViewController *appearingViewController = self.viewControllers[self.viewControllers.count - 2];
     if (appearingViewController.km_transitionNavigationBar) {
-        UINavigationBar *appearingNavigationBar = appearingViewController.km_transitionNavigationBar;
-        self.navigationBar.barTintColor = appearingNavigationBar.barTintColor;
-        [self.navigationBar setBackgroundImage:[appearingNavigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
-        self.navigationBar.shadowImage = appearingNavigationBar.shadowImage;
+        [self.navigationBar km_updateAppearanceFromNavigationBar:appearingViewController.km_transitionNavigationBar];
     }
     if (animated) {
         disappearingViewController.km_prefersNavigationBarBackgroundViewHidden = YES;
@@ -103,10 +101,7 @@
     UIViewController *disappearingViewController = self.viewControllers.lastObject;
     [disappearingViewController km_addTransitionNavigationBarIfNeeded];
     if (viewController.km_transitionNavigationBar) {
-        UINavigationBar *appearingNavigationBar = viewController.km_transitionNavigationBar;
-        self.navigationBar.barTintColor = appearingNavigationBar.barTintColor;
-        [self.navigationBar setBackgroundImage:[appearingNavigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
-        self.navigationBar.shadowImage = appearingNavigationBar.shadowImage;
+        [self.navigationBar km_updateAppearanceFromNavigationBar:viewController.km_transitionNavigationBar];
     }
     if (animated) {
         disappearingViewController.km_prefersNavigationBarBackgroundViewHidden = YES;
@@ -122,10 +117,7 @@
     [disappearingViewController km_addTransitionNavigationBarIfNeeded];
     UIViewController *rootViewController = self.viewControllers.firstObject;
     if (rootViewController.km_transitionNavigationBar) {
-        UINavigationBar *appearingNavigationBar = rootViewController.km_transitionNavigationBar;
-        self.navigationBar.barTintColor = appearingNavigationBar.barTintColor;
-        [self.navigationBar setBackgroundImage:[appearingNavigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
-        self.navigationBar.shadowImage = appearingNavigationBar.shadowImage;
+        [self.navigationBar km_updateAppearanceFromNavigationBar:rootViewController.km_transitionNavigationBar];
     }
     if (animated) {
         disappearingViewController.km_prefersNavigationBarBackgroundViewHidden = YES;
