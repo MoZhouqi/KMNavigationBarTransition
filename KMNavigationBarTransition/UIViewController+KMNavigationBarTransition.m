@@ -87,8 +87,11 @@
     if (!self.view.window) {
         return;
     }
-    UIView *backgroundView = [self.navigationController.navigationBar valueForKey:@"_backgroundView"];
-    CGRect rect = [backgroundView.superview convertRect:backgroundView.frame toView:self.view];
+    
+    CGRect rect = self.navigationController.navigationBar.frame;
+    rect.size.height = CGRectGetHeight(rect) + CGRectGetMinY(rect);
+    rect.origin.y = 0;
+    rect = [self.navigationController.navigationBar.superview convertRect:rect toView:self.view];
     self.km_transitionNavigationBar.frame = rect;
 }
 
