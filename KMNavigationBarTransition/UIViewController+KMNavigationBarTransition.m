@@ -110,6 +110,7 @@
     [bar setBackgroundImage:[self.navigationController.navigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
     bar.shadowImage = self.navigationController.navigationBar.shadowImage;
     bar.alpha = self.navigationController.navigationBar.alpha;
+    self.navigationController.navigationBar.alpha = 1;
     [self.km_transitionNavigationBar removeFromSuperview];
     self.km_transitionNavigationBar = bar;
     [self km_resizeTransitionNavigationBarFrame];
