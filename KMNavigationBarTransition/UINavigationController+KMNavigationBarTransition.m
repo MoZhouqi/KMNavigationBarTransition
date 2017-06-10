@@ -89,6 +89,8 @@
         self.navigationBar.barTintColor = appearingNavigationBar.barTintColor;
         [self.navigationBar setBackgroundImage:[appearingNavigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
         self.navigationBar.shadowImage = appearingNavigationBar.shadowImage;
+        self.navigationBar.alpha = appearingNavigationBar.alpha;
+        [self setNavigationBarHidden:appearingNavigationBar.hidden animated:appearingNavigationBar.hidden ? NO : animated];
     }
     if (animated) {
         disappearingViewController.km_prefersNavigationBarBackgroundViewHidden = YES;
@@ -107,6 +109,8 @@
         self.navigationBar.barTintColor = appearingNavigationBar.barTintColor;
         [self.navigationBar setBackgroundImage:[appearingNavigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
         self.navigationBar.shadowImage = appearingNavigationBar.shadowImage;
+        self.navigationBar.alpha = appearingNavigationBar.alpha;
+        [self setNavigationBarHidden:appearingNavigationBar.hidden animated:appearingNavigationBar.hidden ? NO : animated];
     }
     if (animated) {
         disappearingViewController.km_prefersNavigationBarBackgroundViewHidden = YES;
@@ -126,6 +130,8 @@
         self.navigationBar.barTintColor = appearingNavigationBar.barTintColor;
         [self.navigationBar setBackgroundImage:[appearingNavigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
         self.navigationBar.shadowImage = appearingNavigationBar.shadowImage;
+        self.navigationBar.alpha = appearingNavigationBar.alpha;
+        [self setNavigationBarHidden:appearingNavigationBar.hidden animated:appearingNavigationBar.hidden ? NO : animated];
     }
     if (animated) {
         disappearingViewController.km_prefersNavigationBarBackgroundViewHidden = YES;
