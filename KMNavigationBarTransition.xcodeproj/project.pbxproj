@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C8A059521EFA7748004F1962 /* PresentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A059511EFA7748004F1962 /* PresentViewController.swift */; };
+		C8A059541EFA7E32004F1962 /* DisableTransitionNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A059531EFA7E32004F1962 /* DisableTransitionNavigationController.swift */; };
 		CDA372851C39087D00E39A6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA372841C39087D00E39A6D /* AppDelegate.swift */; };
 		CDA372881C39089200E39A6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDA372861C39089200E39A6D /* Main.storyboard */; };
 		CDA3728A1C39089900E39A6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDA372891C39089900E39A6D /* Assets.xcassets */; };
@@ -56,6 +58,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C8A059501EFA7539004F1962 /* KMNavigationBarTransition-Bridge-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KMNavigationBarTransition-Bridge-Header.h"; sourceTree = "<group>"; };
+		C8A059511EFA7748004F1962 /* PresentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentViewController.swift; sourceTree = "<group>"; };
+		C8A059531EFA7E32004F1962 /* DisableTransitionNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisableTransitionNavigationController.swift; sourceTree = "<group>"; };
 		CDA3726F1C3907CE00E39A6D /* KMNavigationBarTransition-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KMNavigationBarTransition-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA372841C39087D00E39A6D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Example/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		CDA372871C39089200E39A6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Example/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
@@ -126,12 +131,15 @@
 				CDA372901C39093E00E39A6D /* MainViewController.swift */,
 				CDA372931C39093E00E39A6D /* SettingsViewController.swift */,
 				CDA372921C39093E00E39A6D /* NavigationController.swift */,
+				C8A059531EFA7E32004F1962 /* DisableTransitionNavigationController.swift */,
+				C8A059511EFA7748004F1962 /* PresentViewController.swift */,
 				CDA3729A1C39094600E39A6D /* Model */,
 				CDA3729B1C39094B00E39A6D /* Extension */,
 				CDA372841C39087D00E39A6D /* AppDelegate.swift */,
 				CDA372891C39089900E39A6D /* Assets.xcassets */,
 				CDA3728B1C3908A000E39A6D /* LaunchScreen.storyboard */,
 				CDA3728E1C3908A500E39A6D /* Info.plist */,
+				C8A059501EFA7539004F1962 /* KMNavigationBarTransition-Bridge-Header.h */,
 			);
 			name = Example;
 			path = KMNavigationBarTransition;
@@ -294,6 +302,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDA372851C39087D00E39A6D /* AppDelegate.swift in Sources */,
+				C8A059541EFA7E32004F1962 /* DisableTransitionNavigationController.swift in Sources */,
+				C8A059521EFA7748004F1962 /* PresentViewController.swift in Sources */,
 				CDA372971C39093E00E39A6D /* NavigationController.swift in Sources */,
 				CDA372951C39093E00E39A6D /* MainViewController.swift in Sources */,
 				CDA372981C39093E00E39A6D /* SettingsViewController.swift in Sources */,
@@ -440,6 +450,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mo.KMNavigationBarTransition-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Wilson/Documents/Project/SourceTree/KMNavigationBarTransition/KMNavigationBarTransition/KMNavigationBarTransition-Bridge-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -453,6 +464,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mo.KMNavigationBarTransition-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Wilson/Documents/Project/SourceTree/KMNavigationBarTransition/KMNavigationBarTransition/KMNavigationBarTransition-Bridge-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

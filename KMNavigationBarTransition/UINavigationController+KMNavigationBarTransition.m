@@ -61,6 +61,9 @@
 }
 
 - (void)km_pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    if (self.km_disableTransition) {
+        return [self km_pushViewController:viewController animated:animated];
+    }
     UIViewController *disappearingViewController = self.viewControllers.lastObject;
     if (!disappearingViewController) {
         return [self km_pushViewController:viewController animated:animated];
@@ -78,6 +81,9 @@
 }
 
 - (UIViewController *)km_popViewControllerAnimated:(BOOL)animated {
+    if (self.km_disableTransition) {
+        return [self km_popViewControllerAnimated:animated];
+    }
     if (self.viewControllers.count < 2) {
         return [self km_popViewControllerAnimated:animated];
     }
@@ -97,6 +103,9 @@
 }
 
 - (NSArray<UIViewController *> *)km_popToViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    if (self.km_disableTransition) {
+        return [self km_popToViewController:viewController animated:animated];
+    }
     if (![self.viewControllers containsObject:viewController] || self.viewControllers.count < 2) {
         return [self km_popToViewController:viewController animated:animated];
     }
@@ -115,6 +124,9 @@
 }
 
 - (NSArray<UIViewController *> *)km_popToRootViewControllerAnimated:(BOOL)animated {
+    if (self.km_disableTransition) {
+        return [self km_popToRootViewControllerAnimated:animated];
+    }
     if (self.viewControllers.count < 2) {
         return [self km_popToRootViewControllerAnimated:animated];
     }
@@ -134,6 +146,9 @@
 }
 
 - (void)km_setViewControllers:(NSArray<UIViewController *> *)viewControllers animated:(BOOL)animated {
+    if (self.km_disableTransition) {
+        return [self km_setViewControllers:viewControllers animated:animated];
+    }
     UIViewController *disappearingViewController = self.viewControllers.lastObject;
     if (animated && disappearingViewController && ![disappearingViewController isEqual:viewControllers.lastObject]) {
         [disappearingViewController km_addTransitionNavigationBarIfNeeded];
@@ -150,6 +165,14 @@
 
 - (void)setKm_transitionContextToViewController:(UIViewController *)viewController {
     km_objc_setAssociatedWeakObject(self, @selector(km_transitionContextToViewController), viewController);
+}
+
+- (BOOL)km_disableTransition {
+    return [km_objc_getAssociatedWeakObject(self, _cmd) boolValue];
+}
+
+- (void)setKm_disableTransition:(BOOL)km_disableTransition {
+    km_objc_setAssociatedWeakObject(self, @selector(km_disableTransition), @(km_disableTransition));
 }
 
 @end

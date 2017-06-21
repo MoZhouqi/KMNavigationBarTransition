@@ -16,6 +16,7 @@ class MainViewController: UITableViewController {
         struct Segue {
             static let ShowNextIdentifier = "Show Next"
             static let SetStyleIdentifier = "Set Style"
+            static let ShowPresentIdentitier = "Show Present"
         }
     }
     
@@ -53,6 +54,13 @@ class MainViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(currentNavigationBarData.prefersHidden, animated: animated)
+    }
+    
+    @IBAction func presentBarButtonAction(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle(for: PresentViewController.self))
+        let controller = storyboard.instantiateViewController(withIdentifier: "PresentViewController")
+        let navigation = DisableTransitionNavigationController(rootViewController: controller)
+        self.present(navigation, animated: true, completion: nil)
     }
     
 }
@@ -147,6 +155,11 @@ extension MainViewController {
                 }
                 viewController.currentNavigationBarData = nextNavigationBarData
                 break
+            case Constants.Segue.ShowPresentIdentitier:
+                guard let viewController = segue.destination as? UINavigationController else {
+                    return
+                }
+                viewController.km_disableTransition = true
             default:
                 break
             }

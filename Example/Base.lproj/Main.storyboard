@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="22n-Re-G8c">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="22n-Re-G8c">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +13,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Xeu-1g-NEa">
             <objects>
-                <navigationController id="22n-Re-G8c" customClass="NavigationController" customModule="KMNavigationBarTransitionExample" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="22n-Re-G8c" customClass="NavigationController" customModule="KMNavigationBarTransition_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tMe-Ck-qEc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -27,10 +27,28 @@
             </objects>
             <point key="canvasLocation" x="-852" y="312"/>
         </scene>
+        <!--Present View Controller-->
+        <scene sceneID="cT1-Yy-2xh">
+            <objects>
+                <viewController storyboardIdentifier="PresentViewController" id="ZMt-a0-o3X" customClass="PresentViewController" customModule="KMNavigationBarTransition_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eEw-cB-Mo8"/>
+                        <viewControllerLayoutGuide type="bottom" id="XTD-xe-rav"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="f2Q-C1-MaH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8go-RV-ogv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="465" y="-338"/>
+        </scene>
         <!--Settings View Controller-->
         <scene sceneID="bPJ-Yw-MC1">
             <objects>
-                <tableViewController id="t1n-FL-Ws1" customClass="SettingsViewController" customModule="KMNavigationBarTransitionExample" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="t1n-FL-Ws1" customClass="SettingsViewController" customModule="KMNavigationBarTransition_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Vq2-f1-7ca">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -59,7 +77,7 @@
         <!--Main View Controller-->
         <scene sceneID="3pn-vu-HGW">
             <objects>
-                <tableViewController id="CWl-bv-lDg" userLabel="Main View Controller" customClass="MainViewController" customModule="KMNavigationBarTransitionExample" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="CWl-bv-lDg" userLabel="Main View Controller" customClass="MainViewController" customModule="KMNavigationBarTransition_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="4d9-n9-jL4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -215,6 +233,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Title" id="MtF-iP-tkn">
+                        <barButtonItem key="leftBarButtonItem" title="Present" id="91F-Rf-xpo">
+                            <connections>
+                                <action selector="presentBarButtonAction:" destination="CWl-bv-lDg" id="2iH-fY-REN"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="Zuu-2P-5wS">
                             <connections>
                                 <segue destination="CWl-bv-lDg" kind="show" identifier="Show Next" id="gBp-2h-4Hi"/>
