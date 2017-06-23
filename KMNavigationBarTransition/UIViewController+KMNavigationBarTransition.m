@@ -72,10 +72,10 @@
         toViewController.view.clipsToBounds = NO;
         if (!self.km_transitionNavigationBar) {
             [self km_addTransitionNavigationBarIfNeeded];
-            
             self.km_prefersNavigationBarBackgroundViewHidden = YES;
         }
         [self km_resizeTransitionNavigationBarFrame];
+        self.km_isSetViewController = NO;
     }
     if (self.km_transitionNavigationBar) {
         [self.view bringSubviewToFront:self.km_transitionNavigationBar];
