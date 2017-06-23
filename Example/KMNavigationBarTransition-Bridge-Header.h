@@ -9,6 +9,6 @@
 #ifndef KMNavigationBarTransition_Bridge_Header_h
 #define KMNavigationBarTransition_Bridge_Header_h
 
-#import <KMNavigationBarTransition/UINavigationController+KMNavigationBarTransition.h>
+#import <KMNavigationBarTransition/KMNavigationBarTransition.h>
 
 #endif /* KMNavigationBarTransition_Bridge_Header_h */

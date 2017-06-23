@@ -38,7 +38,38 @@
                     <view key="view" contentMode="scaleToFill" id="f2Q-C1-MaH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="usN-7o-eRe">
+                                <rect key="frame" x="149" y="266" width="76" height="30"/>
+                                <state key="normal" title="pop to root"/>
+                                <connections>
+                                    <action selector="popToRootAction:" destination="ZMt-a0-o3X" eventType="touchUpInside" id="c1J-SK-Xi3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hl7-SQ-Lqx">
+                                <rect key="frame" x="141" y="327" width="92" height="30"/>
+                                <state key="normal" title="pop to penult"/>
+                                <connections>
+                                    <action selector="popToPenultAction:" destination="ZMt-a0-o3X" eventType="touchUpInside" id="N5M-s2-2Th"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6D-SY-ZbC">
+                                <rect key="frame" x="138" y="388" width="98" height="30"/>
+                                <state key="normal" title="set controllers"/>
+                                <connections>
+                                    <action selector="setControllersAction:" destination="ZMt-a0-o3X" eventType="touchUpInside" id="evd-9l-m9q"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hl7-SQ-Lqx" firstAttribute="top" secondItem="usN-7o-eRe" secondAttribute="bottom" constant="31" id="3n1-gd-TJU"/>
+                            <constraint firstItem="t6D-SY-ZbC" firstAttribute="centerX" secondItem="hl7-SQ-Lqx" secondAttribute="centerX" id="AxH-W2-pfm"/>
+                            <constraint firstItem="usN-7o-eRe" firstAttribute="top" secondItem="eEw-cB-Mo8" secondAttribute="bottom" constant="246" id="Dnx-d3-Lrq"/>
+                            <constraint firstItem="usN-7o-eRe" firstAttribute="centerX" secondItem="f2Q-C1-MaH" secondAttribute="centerX" id="Q6c-Tk-aGC"/>
+                            <constraint firstItem="t6D-SY-ZbC" firstAttribute="top" secondItem="hl7-SQ-Lqx" secondAttribute="bottom" constant="31" id="QFK-k8-wcM"/>
+                            <constraint firstItem="hl7-SQ-Lqx" firstAttribute="centerX" secondItem="usN-7o-eRe" secondAttribute="centerX" id="WOj-WH-Czn"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8go-RV-ogv" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -59,7 +59,7 @@ class MainViewController: UITableViewController {
     @IBAction func presentBarButtonAction(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle(for: PresentViewController.self))
         let controller = storyboard.instantiateViewController(withIdentifier: "PresentViewController")
-        let navigation = DisableTransitionNavigationController(rootViewController: controller)
+        let navigation = NavigationController(rootViewController: controller)
         self.present(navigation, animated: true, completion: nil)
     }
     
