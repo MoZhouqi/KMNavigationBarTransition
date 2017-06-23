@@ -64,10 +64,7 @@
     id<UIViewControllerTransitionCoordinator> tc = self.transitionCoordinator;
     UIViewController *fromViewController = [tc viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *toViewController = [tc viewControllerForKey:UITransitionContextToViewControllerKey];
-    
-    if ([self isEqual:self.navigationController.viewControllers.lastObject] &&
-        [toViewController isEqual:self] &&
-        self.navigationController.km_transitionContextToViewController) {
+    if ([self isEqual:self.navigationController.viewControllers.lastObject] && [toViewController isEqual:self] && (self.navigationController.km_transitionContextToViewController || self.km_isSetViewController)) {
         if (self.navigationController.navigationBar.translucent) {
             [tc containerView].backgroundColor = [self.navigationController km_containerViewBackgroundColor];
         }
@@ -163,5 +160,14 @@
 - (void)setKm_disableTransition:(BOOL)km_disableTransition {
     km_objc_setAssociatedWeakObject(self, @selector(km_disableTransition), @(km_disableTransition));
 }
+
+- (BOOL)km_isSetViewController {
+    return [km_objc_getAssociatedWeakObject(self, _cmd) boolValue];
+}
+
+- (void)setKm_isSetViewController:(BOOL)km_isSetViewController {
+    km_objc_setAssociatedWeakObject(self, @selector(km_isSetViewController), @(km_isSetViewController));
+}
+
 
 @end

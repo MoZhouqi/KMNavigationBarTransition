@@ -172,10 +172,12 @@
             disappearingViewController.km_prefersNavigationBarBackgroundViewHidden = YES;
         }
         self.km_transitionContextToViewController = appearingViewController;
-        for (UIViewController *controller in viewControllers) {
-            if (![controller isEqual:appearingViewController]) {
-                [controller km_addTransitionNavigationBarIfNeeded];
-            }
+    }
+    
+    for (UIViewController *controller in viewControllers) {
+        if (![controller isEqual:appearingViewController]) {
+            controller.km_isSetViewController = true;
+            [controller km_addTransitionNavigationBarIfNeeded];
         }
     }
     return [self km_setViewControllers:viewControllers animated:animated];
