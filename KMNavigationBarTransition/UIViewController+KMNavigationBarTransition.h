@@ -25,4 +25,7 @@
 
 @interface UIViewController (KMNavigationBarTransition)
 
+///disable the transition style
+@property (nonatomic) BOOL km_disableTransition;
+
 @end

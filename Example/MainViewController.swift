@@ -55,6 +55,13 @@ class MainViewController: UITableViewController {
         navigationController?.setNavigationBarHidden(currentNavigationBarData.prefersHidden, animated: animated)
     }
     
+    @IBAction func presentBarButtonAction(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle(for: PresentViewController.self))
+        let controller = storyboard.instantiateViewController(withIdentifier: "PresentViewController")
+        let navigation = NavigationController(rootViewController: controller)
+        self.present(navigation, animated: true, completion: nil)
+    }
+    
 }
 
 // MARK: - Target Action
