@@ -16,7 +16,6 @@ class MainViewController: UITableViewController {
         struct Segue {
             static let ShowNextIdentifier = "Show Next"
             static let SetStyleIdentifier = "Set Style"
-            static let ShowPresentIdentitier = "Show Present"
         }
     }
     
@@ -155,11 +154,6 @@ extension MainViewController {
                 }
                 viewController.currentNavigationBarData = nextNavigationBarData
                 break
-            case Constants.Segue.ShowPresentIdentitier:
-                guard let viewController = segue.destination as? UINavigationController else {
-                    return
-                }
-                viewController.km_disableTransition = true
             default:
                 break
             }
