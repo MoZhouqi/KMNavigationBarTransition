@@ -107,7 +107,7 @@
     }
     return [self km_popViewControllerAnimated:animated];
 }
-///TODO: Test A0->B1->C0->1D
+
 - (NSArray<UIViewController *> *)km_popToViewController:(UIViewController *)viewController animated:(BOOL)animated {
     if (self.km_disableTransition) {
         return [self km_popToViewController:viewController animated:animated];
