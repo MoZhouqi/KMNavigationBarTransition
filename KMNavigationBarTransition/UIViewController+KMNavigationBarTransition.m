@@ -24,6 +24,7 @@
 #import "UIViewController+KMNavigationBarTransition.h"
 #import <objc/runtime.h>
 #import "KMSwizzle.h"
+#import "KMWeakObjectContainer.h"
 #import "UINavigationController+KMNavigationBarTransition.h"
 #import "UINavigationController+KMNavigationBarTransition_Internal.h"
 
@@ -64,7 +65,9 @@
     UIViewController *fromViewController = [tc viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *toViewController = [tc viewControllerForKey:UITransitionContextToViewControllerKey];
     
-    if ([self isEqual:self.navigationController.viewControllers.lastObject] && [toViewController isEqual:self] && self.navigationController.km_transitionContextToViewController) {
+    if ([self isEqual:self.navigationController.viewControllers.lastObject] &&
+        [toViewController isEqual:self] &&
+        self.navigationController.km_transitionContextToViewController) {
         if (self.navigationController.navigationBar.translucent) {
             [tc containerView].backgroundColor = [self.navigationController km_containerViewBackgroundColor];
         }
@@ -106,8 +109,10 @@
         bar.translucent = self.navigationController.navigationBar.translucent;
     }
     bar.barTintColor = self.navigationController.navigationBar.barTintColor;
-    [bar setBackgroundImage:[self.navigationController.navigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
-    bar.shadowImage = self.navigationController.navigationBar.shadowImage;
+    UIImage *backgroundImage = [self.navigationController.navigationBar backgroundImageForBarMetrics:UIBarMetricsDefault];
+    [bar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
+    UIImage *shadowImage = self.navigationController.navigationBar.shadowImage;
+    bar.shadowImage = shadowImage;
     [self.km_transitionNavigationBar removeFromSuperview];
     self.km_transitionNavigationBar = bar;
     [self km_resizeTransitionNavigationBarFrame];
@@ -149,6 +154,14 @@
     [[self.navigationController.navigationBar valueForKey:@"_backgroundView"]
      setHidden:hidden];
     objc_setAssociatedObject(self, @selector(km_prefersNavigationBarBackgroundViewHidden), @(hidden), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (BOOL)km_disableTransition {
+    return [km_objc_getAssociatedWeakObject(self, _cmd) boolValue];
+}
+
+- (void)setKm_disableTransition:(BOOL)km_disableTransition {
+    km_objc_setAssociatedWeakObject(self, @selector(km_disableTransition), @(km_disableTransition));
 }
 
 @end
