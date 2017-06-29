@@ -48,6 +48,8 @@ class MainViewController: UITableViewController {
         navigationController?.navigationBar.shadowImage = (currentNavigationBarData.prefersShadowImageHidden) ? UIImage() : nil
         
         title = "Title " + "\(navigationController!.viewControllers.count)"
+
+        edgesForExtendedLayout = []
     }
     
     override func viewWillAppear(_ animated: Bool) {
