@@ -118,18 +118,40 @@
 
 - (void)km_adjustScrollViewContentOffsetIfNeeded {
     if ([self.view isKindOfClass:[UIScrollView class]]) {
-        UIScrollView *scrollView = (UIScrollView *)self.view;
-        const CGFloat topContentOffsetY = -scrollView.contentInset.top;
-        const CGFloat bottomContentOffsetY = scrollView.contentSize.height - (CGRectGetHeight(scrollView.bounds) - scrollView.contentInset.bottom);
+#ifdef __IPHONE_11_0
+        // iOS11 UIScrollView修改
+        if (@available(iOS 11.0, *)) {
+            UIScrollView *scrollView = (UIScrollView *)self.view;
+            const CGFloat topContentOffsetY = -scrollView.adjustedContentInset.top;
+            const CGFloat bottomContentOffsetY = scrollView.contentSize.height - (CGRectGetHeight(scrollView.bounds) - scrollView.adjustedContentInset.bottom);
+            
+            CGPoint adjustedContentOffset = scrollView.contentOffset;
+            if (adjustedContentOffset.y > bottomContentOffsetY) {
+                adjustedContentOffset.y = bottomContentOffsetY;
+            }
+            if (adjustedContentOffset.y < topContentOffsetY) {
+                adjustedContentOffset.y = topContentOffsetY;
+            }
+            [scrollView setContentOffset:adjustedContentOffset animated:NO];
+        }
+        else
+#endif
+            // 其他
+        {
+            UIScrollView *scrollView = (UIScrollView *)self.view;
+            const CGFloat topContentOffsetY = -scrollView.contentInset.top;
+            const CGFloat bottomContentOffsetY = scrollView.contentSize.height - (CGRectGetHeight(scrollView.bounds) - scrollView.contentInset.bottom);
+            
+            CGPoint adjustedContentOffset = scrollView.contentOffset;
+            if (adjustedContentOffset.y > bottomContentOffsetY) {
+                adjustedContentOffset.y = bottomContentOffsetY;
+            }
+            if (adjustedContentOffset.y < topContentOffsetY) {
+                adjustedContentOffset.y = topContentOffsetY;
+            }
+            [scrollView setContentOffset:adjustedContentOffset animated:NO];
+        }
         
-        CGPoint adjustedContentOffset = scrollView.contentOffset;
-        if (adjustedContentOffset.y > bottomContentOffsetY) {
-            adjustedContentOffset.y = bottomContentOffsetY;
-        }
-        if (adjustedContentOffset.y < topContentOffsetY) {
-            adjustedContentOffset.y = topContentOffsetY;
-        }
-        [scrollView setContentOffset:adjustedContentOffset animated:NO];
     }
 }
 
