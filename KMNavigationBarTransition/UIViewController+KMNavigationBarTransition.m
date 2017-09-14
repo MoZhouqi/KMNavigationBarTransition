@@ -103,6 +103,9 @@
     if (!self.navigationController.navigationBar) {
         return;
     }
+    if (self.topLayoutGuide.length == 0) {
+        return;
+    }
     [self km_adjustScrollViewContentOffsetIfNeeded];
     UINavigationBar *bar = [[UINavigationBar alloc] init];
     bar.barStyle = self.navigationController.navigationBar.barStyle;
