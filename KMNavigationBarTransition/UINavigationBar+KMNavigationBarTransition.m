@@ -42,7 +42,7 @@
 		if ([NSStringFromClass([subview class]) containsString:@"BarBackground"]) {
 			CGRect subViewFrame = subview.frame;
 			if ([self km_useExtendedHeight]) {
-                subViewFrame.size.height = self.frame.size.height + fabs(self.frame.origin.y);
+                subViewFrame.size.height = self.frame.size.height + fabs(subViewFrame.origin.y);
 			}
 			[subview setFrame: subViewFrame];
 		}
