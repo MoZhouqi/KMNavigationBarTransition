@@ -120,32 +120,26 @@
     if ([self.view isKindOfClass:[UIScrollView class]]) {
         
         UIScrollView *scrollView = (UIScrollView *)self.view;
-        CGPoint adjustedContentOffset = scrollView.contentOffset;
+        UIEdgeInsets contentInset;
 #ifdef __IPHONE_11_0
         // iOS11 UIScrollView修改
         if (@available(iOS 11.0, *)) {
-            const CGFloat topContentOffsetY = -scrollView.adjustedContentInset.top;
-            const CGFloat bottomContentOffsetY = scrollView.contentSize.height - (CGRectGetHeight(scrollView.bounds) - scrollView.adjustedContentInset.bottom);
-            if (adjustedContentOffset.y > bottomContentOffsetY) {
-                adjustedContentOffset.y = bottomContentOffsetY;
-            }
-            if (adjustedContentOffset.y < topContentOffsetY) {
-                adjustedContentOffset.y = topContentOffsetY;
-            }
+            contentInset = scrollView.adjustedContentInset;
         }
 #endif
         // 其他
         {
-            const CGFloat topContentOffsetY = -scrollView.contentInset.top;
-            const CGFloat bottomContentOffsetY = scrollView.contentSize.height - (CGRectGetHeight(scrollView.bounds) - scrollView.contentInset.bottom);
-            if (adjustedContentOffset.y > bottomContentOffsetY) {
-                adjustedContentOffset.y = bottomContentOffsetY;
-            }
-            if (adjustedContentOffset.y < topContentOffsetY) {
-                adjustedContentOffset.y = topContentOffsetY;
-            }
+            contentInset = scrollView.contentInset;
         }
-        
+        CGPoint adjustedContentOffset = scrollView.contentOffset;
+        const CGFloat topContentOffsetY = -contentInset.top;
+        const CGFloat bottomContentOffsetY = scrollView.contentSize.height - (CGRectGetHeight(scrollView.bounds) - contentInset.bottom);
+        if (adjustedContentOffset.y > bottomContentOffsetY) {
+            adjustedContentOffset.y = bottomContentOffsetY;
+        }
+        if (adjustedContentOffset.y < topContentOffsetY) {
+            adjustedContentOffset.y = topContentOffsetY;
+        }
         [scrollView setContentOffset:adjustedContentOffset animated:NO];
     }
 }
