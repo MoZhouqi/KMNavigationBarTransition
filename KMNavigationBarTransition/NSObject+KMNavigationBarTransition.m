@@ -1,5 +1,5 @@
 //
-//  KMSwizzle.h
+//  NSObject+KMNavigationBarTransition.h
 //
 //  Copyright (c) 2017 Zhouqi Mo (https://github.com/MoZhouqi)
 //
@@ -21,6 +21,42 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import "NSObject+KMNavigationBarTransition.h"
+#import "UINavigationController+KMNavigationBarTransition_internal.h"
+#import "UINavigationBar+KMNavigationBarTransition_internal.h"
+#import <objc/runtime.h>
+#import "KMSwizzle.h"
 
-extern void KMSwizzleMethod(Class originalCls, SEL originalSelector, Class swizzledCls, SEL swizzledSelector);
+@implementation NSObject (KMNavigationBarTransition)
+
++ (void)load {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        KMSwizzleMethod(objc_getClass("_UIBarBackground"),
+                        @selector(setHidden:),
+                        [self class],
+                        @selector(km_setHidden:));
+    });
+}
+
+- (void)km_setHidden:(BOOL)hidden {
+    UIResponder *responder = (UIResponder *)self;
+    while (responder) {
+        if ([responder isKindOfClass:[UINavigationBar class]] && ((UINavigationBar *)responder).km_isFakeBar) {
+            return;
+        }
+        if ([responder isKindOfClass:[UINavigationController class]]) {
+            [self km_setHidden:((UINavigationController *)responder).km_backgroundViewHidden];
+            return;
+        }
+        responder = responder.nextResponder;
+    }
+    [self km_setHidden:hidden];
+}
+
+@end
+
+
+
+
+

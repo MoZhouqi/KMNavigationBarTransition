@@ -24,19 +24,18 @@
 #import "KMSwizzle.h"
 #import <objc/runtime.h>
 
-void KMSwizzleMethod(Class cls, SEL originalSelector, SEL swizzledSelector)
-{
-    Method originalMethod = class_getInstanceMethod(cls, originalSelector);
-    Method swizzledMethod = class_getInstanceMethod(cls, swizzledSelector);
+void KMSwizzleMethod(Class originalCls, SEL originalSelector, Class swizzledCls, SEL swizzledSelector) {
+    Method originalMethod = class_getInstanceMethod(originalCls, originalSelector);
+    Method swizzledMethod = class_getInstanceMethod(swizzledCls, swizzledSelector);
     
     BOOL didAddMethod =
-    class_addMethod(cls,
+    class_addMethod(originalCls,
                     originalSelector,
                     method_getImplementation(swizzledMethod),
                     method_getTypeEncoding(swizzledMethod));
     
     if (didAddMethod) {
-        class_replaceMethod(cls,
+        class_replaceMethod(originalCls,
                             swizzledSelector,
                             method_getImplementation(originalMethod),
                             method_getTypeEncoding(originalMethod));
@@ -44,4 +43,3 @@ void KMSwizzleMethod(Class cls, SEL originalSelector, SEL swizzledSelector)
         method_exchangeImplementations(originalMethod, swizzledMethod);
     }
 }
-

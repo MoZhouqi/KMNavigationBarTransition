@@ -22,10 +22,11 @@
 //  THE SOFTWARE.
 
 #import "UIViewController+KMNavigationBarTransition.h"
+#import "UINavigationController+KMNavigationBarTransition.h"
+#import "UINavigationController+KMNavigationBarTransition_internal.h"
+#import "UINavigationBar+KMNavigationBarTransition_internal.h"
 #import <objc/runtime.h>
 #import "KMSwizzle.h"
-#import "UINavigationController+KMNavigationBarTransition.h"
-#import "UINavigationController+KMNavigationBarTransition_Internal.h"
 
 @implementation UIViewController (KMNavigationBarTransition)
 
@@ -34,10 +35,12 @@
     dispatch_once(&onceToken, ^{
         KMSwizzleMethod([self class],
                         @selector(viewWillLayoutSubviews),
+                        [self class],
                         @selector(km_viewWillLayoutSubviews));
         
         KMSwizzleMethod([self class],
                         @selector(viewDidAppear:),
+                        [self class],
                         @selector(km_viewDidAppear:));
     });
 }
@@ -55,7 +58,7 @@
             self.navigationController.km_transitionContextToViewController = nil;
         }
     }
-    self.km_prefersNavigationBarBackgroundViewHidden = NO;
+    self.navigationController.km_backgroundViewHidden = NO;
     [self km_viewDidAppear:animated];
 }
 
@@ -73,7 +76,7 @@
         if (!self.km_transitionNavigationBar) {
             [self km_addTransitionNavigationBarIfNeeded];
             
-            self.km_prefersNavigationBarBackgroundViewHidden = YES;
+            self.navigationController.km_backgroundViewHidden = YES;
         }
         [self km_resizeTransitionNavigationBarFrame];
     }
@@ -101,6 +104,7 @@
     }
     [self km_adjustScrollViewContentOffsetIfNeeded];
     UINavigationBar *bar = [[UINavigationBar alloc] init];
+    bar.km_isFakeBar = YES;
     bar.barStyle = self.navigationController.navigationBar.barStyle;
     if (bar.translucent != self.navigationController.navigationBar.translucent) {
         bar.translucent = self.navigationController.navigationBar.translucent;
@@ -118,22 +122,20 @@
 
 - (void)km_adjustScrollViewContentOffsetIfNeeded {
     if ([self.view isKindOfClass:[UIScrollView class]]) {
-        
         UIScrollView *scrollView = (UIScrollView *)self.view;
         UIEdgeInsets contentInset;
 #ifdef __IPHONE_11_0
-        // iOS11 UIScrollView修改
         if (@available(iOS 11.0, *)) {
             contentInset = scrollView.adjustedContentInset;
         }
+#else
+        contentInset = scrollView.contentInset;
+    }
 #endif
-        // 其他
-        {
-            contentInset = scrollView.contentInset;
-        }
-        CGPoint adjustedContentOffset = scrollView.contentOffset;
         const CGFloat topContentOffsetY = -contentInset.top;
         const CGFloat bottomContentOffsetY = scrollView.contentSize.height - (CGRectGetHeight(scrollView.bounds) - contentInset.bottom);
+    
+        CGPoint adjustedContentOffset = scrollView.contentOffset;
         if (adjustedContentOffset.y > bottomContentOffsetY) {
             adjustedContentOffset.y = bottomContentOffsetY;
         }
@@ -150,16 +152,6 @@
 
 - (void)setKm_transitionNavigationBar:(UINavigationBar *)navigationBar {
     objc_setAssociatedObject(self, @selector(km_transitionNavigationBar), navigationBar, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (BOOL)km_prefersNavigationBarBackgroundViewHidden {
-    return [objc_getAssociatedObject(self, _cmd) boolValue];
-}
-
-- (void)setKm_prefersNavigationBarBackgroundViewHidden:(BOOL)hidden {
-    [[self.navigationController.navigationBar valueForKey:@"_backgroundView"]
-     setHidden:hidden];
-    objc_setAssociatedObject(self, @selector(km_prefersNavigationBarBackgroundViewHidden), @(hidden), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end

@@ -22,7 +22,7 @@
 //  THE SOFTWARE.
 
 #import "UINavigationController+KMNavigationBarTransition.h"
-#import "UINavigationController+KMNavigationBarTransition_Internal.h"
+#import "UINavigationController+KMNavigationBarTransition_internal.h"
 #import "UIViewController+KMNavigationBarTransition.h"
 #import "UIViewController+KMNavigationBarTransition_internal.h"
 #import "KMWeakObjectContainer.h"
@@ -36,22 +36,27 @@
     dispatch_once(&onceToken, ^{
         KMSwizzleMethod([self class],
                         @selector(pushViewController:animated:),
+                        [self class],
                         @selector(km_pushViewController:animated:));
         
         KMSwizzleMethod([self class],
                         @selector(popViewControllerAnimated:),
+                        [self class],
                         @selector(km_popViewControllerAnimated:));
         
         KMSwizzleMethod([self class],
                         @selector(popToViewController:animated:),
+                        [self class],
                         @selector(km_popToViewController:animated:));
         
         KMSwizzleMethod([self class],
                         @selector(popToRootViewControllerAnimated:),
+                        [self class],
                         @selector(km_popToRootViewControllerAnimated:));
         
         KMSwizzleMethod([self class],
                         @selector(setViewControllers:animated:),
+                        [self class],
                         @selector(km_setViewControllers:animated:));
     });
 }
@@ -71,7 +76,7 @@
     if (animated) {
         self.km_transitionContextToViewController = viewController;
         if (disappearingViewController.km_transitionNavigationBar) {
-            disappearingViewController.km_prefersNavigationBarBackgroundViewHidden = YES;
+            disappearingViewController.navigationController.km_backgroundViewHidden = YES;
         }
     }
     return [self km_pushViewController:viewController animated:animated];
@@ -91,7 +96,7 @@
         self.navigationBar.shadowImage = appearingNavigationBar.shadowImage;
     }
     if (animated) {
-        disappearingViewController.km_prefersNavigationBarBackgroundViewHidden = YES;
+        disappearingViewController.navigationController.km_backgroundViewHidden = YES;
     }
     return [self km_popViewControllerAnimated:animated];
 }
@@ -109,7 +114,7 @@
         self.navigationBar.shadowImage = appearingNavigationBar.shadowImage;
     }
     if (animated) {
-        disappearingViewController.km_prefersNavigationBarBackgroundViewHidden = YES;
+        disappearingViewController.navigationController.km_backgroundViewHidden = YES;
     }
     return [self km_popToViewController:viewController animated:animated];
 }
@@ -128,7 +133,7 @@
         self.navigationBar.shadowImage = appearingNavigationBar.shadowImage;
     }
     if (animated) {
-        disappearingViewController.km_prefersNavigationBarBackgroundViewHidden = YES;
+        disappearingViewController.navigationController.km_backgroundViewHidden = YES;
     }
     return [self km_popToRootViewControllerAnimated:animated];
 }
@@ -138,10 +143,20 @@
     if (animated && disappearingViewController && ![disappearingViewController isEqual:viewControllers.lastObject]) {
         [disappearingViewController km_addTransitionNavigationBarIfNeeded];
         if (disappearingViewController.km_transitionNavigationBar) {
-            disappearingViewController.km_prefersNavigationBarBackgroundViewHidden = YES;
+            disappearingViewController.navigationController.km_backgroundViewHidden = YES;
         }
     }
     return [self km_setViewControllers:viewControllers animated:animated];
+}
+
+- (BOOL)km_backgroundViewHidden {
+    return [objc_getAssociatedObject(self, _cmd) boolValue];
+}
+
+- (void)setKm_backgroundViewHidden:(BOOL)hidden {
+    objc_setAssociatedObject(self, @selector(km_backgroundViewHidden), @(hidden), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    [[self.navigationBar valueForKey:@"_backgroundView"]
+     setHidden:hidden];
 }
 
 - (UIViewController *)km_transitionContextToViewController {
