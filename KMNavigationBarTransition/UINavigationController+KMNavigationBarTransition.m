@@ -61,7 +61,13 @@
 }
 
 - (void)km_pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    if (self.km_disableTransition) {
+        return [self km_pushViewController:viewController animated:animated];
+    }
     UIViewController *disappearingViewController = self.viewControllers.lastObject;
+    if (viewController.km_disableTransition && disappearingViewController.km_disableTransition) {
+        return [self km_pushViewController:viewController animated:animated];
+    }
     if (!disappearingViewController) {
         return [self km_pushViewController:viewController animated:animated];
     }
@@ -78,12 +84,18 @@
 }
 
 - (UIViewController *)km_popViewControllerAnimated:(BOOL)animated {
+    if (self.km_disableTransition) {
+        return [self km_popViewControllerAnimated:animated];
+    }
     if (self.viewControllers.count < 2) {
         return [self km_popViewControllerAnimated:animated];
     }
     UIViewController *disappearingViewController = self.viewControllers.lastObject;
-    [disappearingViewController km_addTransitionNavigationBarIfNeeded];
     UIViewController *appearingViewController = self.viewControllers[self.viewControllers.count - 2];
+    if (disappearingViewController.km_disableTransition && appearingViewController.km_disableTransition) {
+        return [self km_popViewControllerAnimated:animated];
+    }
+    [disappearingViewController km_addTransitionNavigationBarIfNeeded];
     if (appearingViewController.km_transitionNavigationBar) {
         UINavigationBar *appearingNavigationBar = appearingViewController.km_transitionNavigationBar;
         self.navigationBar.barTintColor = appearingNavigationBar.barTintColor;
@@ -97,10 +109,16 @@
 }
 
 - (NSArray<UIViewController *> *)km_popToViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    if (self.km_disableTransition) {
+        return [self km_popToViewController:viewController animated:animated];
+    }
     if (![self.viewControllers containsObject:viewController] || self.viewControllers.count < 2) {
         return [self km_popToViewController:viewController animated:animated];
     }
     UIViewController *disappearingViewController = self.viewControllers.lastObject;
+    if (viewController.km_disableTransition && disappearingViewController.km_disableTransition) {
+        return [self km_popToViewController:viewController animated:animated];
+    }
     [disappearingViewController km_addTransitionNavigationBarIfNeeded];
     if (viewController.km_transitionNavigationBar) {
         UINavigationBar *appearingNavigationBar = viewController.km_transitionNavigationBar;
@@ -115,12 +133,18 @@
 }
 
 - (NSArray<UIViewController *> *)km_popToRootViewControllerAnimated:(BOOL)animated {
+    if (self.km_disableTransition) {
+        return [self km_popToRootViewControllerAnimated:animated];
+    }
     if (self.viewControllers.count < 2) {
         return [self km_popToRootViewControllerAnimated:animated];
     }
     UIViewController *disappearingViewController = self.viewControllers.lastObject;
-    [disappearingViewController km_addTransitionNavigationBarIfNeeded];
     UIViewController *rootViewController = self.viewControllers.firstObject;
+    if (disappearingViewController.km_disableTransition && rootViewController.km_disableTransition) {
+        return [self km_popToRootViewControllerAnimated:animated];
+    }
+    [disappearingViewController km_addTransitionNavigationBarIfNeeded];
     if (rootViewController.km_transitionNavigationBar) {
         UINavigationBar *appearingNavigationBar = rootViewController.km_transitionNavigationBar;
         self.navigationBar.barTintColor = appearingNavigationBar.barTintColor;
@@ -134,11 +158,26 @@
 }
 
 - (void)km_setViewControllers:(NSArray<UIViewController *> *)viewControllers animated:(BOOL)animated {
+    if (self.km_disableTransition) {
+        return [self km_setViewControllers:viewControllers animated:animated];
+    }
     UIViewController *disappearingViewController = self.viewControllers.lastObject;
+    UIViewController *appearingViewController = viewControllers.lastObject;
+    if (disappearingViewController.km_disableTransition && appearingViewController.km_disableTransition) {
+        return [self km_setViewControllers:viewControllers animated:animated];
+    }
     if (animated && disappearingViewController && ![disappearingViewController isEqual:viewControllers.lastObject]) {
         [disappearingViewController km_addTransitionNavigationBarIfNeeded];
         if (disappearingViewController.km_transitionNavigationBar) {
             disappearingViewController.km_prefersNavigationBarBackgroundViewHidden = YES;
+        }
+        self.km_transitionContextToViewController = appearingViewController;
+    }
+    
+    for (UIViewController *controller in viewControllers) {
+        if (![controller isEqual:appearingViewController]) {
+            controller.km_isSetViewController = true;
+            [controller km_addTransitionNavigationBarIfNeeded];
         }
     }
     return [self km_setViewControllers:viewControllers animated:animated];
@@ -150,6 +189,14 @@
 
 - (void)setKm_transitionContextToViewController:(UIViewController *)viewController {
     km_objc_setAssociatedWeakObject(self, @selector(km_transitionContextToViewController), viewController);
+}
+
+- (BOOL)km_disableTransition {
+    return [km_objc_getAssociatedWeakObject(self, _cmd) boolValue];
+}
+
+- (void)setKm_disableTransition:(BOOL)km_disableTransition {
+    km_objc_setAssociatedWeakObject(self, @selector(km_disableTransition), @(km_disableTransition));
 }
 
 @end

@@ -23,7 +23,11 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface UINavigationController (KMNavigationBarTransition)
+
+///disable the transition style
+@property (nonatomic) BOOL km_disableTransition;
 
 // By default this is white, it is related to issue with transparent navigationBar
 - (UIColor *)km_containerViewBackgroundColor;

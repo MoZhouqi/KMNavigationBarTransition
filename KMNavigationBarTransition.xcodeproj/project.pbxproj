@@ -7,21 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CDA372851C39087D00E39A6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA372841C39087D00E39A6D /* AppDelegate.swift */; };
-		CDA372881C39089200E39A6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDA372861C39089200E39A6D /* Main.storyboard */; };
-		CDA3728A1C39089900E39A6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDA372891C39089900E39A6D /* Assets.xcassets */; };
-		CDA3728D1C3908A000E39A6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDA3728B1C3908A000E39A6D /* LaunchScreen.storyboard */; };
-		CDA372951C39093E00E39A6D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA372901C39093E00E39A6D /* MainViewController.swift */; };
-		CDA372961C39093E00E39A6D /* NavigationBarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA372911C39093E00E39A6D /* NavigationBarData.swift */; };
-		CDA372971C39093E00E39A6D /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA372921C39093E00E39A6D /* NavigationController.swift */; };
-		CDA372981C39093E00E39A6D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA372931C39093E00E39A6D /* SettingsViewController.swift */; };
-		CDA372991C39093E00E39A6D /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA372941C39093E00E39A6D /* UIImage+Color.swift */; };
+		C851C0851EFB68B400A99AEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C851C0761EFB68B400A99AEA /* AppDelegate.swift */; };
+		C851C0861EFB68B400A99AEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C851C0771EFB68B400A99AEA /* Assets.xcassets */; };
+		C851C0871EFB68B400A99AEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C851C0781EFB68B400A99AEA /* LaunchScreen.storyboard */; };
+		C851C0881EFB68B400A99AEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C851C07A1EFB68B400A99AEA /* Main.storyboard */; };
+		C851C0891EFB68B400A99AEA /* DisableTransitionNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C851C07C1EFB68B400A99AEA /* DisableTransitionNavigationController.swift */; };
+		C851C08A1EFB68B400A99AEA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C851C07D1EFB68B400A99AEA /* Info.plist */; };
+		C851C08B1EFB68B400A99AEA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C851C07F1EFB68B400A99AEA /* MainViewController.swift */; };
+		C851C08C1EFB68B400A99AEA /* NavigationBarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C851C0801EFB68B400A99AEA /* NavigationBarData.swift */; };
+		C851C08D1EFB68B400A99AEA /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C851C0811EFB68B400A99AEA /* NavigationController.swift */; };
+		C851C08E1EFB68B400A99AEA /* PresentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C851C0821EFB68B400A99AEA /* PresentViewController.swift */; };
+		C851C08F1EFB68B400A99AEA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C851C0831EFB68B400A99AEA /* SettingsViewController.swift */; };
+		C851C0901EFB68B400A99AEA /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C851C0841EFB68B400A99AEA /* UIImage+Color.swift */; };
 		CDAA3BB31E5CB40E00666BB0 /* UIViewController+KMNavigationBarTransition_internal.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAA3BB21E5CB40E00666BB0 /* UIViewController+KMNavigationBarTransition_internal.h */; };
 		CDC01B971E5CA42000F6F3E2 /* KMNavigationBarTransition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC01B901E5CA42000F6F3E2 /* KMNavigationBarTransition.framework */; };
 		CDC01B981E5CA42000F6F3E2 /* KMNavigationBarTransition.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CDC01B901E5CA42000F6F3E2 /* KMNavigationBarTransition.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CDC01B9D1E5CA46400F6F3E2 /* KMNavigationBarTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = CDC01B9C1E5CA46400F6F3E2 /* KMNavigationBarTransition.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDC01B9F1E5CA48400F6F3E2 /* UINavigationController+KMNavigationBarTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = CDDFA1F31C3921BD00BFBA1B /* UINavigationController+KMNavigationBarTransition.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CDC01BA11E5CA48900F6F3E2 /* UIViewController+KMNavigationBarTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = CDDFA1F51C3921BD00BFBA1B /* UIViewController+KMNavigationBarTransition.h */; };
+		CDC01BA11E5CA48900F6F3E2 /* UIViewController+KMNavigationBarTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = CDDFA1F51C3921BD00BFBA1B /* UIViewController+KMNavigationBarTransition.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDC01BA21E5CA48B00F6F3E2 /* UIViewController+KMNavigationBarTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = CDDFA1F61C3921BD00BFBA1B /* UIViewController+KMNavigationBarTransition.m */; };
 		CDC01BA31E5CA48D00F6F3E2 /* KMWeakObjectContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = CDC1BA0C1CE1DFE8006BE1B6 /* KMWeakObjectContainer.h */; };
 		CDC01BA41E5CA48F00F6F3E2 /* KMWeakObjectContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC1BA0D1CE1DFE8006BE1B6 /* KMWeakObjectContainer.m */; };
@@ -56,17 +59,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C851C0761EFB68B400A99AEA /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C851C0771EFB68B400A99AEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C851C0791EFB68B400A99AEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C851C07B1EFB68B400A99AEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C851C07C1EFB68B400A99AEA /* DisableTransitionNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisableTransitionNavigationController.swift; sourceTree = "<group>"; };
+		C851C07D1EFB68B400A99AEA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C851C07E1EFB68B400A99AEA /* KMNavigationBarTransition-Bridge-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KMNavigationBarTransition-Bridge-Header.h"; sourceTree = "<group>"; };
+		C851C07F1EFB68B400A99AEA /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		C851C0801EFB68B400A99AEA /* NavigationBarData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarData.swift; sourceTree = "<group>"; };
+		C851C0811EFB68B400A99AEA /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		C851C0821EFB68B400A99AEA /* PresentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentViewController.swift; sourceTree = "<group>"; };
+		C851C0831EFB68B400A99AEA /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		C851C0841EFB68B400A99AEA /* UIImage+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
 		CDA3726F1C3907CE00E39A6D /* KMNavigationBarTransition-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KMNavigationBarTransition-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CDA372841C39087D00E39A6D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Example/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
-		CDA372871C39089200E39A6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Example/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
-		CDA372891C39089900E39A6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Example/Assets.xcassets; sourceTree = SOURCE_ROOT; };
-		CDA3728C1C3908A000E39A6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Example/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
-		CDA3728E1C3908A500E39A6D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Example/Info.plist; sourceTree = SOURCE_ROOT; };
-		CDA372901C39093E00E39A6D /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = Example/MainViewController.swift; sourceTree = SOURCE_ROOT; };
-		CDA372911C39093E00E39A6D /* NavigationBarData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationBarData.swift; path = Example/NavigationBarData.swift; sourceTree = SOURCE_ROOT; };
-		CDA372921C39093E00E39A6D /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationController.swift; path = Example/NavigationController.swift; sourceTree = SOURCE_ROOT; };
-		CDA372931C39093E00E39A6D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Example/SettingsViewController.swift; sourceTree = SOURCE_ROOT; };
-		CDA372941C39093E00E39A6D /* UIImage+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Color.swift"; path = "Example/UIImage+Color.swift"; sourceTree = SOURCE_ROOT; };
 		CDAA3BB21E5CB40E00666BB0 /* UIViewController+KMNavigationBarTransition_internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+KMNavigationBarTransition_internal.h"; sourceTree = "<group>"; };
 		CDC01B901E5CA42000F6F3E2 /* KMNavigationBarTransition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KMNavigationBarTransition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDC01B9C1E5CA46400F6F3E2 /* KMNavigationBarTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMNavigationBarTransition.h; sourceTree = "<group>"; };
@@ -101,11 +107,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C851C0751EFB68B400A99AEA /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				C851C07C1EFB68B400A99AEA /* DisableTransitionNavigationController.swift */,
+				C851C07F1EFB68B400A99AEA /* MainViewController.swift */,
+				C851C0801EFB68B400A99AEA /* NavigationBarData.swift */,
+				C851C0811EFB68B400A99AEA /* NavigationController.swift */,
+				C851C0821EFB68B400A99AEA /* PresentViewController.swift */,
+				C851C0831EFB68B400A99AEA /* SettingsViewController.swift */,
+				C851C0841EFB68B400A99AEA /* UIImage+Color.swift */,
+				C851C0761EFB68B400A99AEA /* AppDelegate.swift */,
+				C851C07E1EFB68B400A99AEA /* KMNavigationBarTransition-Bridge-Header.h */,
+				C851C0771EFB68B400A99AEA /* Assets.xcassets */,
+				C851C0781EFB68B400A99AEA /* LaunchScreen.storyboard */,
+				C851C07A1EFB68B400A99AEA /* Main.storyboard */,
+				C851C07D1EFB68B400A99AEA /* Info.plist */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
 		CDA372661C3907CE00E39A6D = {
 			isa = PBXGroup;
 			children = (
 				CDDFA1F01C3921BD00BFBA1B /* KMNavigationBarTransition */,
-				CDA372711C3907CE00E39A6D /* Example */,
+				C851C0751EFB68B400A99AEA /* Example */,
 				CDA372701C3907CE00E39A6D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -117,40 +143,6 @@
 				CDC01B901E5CA42000F6F3E2 /* KMNavigationBarTransition.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		CDA372711C3907CE00E39A6D /* Example */ = {
-			isa = PBXGroup;
-			children = (
-				CDA372861C39089200E39A6D /* Main.storyboard */,
-				CDA372901C39093E00E39A6D /* MainViewController.swift */,
-				CDA372931C39093E00E39A6D /* SettingsViewController.swift */,
-				CDA372921C39093E00E39A6D /* NavigationController.swift */,
-				CDA3729A1C39094600E39A6D /* Model */,
-				CDA3729B1C39094B00E39A6D /* Extension */,
-				CDA372841C39087D00E39A6D /* AppDelegate.swift */,
-				CDA372891C39089900E39A6D /* Assets.xcassets */,
-				CDA3728B1C3908A000E39A6D /* LaunchScreen.storyboard */,
-				CDA3728E1C3908A500E39A6D /* Info.plist */,
-			);
-			name = Example;
-			path = KMNavigationBarTransition;
-			sourceTree = "<group>";
-		};
-		CDA3729A1C39094600E39A6D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				CDA372911C39093E00E39A6D /* NavigationBarData.swift */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		CDA3729B1C39094B00E39A6D /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				CDA372941C39093E00E39A6D /* UIImage+Color.swift */,
-			);
-			name = Extension;
 			sourceTree = "<group>";
 		};
 		CDDFA1F01C3921BD00BFBA1B /* KMNavigationBarTransition */ = {
@@ -181,9 +173,9 @@
 			files = (
 				CDC01B9D1E5CA46400F6F3E2 /* KMNavigationBarTransition.h in Headers */,
 				CDC01BAA1E5CA82800F6F3E2 /* UINavigationController+KMNavigationBarTransition_Internal.h in Headers */,
+				CDC01BA11E5CA48900F6F3E2 /* UIViewController+KMNavigationBarTransition.h in Headers */,
 				CDAA3BB31E5CB40E00666BB0 /* UIViewController+KMNavigationBarTransition_internal.h in Headers */,
 				CDC01B9F1E5CA48400F6F3E2 /* UINavigationController+KMNavigationBarTransition.h in Headers */,
-				CDC01BA11E5CA48900F6F3E2 /* UIViewController+KMNavigationBarTransition.h in Headers */,
 				CDC01BA31E5CA48D00F6F3E2 /* KMWeakObjectContainer.h in Headers */,
 				CDC01BA51E5CA49100F6F3E2 /* KMSwizzle.h in Headers */,
 			);
@@ -273,9 +265,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDA3728D1C3908A000E39A6D /* LaunchScreen.storyboard in Resources */,
-				CDA3728A1C39089900E39A6D /* Assets.xcassets in Resources */,
-				CDA372881C39089200E39A6D /* Main.storyboard in Resources */,
+				C851C08A1EFB68B400A99AEA /* Info.plist in Resources */,
+				C851C0881EFB68B400A99AEA /* Main.storyboard in Resources */,
+				C851C0861EFB68B400A99AEA /* Assets.xcassets in Resources */,
+				C851C0871EFB68B400A99AEA /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,12 +286,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDA372851C39087D00E39A6D /* AppDelegate.swift in Sources */,
-				CDA372971C39093E00E39A6D /* NavigationController.swift in Sources */,
-				CDA372951C39093E00E39A6D /* MainViewController.swift in Sources */,
-				CDA372981C39093E00E39A6D /* SettingsViewController.swift in Sources */,
-				CDA372961C39093E00E39A6D /* NavigationBarData.swift in Sources */,
-				CDA372991C39093E00E39A6D /* UIImage+Color.swift in Sources */,
+				C851C08B1EFB68B400A99AEA /* MainViewController.swift in Sources */,
+				C851C0901EFB68B400A99AEA /* UIImage+Color.swift in Sources */,
+				C851C08C1EFB68B400A99AEA /* NavigationBarData.swift in Sources */,
+				C851C08F1EFB68B400A99AEA /* SettingsViewController.swift in Sources */,
+				C851C08E1EFB68B400A99AEA /* PresentViewController.swift in Sources */,
+				C851C08D1EFB68B400A99AEA /* NavigationController.swift in Sources */,
+				C851C0851EFB68B400A99AEA /* AppDelegate.swift in Sources */,
+				C851C0891EFB68B400A99AEA /* DisableTransitionNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,20 +319,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CDA372861C39089200E39A6D /* Main.storyboard */ = {
+		C851C0781EFB68B400A99AEA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				CDA372871C39089200E39A6D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		CDA3728B1C3908A000E39A6D /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CDA3728C1C3908A000E39A6D /* Base */,
+				C851C0791EFB68B400A99AEA /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C851C07A1EFB68B400A99AEA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C851C07B1EFB68B400A99AEA /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -440,6 +435,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mo.KMNavigationBarTransition-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Example/KMNavigationBarTransition-Bridge-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -453,6 +449,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mo.KMNavigationBarTransition-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Example/KMNavigationBarTransition-Bridge-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
