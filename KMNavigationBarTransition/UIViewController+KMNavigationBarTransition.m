@@ -130,7 +130,6 @@
         }
 #else
         contentInset = scrollView.contentInset;
-    }
 #endif
         const CGFloat topContentOffsetY = -contentInset.top;
         const CGFloat bottomContentOffsetY = scrollView.contentSize.height - (CGRectGetHeight(scrollView.bounds) - contentInset.bottom);
