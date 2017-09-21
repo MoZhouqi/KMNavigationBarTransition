@@ -1,5 +1,5 @@
 //
-//  UINavigationBar+KMNavigationBarTransition.h
+//  UINavigationBar+KMNavigationBarTransition.m
 //
 //  Copyright (c) 2017 Zhouqi Mo (https://github.com/MoZhouqi)
 //
