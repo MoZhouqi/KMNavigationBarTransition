@@ -127,6 +127,8 @@
 #ifdef __IPHONE_11_0
         if (@available(iOS 11.0, *)) {
             contentInset = scrollView.adjustedContentInset;
+        } else {
+            contentInset = scrollView.contentInset;
         }
 #else
         contentInset = scrollView.contentInset;
