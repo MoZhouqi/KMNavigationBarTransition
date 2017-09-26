@@ -52,6 +52,7 @@
 }
 
 - (void)km_viewWillAppear:(BOOL)animated {
+    [self km_viewWillAppear:animated];
     id<UIViewControllerTransitionCoordinator> tc = self.transitionCoordinator;
     UIViewController *toViewController = [tc viewControllerForKey:UITransitionContextToViewControllerKey];
     
@@ -63,7 +64,6 @@
             }
         });
     }
-    [self km_viewWillAppear:animated];
 }
 
 - (void)km_viewDidAppear:(BOOL)animated {
