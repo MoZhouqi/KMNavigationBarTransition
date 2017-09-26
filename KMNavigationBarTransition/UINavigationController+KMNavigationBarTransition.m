@@ -71,7 +71,7 @@
         return [self km_pushViewController:viewController animated:animated];
     }
     if (!self.km_transitionContextToViewController || !disappearingViewController.km_transitionNavigationBar) {
-    [disappearingViewController km_addTransitionNavigationBarIfNeeded];
+        [disappearingViewController km_addTransitionNavigationBarIfNeeded];
     }
     if (animated) {
         self.km_transitionContextToViewController = viewController;

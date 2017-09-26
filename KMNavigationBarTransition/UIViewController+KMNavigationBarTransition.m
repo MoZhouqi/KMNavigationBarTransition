@@ -25,6 +25,7 @@
 #import "UINavigationController+KMNavigationBarTransition.h"
 #import "UINavigationController+KMNavigationBarTransition_internal.h"
 #import "UINavigationBar+KMNavigationBarTransition_internal.h"
+#import "UIScrollView+KMNavigationBarTransition.h"
 #import <objc/runtime.h>
 #import "KMSwizzle.h"
 
@@ -39,13 +40,34 @@
                         @selector(km_viewWillLayoutSubviews));
         
         KMSwizzleMethod([self class],
+                        @selector(viewWillAppear:),
+                        [self class],
+                        @selector(km_viewWillAppear:));
+        
+        KMSwizzleMethod([self class],
                         @selector(viewDidAppear:),
                         [self class],
                         @selector(km_viewDidAppear:));
     });
 }
 
+- (void)km_viewWillAppear:(BOOL)animated {
+    id<UIViewControllerTransitionCoordinator> tc = self.transitionCoordinator;
+    UIViewController *toViewController = [tc viewControllerForKey:UITransitionContextToViewControllerKey];
+    
+    if ([self isEqual:self.navigationController.viewControllers.lastObject] && [toViewController isEqual:self]) {
+         [self km_adjustScrollViewContentInsetAdjustmentBehavior];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (self.navigationController.navigationBarHidden) {
+                [self km_restoreScrollViewContentInsetAdjustmentBehaviorIfNeeded];
+            }
+        });
+    }
+    [self km_viewWillAppear:animated];
+}
+
 - (void)km_viewDidAppear:(BOOL)animated {
+    [self km_restoreScrollViewContentInsetAdjustmentBehaviorIfNeeded];
     if (self.km_transitionNavigationBar) {
         self.navigationController.navigationBar.barTintColor = self.km_transitionNavigationBar.barTintColor;
         [self.navigationController.navigationBar setBackgroundImage:[self.km_transitionNavigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
@@ -146,6 +168,40 @@
         [scrollView setContentOffset:adjustedContentOffset animated:NO];
     }
 }
+
+- (void)km_adjustScrollViewContentInsetAdjustmentBehavior {
+#ifdef __IPHONE_11_0
+    if (self.navigationController.navigationBar.translucent) {
+        return;
+    }
+    if (@available(iOS 11.0, *)) {
+        if ([self.view isKindOfClass:[UIScrollView class]]) {
+            UIScrollView *scrollView = (UIScrollView *)self.view;
+            UIScrollViewContentInsetAdjustmentBehavior contentInsetAdjustmentBehavior = scrollView.contentInsetAdjustmentBehavior;
+            if (contentInsetAdjustmentBehavior != UIScrollViewContentInsetAdjustmentNever) {
+                scrollView.km_originalContentInsetAdjustmentBehavior = contentInsetAdjustmentBehavior;
+                scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+                scrollView.km_shouldRestoreContentInsetAdjustmentBehavior = YES;
+            }
+        }
+    }
+#endif
+}
+
+- (void)km_restoreScrollViewContentInsetAdjustmentBehaviorIfNeeded {
+#ifdef __IPHONE_11_0
+    if (@available(iOS 11.0, *)) {
+        if ([self.view isKindOfClass:[UIScrollView class]]) {
+            UIScrollView *scrollView = (UIScrollView *)self.view;
+            if (scrollView.km_shouldRestoreContentInsetAdjustmentBehavior) {
+                scrollView.contentInsetAdjustmentBehavior = scrollView.km_originalContentInsetAdjustmentBehavior;
+                scrollView.km_shouldRestoreContentInsetAdjustmentBehavior = NO;
+            }
+        }
+    }
+#endif
+}
+
 
 - (UINavigationBar *)km_transitionNavigationBar {
     return objc_getAssociatedObject(self, _cmd);

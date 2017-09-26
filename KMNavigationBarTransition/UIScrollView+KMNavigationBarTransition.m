@@ -1,5 +1,5 @@
 //
-//  UINavigationBar+KMNavigationBarTransition.m
+//  UIScrollView+KMNavigationBarTransition.m
 //
 //  Copyright (c) 2017 Zhouqi Mo (https://github.com/MoZhouqi)
 //
@@ -21,38 +21,28 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-#import "UINavigationBar+KMNavigationBarTransition.h"
+#import "UIScrollView+KMNavigationBarTransition.h"
 #import <objc/runtime.h>
 #import "KMSwizzle.h"
 
-@implementation UINavigationBar (KMNavigationBarTransition)
+@implementation UIScrollView (KMNavigationBarTransition)
 
 #ifdef __IPHONE_11_0
-+ (void)load {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        KMSwizzleMethod([self class],
-                        @selector(layoutSubviews),
-                        [self class],
-                        @selector(km_layoutSubviews));
-    });
-}
-#endif
-
-- (void)km_layoutSubviews {
-    [self km_layoutSubviews];
-    UIView *backgroundView = [self valueForKey:@"_backgroundView"];
-    CGRect frame = backgroundView.frame;
-    frame.size.height = self.frame.size.height + fabs(frame.origin.y);
-    backgroundView.frame = frame;
+- (UIScrollViewContentInsetAdjustmentBehavior)km_originalContentInsetAdjustmentBehavior {
+    return [objc_getAssociatedObject(self, _cmd) integerValue];
 }
 
-- (BOOL)km_isFakeBar {
+- (void)setKm_originalContentInsetAdjustmentBehavior:(UIScrollViewContentInsetAdjustmentBehavior)contentInsetAdjustmentBehavior {
+    objc_setAssociatedObject(self, @selector(km_originalContentInsetAdjustmentBehavior), @(contentInsetAdjustmentBehavior), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (BOOL)km_shouldRestoreContentInsetAdjustmentBehavior {
     return [objc_getAssociatedObject(self, _cmd) boolValue];
 }
 
-- (void)setKm_isFakeBar:(BOOL)hidden {
-    objc_setAssociatedObject(self, @selector(km_isFakeBar), @(hidden), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setKm_shouldRestoreContentInsetAdjustmentBehavior:(BOOL)isShould {
+    objc_setAssociatedObject(self, @selector(km_shouldRestoreContentInsetAdjustmentBehavior), @(isShould), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
+#endif
 
 @end
