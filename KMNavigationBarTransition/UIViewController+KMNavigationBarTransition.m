@@ -56,7 +56,7 @@
     id<UIViewControllerTransitionCoordinator> tc = self.transitionCoordinator;
     UIViewController *toViewController = [tc viewControllerForKey:UITransitionContextToViewControllerKey];
     
-    if ([self isEqual:self.navigationController.viewControllers.lastObject] && [toViewController isEqual:self]) {
+    if ([self isEqual:self.navigationController.viewControllers.lastObject] && [toViewController isEqual:self]  && tc.presentationStyle == UIModalPresentationNone) {
          [self km_adjustScrollViewContentInsetAdjustmentBehavior];
         dispatch_async(dispatch_get_main_queue(), ^{
             if (self.navigationController.navigationBarHidden) {
@@ -89,7 +89,7 @@
     UIViewController *fromViewController = [tc viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *toViewController = [tc viewControllerForKey:UITransitionContextToViewControllerKey];
     
-    if ([self isEqual:self.navigationController.viewControllers.lastObject] && [toViewController isEqual:self] && self.navigationController.km_transitionContextToViewController) {
+    if ([self isEqual:self.navigationController.viewControllers.lastObject] && [toViewController isEqual:self] && tc.presentationStyle == UIModalPresentationNone) {
         if (self.navigationController.navigationBar.translucent) {
             [tc containerView].backgroundColor = [self.navigationController km_containerViewBackgroundColor];
         }
@@ -97,7 +97,6 @@
         toViewController.view.clipsToBounds = NO;
         if (!self.km_transitionNavigationBar) {
             [self km_addTransitionNavigationBarIfNeeded];
-            
             self.navigationController.km_backgroundViewHidden = YES;
         }
         [self km_resizeTransitionNavigationBarFrame];
