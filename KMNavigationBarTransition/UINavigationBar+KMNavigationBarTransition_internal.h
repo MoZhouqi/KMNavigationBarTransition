@@ -23,7 +23,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UINavigationBar (KMNavigationBarTransition_Internal)
+@interface UINavigationBar (KMNavigationBarTransition_internal)
 
 @property (nonatomic, assign) BOOL km_isFakeBar;
 

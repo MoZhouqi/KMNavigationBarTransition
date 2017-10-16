@@ -25,7 +25,7 @@
 #import "UINavigationController+KMNavigationBarTransition.h"
 #import "UINavigationController+KMNavigationBarTransition_internal.h"
 #import "UINavigationBar+KMNavigationBarTransition_internal.h"
-#import "UIScrollView+KMNavigationBarTransition.h"
+#import "UIScrollView+KMNavigationBarTransition_internal.h"
 #import <objc/runtime.h>
 #import "KMSwizzle.h"
 

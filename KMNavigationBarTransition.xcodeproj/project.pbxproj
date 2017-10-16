@@ -35,6 +35,7 @@
 		CDC722B01F72590C0077084B /* UINavigationBar+KMNavigationBarTransition_internal.h in Headers */ = {isa = PBXBuildFile; fileRef = CDC722AF1F72590C0077084B /* UINavigationBar+KMNavigationBarTransition_internal.h */; };
 		CDC722B31F72599F0077084B /* NSObject+KMNavigationBarTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = CDC722B11F72599F0077084B /* NSObject+KMNavigationBarTransition.h */; };
 		CDC722B41F72599F0077084B /* NSObject+KMNavigationBarTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC722B21F72599F0077084B /* NSObject+KMNavigationBarTransition.m */; };
+		CDD35A4C1F94CABE00EFDBD8 /* UIScrollView+KMNavigationBarTransition_internal.h in Headers */ = {isa = PBXBuildFile; fileRef = CDD35A4B1F94CABE00EFDBD8 /* UIScrollView+KMNavigationBarTransition_internal.h */; };
 		CDE74D821F7A457C003052BE /* UIScrollView+KMNavigationBarTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE74D811F7A457C003052BE /* UIScrollView+KMNavigationBarTransition.m */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +87,7 @@
 		CDC722AF1F72590C0077084B /* UINavigationBar+KMNavigationBarTransition_internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+KMNavigationBarTransition_internal.h"; sourceTree = "<group>"; };
 		CDC722B11F72599F0077084B /* NSObject+KMNavigationBarTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+KMNavigationBarTransition.h"; sourceTree = "<group>"; };
 		CDC722B21F72599F0077084B /* NSObject+KMNavigationBarTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KMNavigationBarTransition.m"; sourceTree = "<group>"; };
+		CDD35A4B1F94CABE00EFDBD8 /* UIScrollView+KMNavigationBarTransition_internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+KMNavigationBarTransition_internal.h"; sourceTree = "<group>"; };
 		CDDFA1F11C3921BD00BFBA1B /* KMSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMSwizzle.h; sourceTree = "<group>"; };
 		CDDFA1F21C3921BD00BFBA1B /* KMSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMSwizzle.m; sourceTree = "<group>"; };
 		CDDFA1F31C3921BD00BFBA1B /* UINavigationController+KMNavigationBarTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+KMNavigationBarTransition.h"; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				CDC722AF1F72590C0077084B /* UINavigationBar+KMNavigationBarTransition_internal.h */,
 				CDC722AB1F7257EE0077084B /* UINavigationBar+KMNavigationBarTransition.h */,
 				CDC722AC1F7257EE0077084B /* UINavigationBar+KMNavigationBarTransition.m */,
+				CDD35A4B1F94CABE00EFDBD8 /* UIScrollView+KMNavigationBarTransition_internal.h */,
 				CDE74D801F7A457C003052BE /* UIScrollView+KMNavigationBarTransition.h */,
 				CDE74D811F7A457C003052BE /* UIScrollView+KMNavigationBarTransition.m */,
 				CDC722B11F72599F0077084B /* NSObject+KMNavigationBarTransition.h */,
@@ -206,6 +209,7 @@
 				CDAA3BB31E5CB40E00666BB0 /* UIViewController+KMNavigationBarTransition_internal.h in Headers */,
 				CDC01B9F1E5CA48400F6F3E2 /* UINavigationController+KMNavigationBarTransition.h in Headers */,
 				CDC722B01F72590C0077084B /* UINavigationBar+KMNavigationBarTransition_internal.h in Headers */,
+				CDD35A4C1F94CABE00EFDBD8 /* UIScrollView+KMNavigationBarTransition_internal.h in Headers */,
 				CD4209391F7A47CF00A1EAF5 /* UIScrollView+KMNavigationBarTransition.h in Headers */,
 				CDC01BA11E5CA48900F6F3E2 /* UIViewController+KMNavigationBarTransition.h in Headers */,
 				CDC01BA31E5CA48D00F6F3E2 /* KMWeakObjectContainer.h in Headers */,

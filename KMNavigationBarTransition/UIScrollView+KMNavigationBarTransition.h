@@ -25,9 +25,4 @@
 
 @interface UIScrollView (KMNavigationBarTransition)
 
-#ifdef __IPHONE_11_0
-@property (nonatomic, assign) UIScrollViewContentInsetAdjustmentBehavior km_originalContentInsetAdjustmentBehavior NS_AVAILABLE_IOS(11_0);
-@property (nonatomic, assign) BOOL km_shouldRestoreContentInsetAdjustmentBehavior NS_AVAILABLE_IOS(11_0);
-#endif
-
 @end
