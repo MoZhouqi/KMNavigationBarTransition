@@ -26,6 +26,7 @@
 #import "UINavigationController+KMNavigationBarTransition_internal.h"
 #import "UINavigationBar+KMNavigationBarTransition_internal.h"
 #import "UIScrollView+KMNavigationBarTransition_internal.h"
+#import "KMWeakObjectContainer.h"
 #import <objc/runtime.h>
 #import "KMSwizzle.h"
 
@@ -143,8 +144,8 @@
 }
 
 - (void)km_adjustScrollViewContentOffsetIfNeeded {
-    if ([self.view isKindOfClass:[UIScrollView class]]) {
-        UIScrollView *scrollView = (UIScrollView *)self.view;
+    UIScrollView *scrollView = self.km_visibleScrollView;
+    if (scrollView) {
         UIEdgeInsets contentInset;
 #ifdef __IPHONE_11_0
         if (@available(iOS 11.0, *)) {
@@ -175,8 +176,8 @@
         return;
     }
     if (@available(iOS 11.0, *)) {
-        if ([self.view isKindOfClass:[UIScrollView class]]) {
-            UIScrollView *scrollView = (UIScrollView *)self.view;
+        UIScrollView *scrollView = self.km_visibleScrollView;
+        if (scrollView) {
             UIScrollViewContentInsetAdjustmentBehavior contentInsetAdjustmentBehavior = scrollView.contentInsetAdjustmentBehavior;
             if (contentInsetAdjustmentBehavior != UIScrollViewContentInsetAdjustmentNever) {
                 scrollView.km_originalContentInsetAdjustmentBehavior = contentInsetAdjustmentBehavior;
@@ -191,8 +192,8 @@
 - (void)km_restoreScrollViewContentInsetAdjustmentBehaviorIfNeeded {
 #ifdef __IPHONE_11_0
     if (@available(iOS 11.0, *)) {
-        if ([self.view isKindOfClass:[UIScrollView class]]) {
-            UIScrollView *scrollView = (UIScrollView *)self.view;
+        UIScrollView *scrollView = self.km_visibleScrollView;
+        if (scrollView) {
             if (scrollView.km_shouldRestoreContentInsetAdjustmentBehavior) {
                 scrollView.contentInsetAdjustmentBehavior = scrollView.km_originalContentInsetAdjustmentBehavior;
                 scrollView.km_shouldRestoreContentInsetAdjustmentBehavior = NO;
@@ -209,6 +210,22 @@
 
 - (void)setKm_transitionNavigationBar:(UINavigationBar *)navigationBar {
     objc_setAssociatedObject(self, @selector(km_transitionNavigationBar), navigationBar, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (UIScrollView *)km_scrollView {
+    return km_objc_getAssociatedWeakObject(self, _cmd);
+}
+
+- (void)setKm_scrollView:(UIScrollView *)scrollView {
+    km_objc_setAssociatedWeakObject(self, @selector(km_scrollView), scrollView);
+}
+
+- (UIScrollView *)km_visibleScrollView {
+    UIScrollView *scrollView = self.km_scrollView;
+    if (!scrollView && [self.view isKindOfClass:[UIScrollView class]]) {
+        scrollView = (UIScrollView *)self.view;
+    }
+    return scrollView;
 }
 
 @end

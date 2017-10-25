@@ -25,4 +25,6 @@
 
 @interface UIViewController (KMNavigationBarTransition)
 
+@property (nonatomic, weak) UIScrollView *km_scrollView;
+
 @end
