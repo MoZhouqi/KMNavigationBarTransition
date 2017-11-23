@@ -48,7 +48,7 @@ class MainViewController: UITableViewController {
         
         if let titleColor = currentNavigationBarData.titleColor.toUIColor {
             navigationController?.navigationBar.tintColor = titleColor
-            navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: titleColor]
+            navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: titleColor]
         }
         
         navigationController?.navigationBar.barTintColor = currentNavigationBarData.barTintColor.toUIColor
