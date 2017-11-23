@@ -13,6 +13,7 @@ struct NavigationBarData {
     static let BarTintColorArray: [NavigationBarBackgroundViewColor] = [.Cyan, .Yellow, .Green, .Orange, .lightGray, .NoValue]
     static let BackgroundImageColorArray: [NavigationBarBackgroundViewColor] = [.NoValue, .Transparent, .Cyan, .Yellow, .Green, .Orange, .lightGray]
     
+    var titleColor = NavigationBarData.BarTintColorArray.last!
     var barTintColor = NavigationBarData.BarTintColorArray.first!
     var backgroundImageColor = NavigationBarData.BackgroundImageColorArray.first!
     var prefersHidden = false

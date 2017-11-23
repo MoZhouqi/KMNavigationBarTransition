@@ -89,12 +89,8 @@
     UIViewController *disappearingViewController = self.viewControllers.lastObject;
     [disappearingViewController km_addTransitionNavigationBarIfNeeded];
     UIViewController *appearingViewController = self.viewControllers[self.viewControllers.count - 2];
-    if (appearingViewController.km_transitionNavigationBar) {
-        UINavigationBar *appearingNavigationBar = appearingViewController.km_transitionNavigationBar;
-        self.navigationBar.barTintColor = appearingNavigationBar.barTintColor;
-        [self.navigationBar setBackgroundImage:[appearingNavigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
-        self.navigationBar.shadowImage = appearingNavigationBar.shadowImage;
-    }
+    [self renewTheNavigationBar:appearingViewController.km_transitionNavigationBar];
+
     if (animated) {
         disappearingViewController.navigationController.km_backgroundViewHidden = YES;
     }
@@ -107,12 +103,8 @@
     }
     UIViewController *disappearingViewController = self.viewControllers.lastObject;
     [disappearingViewController km_addTransitionNavigationBarIfNeeded];
-    if (viewController.km_transitionNavigationBar) {
-        UINavigationBar *appearingNavigationBar = viewController.km_transitionNavigationBar;
-        self.navigationBar.barTintColor = appearingNavigationBar.barTintColor;
-        [self.navigationBar setBackgroundImage:[appearingNavigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
-        self.navigationBar.shadowImage = appearingNavigationBar.shadowImage;
-    }
+    [self renewTheNavigationBar:viewController.km_transitionNavigationBar];
+
     if (animated) {
         disappearingViewController.navigationController.km_backgroundViewHidden = YES;
     }
@@ -126,12 +118,8 @@
     UIViewController *disappearingViewController = self.viewControllers.lastObject;
     [disappearingViewController km_addTransitionNavigationBarIfNeeded];
     UIViewController *rootViewController = self.viewControllers.firstObject;
-    if (rootViewController.km_transitionNavigationBar) {
-        UINavigationBar *appearingNavigationBar = rootViewController.km_transitionNavigationBar;
-        self.navigationBar.barTintColor = appearingNavigationBar.barTintColor;
-        [self.navigationBar setBackgroundImage:[appearingNavigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
-        self.navigationBar.shadowImage = appearingNavigationBar.shadowImage;
-    }
+    [self renewTheNavigationBar:rootViewController.km_transitionNavigationBar];
+
     if (animated) {
         disappearingViewController.navigationController.km_backgroundViewHidden = YES;
     }
@@ -147,6 +135,18 @@
         }
     }
     return [self km_setViewControllers:viewControllers animated:animated];
+}
+
+- (void)renewTheNavigationBar:(UINavigationBar *)appearingNavigationBar {
+    if (appearingNavigationBar == nil) {
+        return;
+    }
+    self.navigationBar.tintColor = appearingNavigationBar.tintColor;
+    self.navigationBar.titleTextAttributes = appearingNavigationBar.titleTextAttributes;
+    
+    self.navigationBar.barTintColor = appearingNavigationBar.barTintColor;
+    self.navigationBar.shadowImage = appearingNavigationBar.shadowImage;
+    [self.navigationBar setBackgroundImage:[appearingNavigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
 }
 
 - (BOOL)km_backgroundViewHidden {
