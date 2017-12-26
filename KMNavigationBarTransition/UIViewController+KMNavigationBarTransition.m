@@ -135,6 +135,10 @@
     bar.barTintColor = self.navigationController.navigationBar.barTintColor;
     [bar setBackgroundImage:[self.navigationController.navigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
     bar.shadowImage = self.navigationController.navigationBar.shadowImage;
+    bar.layer.shadowOpacity = self.navigationController.navigationBar.layer.shadowOpacity;
+    bar.layer.shadowColor = self.navigationController.navigationBar.layer.shadowColor;
+    bar.layer.shadowOffset = self.navigationController.navigationBar.layer.shadowOffset;
+    bar.layer.shadowRadius = self.navigationController.navigationBar.layer.shadowRadius;
     [self.km_transitionNavigationBar removeFromSuperview];
     self.km_transitionNavigationBar = bar;
     [self km_resizeTransitionNavigationBarFrame];
