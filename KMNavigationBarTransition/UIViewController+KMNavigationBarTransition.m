@@ -75,8 +75,10 @@
         [self.navigationController.navigationBar setBackgroundImage:[self.km_transitionNavigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
         [self.navigationController.navigationBar setShadowImage:self.km_transitionNavigationBar.shadowImage];
         if (!transitionViewController || [transitionViewController isEqual:self]) {
-            [self.km_transitionNavigationBar removeFromSuperview];
-            self.km_transitionNavigationBar = nil; 
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.km_transitionNavigationBar removeFromSuperview];
+                self.km_transitionNavigationBar = nil;
+            });
         }
     }
     if ([transitionViewController isEqual:self]) {
