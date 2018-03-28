@@ -10,14 +10,14 @@ import UIKit
 
 public extension UIImage {
     
-    convenience init(color: UIColor, size: CGSize = CGSizeMake(1, 1)) {
+    convenience init(color: UIColor, size: CGSize = CGSize(width: 1.0, height: 1.0)) {
         let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         UIGraphicsBeginImageContextWithOptions(rect.size, false, 0)
         color.setFill()
         UIRectFill(rect)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        self.init(CGImage: image.CGImage!)
+        self.init(cgImage: image!.cgImage!)
     }
     
 }

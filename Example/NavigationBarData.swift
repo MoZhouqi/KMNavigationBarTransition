@@ -32,15 +32,15 @@ enum NavigationBarBackgroundViewColor: String {
     var toUIColor: UIColor? {
         switch self {
         case .Cyan:
-            return UIColor.cyanColor()
+            return UIColor.cyan
         case .Yellow:
-            return UIColor.yellowColor()
+            return UIColor.yellow
         case .Green:
-            return UIColor.greenColor()
+            return UIColor.green
         case .Orange:
-            return UIColor.orangeColor()
+            return UIColor.orange
         case .lightGray:
-            return UIColor.lightGrayColor()
+            return UIColor.lightGray
         default:
             return nil
         }
