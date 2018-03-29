@@ -63,7 +63,7 @@
 
 - (UIColor *)km_containerViewBackgroundColor {
     id<UIViewControllerTransitionCoordinator> tc = self.transitionCoordinator;
-    if (tc != nil && [tc containerView].backgroundColor != nil) {
+    if (tc) {
         return [tc containerView].backgroundColor;
     }
     return [UIColor whiteColor];
