@@ -67,13 +67,20 @@
     }
 }
 
+- (void)km_settingNavigationBarMoreProperty:(UINavigationBar *)bar{
+    self.navigationController.navigationBar.barTintColor = bar.barTintColor;
+    [self.navigationController.navigationBar setBackgroundImage:[bar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:bar.shadowImage];
+    
+    self.navigationController.navigationBar.tintColor = bar.tintColor;
+    self.navigationController.navigationBar.titleTextAttributes = bar.titleTextAttributes;
+}
+
 - (void)km_viewDidAppear:(BOOL)animated {
     [self km_restoreScrollViewContentInsetAdjustmentBehaviorIfNeeded];
     UIViewController *transitionViewController = self.navigationController.km_transitionContextToViewController;
     if (self.km_transitionNavigationBar) {
-        self.navigationController.navigationBar.barTintColor = self.km_transitionNavigationBar.barTintColor;
-        [self.navigationController.navigationBar setBackgroundImage:[self.km_transitionNavigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
-        [self.navigationController.navigationBar setShadowImage:self.km_transitionNavigationBar.shadowImage];
+        [self km_settingNavigationBarMoreProperty:self.km_transitionNavigationBar];
         if (!transitionViewController || [transitionViewController isEqual:self]) {
             [self.km_transitionNavigationBar removeFromSuperview];
             self.km_transitionNavigationBar = nil; 
