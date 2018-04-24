@@ -72,7 +72,7 @@
     [self.navigationController.navigationBar setBackgroundImage:[bar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setShadowImage:bar.shadowImage];
     
-    self.navigationBar.translucent = appearingNavigationBar.translucent;
+    self.navigationController.navigationBar.translucent = bar.translucent;
     
     self.navigationController.navigationBar.tintColor = bar.tintColor;
     self.navigationController.navigationBar.titleTextAttributes = bar.titleTextAttributes;
