@@ -21,15 +21,17 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-#import "UINavigationController+KMNavigationBarTransition.h"
-#import "UINavigationController+KMNavigationBarTransition_internal.h"
+#import "KMNavigationController+KMNavigationBarTransition.h"
+#import "KMNavigationController+KMNavigationBarTransition_internal.h"
 #import "UIViewController+KMNavigationBarTransition.h"
 #import "UIViewController+KMNavigationBarTransition_internal.h"
 #import "KMWeakObjectContainer.h"
 #import <objc/runtime.h>
 #import "KMSwizzle.h"
+//#import "KMNavigationController.h"
+//#import "KMViewController.h"
 
-@implementation UINavigationController (KMNavigationBarTransition)
+@implementation KMNavigationController (KMNavigationBarTransition)
 
 + (void)load {
     static dispatch_once_t onceToken;
@@ -76,7 +78,7 @@
     if (animated) {
         self.km_transitionContextToViewController = viewController;
         if (disappearingViewController.km_transitionNavigationBar) {
-            disappearingViewController.navigationController.km_backgroundViewHidden = YES;
+            ((KMNavigationController *) disappearingViewController.navigationController).km_backgroundViewHidden = YES;
         }
     }
     return [self km_pushViewController:viewController animated:animated];
@@ -96,7 +98,7 @@
         self.navigationBar.shadowImage = appearingNavigationBar.shadowImage;
     }
     if (animated) {
-        disappearingViewController.navigationController.km_backgroundViewHidden = YES;
+        ((KMNavigationController *) disappearingViewController.navigationController).km_backgroundViewHidden = YES;
     }
     return [self km_popViewControllerAnimated:animated];
 }
@@ -114,7 +116,7 @@
         self.navigationBar.shadowImage = appearingNavigationBar.shadowImage;
     }
     if (animated) {
-        disappearingViewController.navigationController.km_backgroundViewHidden = YES;
+        ((KMNavigationController *) disappearingViewController.navigationController).km_backgroundViewHidden = YES;
     }
     return [self km_popToViewController:viewController animated:animated];
 }
@@ -133,7 +135,7 @@
         self.navigationBar.shadowImage = appearingNavigationBar.shadowImage;
     }
     if (animated) {
-        disappearingViewController.navigationController.km_backgroundViewHidden = YES;
+        ((KMNavigationController *) disappearingViewController.navigationController).km_backgroundViewHidden = YES;
     }
     return [self km_popToRootViewControllerAnimated:animated];
 }
@@ -143,7 +145,7 @@
     if (animated && disappearingViewController && ![disappearingViewController isEqual:viewControllers.lastObject]) {
         [disappearingViewController km_addTransitionNavigationBarIfNeeded];
         if (disappearingViewController.km_transitionNavigationBar) {
-            disappearingViewController.navigationController.km_backgroundViewHidden = YES;
+            ((KMNavigationController *) disappearingViewController.navigationController).km_backgroundViewHidden = YES;
         }
     }
     return [self km_setViewControllers:viewControllers animated:animated];

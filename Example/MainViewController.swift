@@ -122,14 +122,14 @@ extension MainViewController {
                 switch (selectedIndexPath.section, selectedIndexPath.row) {
                 case (0, 0):
                     colorsArray = NavigationBarData.BarTintColorArray
-                    selectedIndex = colorsArray.index(of: NavigationBarBackgroundViewColor(rawValue: nextNavigationBarTintColorText.text!)!)
+                    selectedIndex = colorsArray.firstIndex(of: NavigationBarBackgroundViewColor(rawValue: nextNavigationBarTintColorText.text!)!)
                     block = {
                         self.nextNavigationBarData.barTintColor = $0
                         self.nextNavigationBarTintColorText.text = $0.rawValue
                     }
                 case (0, 1):
                     colorsArray = NavigationBarData.BackgroundImageColorArray
-                    selectedIndex = colorsArray.index(of: NavigationBarBackgroundViewColor(rawValue: nextNavigatioBarBackgroundImageColorText.text!)!)
+                    selectedIndex = colorsArray.firstIndex(of: NavigationBarBackgroundViewColor(rawValue: nextNavigatioBarBackgroundImageColorText.text!)!)
                     block = {
                         self.nextNavigationBarData.backgroundImageColor = $0
                         self.nextNavigatioBarBackgroundImageColorText.text = $0.rawValue

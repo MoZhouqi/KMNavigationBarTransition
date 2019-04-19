@@ -22,7 +22,7 @@
 //  THE SOFTWARE.
 
 #import "NSObject+KMNavigationBarTransition.h"
-#import "UINavigationController+KMNavigationBarTransition_internal.h"
+#import "KMNavigationController+KMNavigationBarTransition_internal.h"
 #import "UINavigationBar+KMNavigationBarTransition_internal.h"
 #import <objc/runtime.h>
 #import "KMSwizzle.h"
@@ -45,8 +45,8 @@
         if ([responder isKindOfClass:[UINavigationBar class]] && ((UINavigationBar *)responder).km_isFakeBar) {
             return;
         }
-        if ([responder isKindOfClass:[UINavigationController class]]) {
-            [self km_setHidden:((UINavigationController *)responder).km_backgroundViewHidden];
+        if ([responder isKindOfClass:[KMNavigationController class]]) {
+            [self km_setHidden:((KMNavigationController *)responder).km_backgroundViewHidden];
             return;
         }
         responder = responder.nextResponder;
