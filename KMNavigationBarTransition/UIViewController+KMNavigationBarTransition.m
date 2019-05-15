@@ -71,9 +71,7 @@
     [self km_restoreScrollViewContentInsetAdjustmentBehaviorIfNeeded];
     UIViewController *transitionViewController = self.navigationController.km_transitionContextToViewController;
     if (self.km_transitionNavigationBar) {
-        self.navigationController.navigationBar.barTintColor = self.km_transitionNavigationBar.barTintColor;
-        [self.navigationController.navigationBar setBackgroundImage:[self.km_transitionNavigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
-        [self.navigationController.navigationBar setShadowImage:self.km_transitionNavigationBar.shadowImage];
+        [self km_setNavigationBarProperty:self.navigationController.navigationBar fromBar:self.km_transitionNavigationBar];
         if (!transitionViewController || [transitionViewController isEqual:self]) {
             [self.km_transitionNavigationBar removeFromSuperview];
             self.km_transitionNavigationBar = nil; 
@@ -84,6 +82,28 @@
     }
     self.navigationController.km_backgroundViewHidden = NO;
     [self km_viewDidAppear:animated];
+}
+
+- (void)km_setNavigationBarProperty:(UINavigationBar *)bar fromBar:(UINavigationBar *)fromBar {
+    bar.barStyle = fromBar.barStyle;
+    bar.barTintColor = fromBar.barTintColor;
+    [bar setBackgroundImage:[fromBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
+    [bar setShadowImage:fromBar.shadowImage];
+    
+    bar.translucent = fromBar.translucent;
+    
+    bar.tintColor = fromBar.tintColor;
+    bar.titleTextAttributes = fromBar.titleTextAttributes;
+    if (@available(iOS 11.0, *)) {
+        bar.largeTitleTextAttributes = fromBar.largeTitleTextAttributes;
+    }
+    
+    // layer
+    bar.layer.shadowColor = fromBar.layer.shadowColor;
+    bar.layer.shadowOffset = fromBar.layer.shadowOffset;
+    bar.layer.shadowOpacity = fromBar.layer.shadowOpacity;
+    bar.layer.shadowPath = fromBar.layer.shadowPath;
+    bar.layer.shadowRadius = fromBar.layer.shadowRadius;
 }
 
 - (void)km_viewWillLayoutSubviews {
@@ -128,13 +148,7 @@
     [self km_adjustScrollViewContentOffsetIfNeeded];
     UINavigationBar *bar = [[UINavigationBar alloc] init];
     bar.km_isFakeBar = YES;
-    bar.barStyle = self.navigationController.navigationBar.barStyle;
-    if (bar.translucent != self.navigationController.navigationBar.translucent) {
-        bar.translucent = self.navigationController.navigationBar.translucent;
-    }
-    bar.barTintColor = self.navigationController.navigationBar.barTintColor;
-    [bar setBackgroundImage:[self.navigationController.navigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
-    bar.shadowImage = self.navigationController.navigationBar.shadowImage;
+    [self km_setNavigationBarProperty:bar fromBar:self.navigationController.navigationBar];
     [self.km_transitionNavigationBar removeFromSuperview];
     self.km_transitionNavigationBar = bar;
     [self km_resizeTransitionNavigationBarFrame];
