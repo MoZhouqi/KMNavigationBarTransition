@@ -93,7 +93,9 @@
         UINavigationBar *appearingNavigationBar = appearingViewController.km_transitionNavigationBar;
         self.navigationBar.barTintColor = appearingNavigationBar.barTintColor;
         self.navigationBar.titleTextAttributes = appearingNavigationBar.titleTextAttributes;
-        self.navigationBar.largeTitleTextAttributes = appearingNavigationBar.largeTitleTextAttributes;
+        if (@available(iOS 11.0, *)) {
+            self.navigationBar.largeTitleTextAttributes = appearingNavigationBar.largeTitleTextAttributes;
+        }
         [self.navigationBar setBackgroundImage:[appearingNavigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
         self.navigationBar.shadowImage = appearingNavigationBar.shadowImage;
     }
