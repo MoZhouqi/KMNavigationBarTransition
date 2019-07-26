@@ -172,26 +172,26 @@
 		CDDFA1F01C3921BD00BFBA1B /* KMNavigationBarTransition */ = {
 			isa = PBXGroup;
 			children = (
-				CDC01BA81E5CA82800F6F3E2 /* UINavigationController+KMNavigationBarTransition_internal.h */,
-				CDDFA1F31C3921BD00BFBA1B /* UINavigationController+KMNavigationBarTransition.h */,
-				CDDFA1F41C3921BD00BFBA1B /* UINavigationController+KMNavigationBarTransition.m */,
-				CDAA3BB21E5CB40E00666BB0 /* UIViewController+KMNavigationBarTransition_internal.h */,
-				CDDFA1F51C3921BD00BFBA1B /* UIViewController+KMNavigationBarTransition.h */,
-				CDDFA1F61C3921BD00BFBA1B /* UIViewController+KMNavigationBarTransition.m */,
+				CDC01B9E1E5CA46900F6F3E2 /* Info.plist */,
+				CDC01B9C1E5CA46400F6F3E2 /* KMNavigationBarTransition.h */,
+				CDDFA1F11C3921BD00BFBA1B /* KMSwizzle.h */,
+				CDDFA1F21C3921BD00BFBA1B /* KMSwizzle.m */,
+				CDC1BA0C1CE1DFE8006BE1B6 /* KMWeakObjectContainer.h */,
+				CDC1BA0D1CE1DFE8006BE1B6 /* KMWeakObjectContainer.m */,
+				CDC722B11F72599F0077084B /* NSObject+KMNavigationBarTransition.h */,
+				CDC722B21F72599F0077084B /* NSObject+KMNavigationBarTransition.m */,
 				CDC722AF1F72590C0077084B /* UINavigationBar+KMNavigationBarTransition_internal.h */,
 				CDC722AB1F7257EE0077084B /* UINavigationBar+KMNavigationBarTransition.h */,
 				CDC722AC1F7257EE0077084B /* UINavigationBar+KMNavigationBarTransition.m */,
+				CDC01BA81E5CA82800F6F3E2 /* UINavigationController+KMNavigationBarTransition_internal.h */,
+				CDDFA1F31C3921BD00BFBA1B /* UINavigationController+KMNavigationBarTransition.h */,
+				CDDFA1F41C3921BD00BFBA1B /* UINavigationController+KMNavigationBarTransition.m */,
 				CDD35A4B1F94CABE00EFDBD8 /* UIScrollView+KMNavigationBarTransition_internal.h */,
 				CDE74D801F7A457C003052BE /* UIScrollView+KMNavigationBarTransition.h */,
 				CDE74D811F7A457C003052BE /* UIScrollView+KMNavigationBarTransition.m */,
-				CDC722B11F72599F0077084B /* NSObject+KMNavigationBarTransition.h */,
-				CDC722B21F72599F0077084B /* NSObject+KMNavigationBarTransition.m */,
-				CDC1BA0C1CE1DFE8006BE1B6 /* KMWeakObjectContainer.h */,
-				CDC1BA0D1CE1DFE8006BE1B6 /* KMWeakObjectContainer.m */,
-				CDDFA1F11C3921BD00BFBA1B /* KMSwizzle.h */,
-				CDDFA1F21C3921BD00BFBA1B /* KMSwizzle.m */,
-				CDC01B9C1E5CA46400F6F3E2 /* KMNavigationBarTransition.h */,
-				CDC01B9E1E5CA46900F6F3E2 /* Info.plist */,
+				CDAA3BB21E5CB40E00666BB0 /* UIViewController+KMNavigationBarTransition_internal.h */,
+				CDDFA1F51C3921BD00BFBA1B /* UIViewController+KMNavigationBarTransition.h */,
+				CDDFA1F61C3921BD00BFBA1B /* UIViewController+KMNavigationBarTransition.m */,
 			);
 			path = KMNavigationBarTransition;
 			sourceTree = "<group>";
@@ -283,6 +283,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -467,6 +468,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -480,6 +482,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

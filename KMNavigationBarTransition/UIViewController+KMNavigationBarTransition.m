@@ -90,7 +90,9 @@
     [bar setBackgroundImage:[fromBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
     [bar setShadowImage:fromBar.shadowImage];
     
-    bar.translucent = fromBar.translucent;
+    if (bar.translucent != fromBar.translucent) {
+        bar.translucent = fromBar.translucent;
+    }
     
     bar.tintColor = fromBar.tintColor;
     bar.titleTextAttributes = fromBar.titleTextAttributes;
@@ -99,11 +101,11 @@
     }
     
     // layer
-    bar.layer.shadowColor = fromBar.layer.shadowColor;
-    bar.layer.shadowOffset = fromBar.layer.shadowOffset;
-    bar.layer.shadowOpacity = fromBar.layer.shadowOpacity;
-    bar.layer.shadowPath = fromBar.layer.shadowPath;
-    bar.layer.shadowRadius = fromBar.layer.shadowRadius;
+//    bar.layer.shadowColor = fromBar.layer.shadowColor;
+//    bar.layer.shadowOffset = fromBar.layer.shadowOffset;
+//    bar.layer.shadowOpacity = fromBar.layer.shadowOpacity;
+//    bar.layer.shadowPath = fromBar.layer.shadowPath;
+//    bar.layer.shadowRadius = fromBar.layer.shadowRadius;
 }
 
 - (void)km_viewWillLayoutSubviews {
