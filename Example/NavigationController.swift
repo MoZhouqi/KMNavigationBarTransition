@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import KMNavigationBarTransition
+
 
 class NavigationController: UINavigationController {
 

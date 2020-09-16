@@ -22,8 +22,9 @@
 //  THE SOFTWARE.
 
 #import <UIKit/UIKit.h>
+#import "KMNavigationController.h"
 
-@interface UINavigationController (KMNavigationBarTransition_internal)
+@interface KMNavigationController (KMNavigationBarTransition_internal)
 
 @property (nonatomic, assign) BOOL km_backgroundViewHidden;
 @property (nonatomic, weak) UIViewController *km_transitionContextToViewController;
