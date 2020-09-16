@@ -26,5 +26,7 @@
 @interface UINavigationBar (KMNavigationBarTransition_internal)
 
 @property (nonatomic, assign) BOOL km_isFakeBar;
+// store current navigation controller.
+@property (nonatomic, weak) UINavigationController *km_fakeController;
 
 @end
