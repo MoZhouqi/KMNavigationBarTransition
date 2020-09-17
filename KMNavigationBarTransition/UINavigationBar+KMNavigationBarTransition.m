@@ -22,8 +22,6 @@
 //  THE SOFTWARE.
 
 #import "UINavigationBar+KMNavigationBarTransition.h"
-#import "UINavigationBar+KMNavigationBarTransition_internal.h"
-#import "KMWeakObjectContainer.h"
 #import <objc/runtime.h>
 #import "KMSwizzle.h"
 
@@ -37,13 +35,6 @@
                         @selector(layoutSubviews),
                         [self class],
                         @selector(km_layoutSubviews));
-        // fix the bug of iOS14 beta 6
-        if (@available(iOS 14.0, *)) {
-          KMSwizzleMethod([self class],
-                          NSSelectorFromString(@"_accessibility_navigationController"),
-                          [self class],
-                          @selector(km_accessibility_navigationController));
-        }
     });
 }
 #endif
@@ -62,26 +53,6 @@
 
 - (void)setKm_isFakeBar:(BOOL)hidden {
     objc_setAssociatedObject(self, @selector(km_isFakeBar), @(hidden), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (UINavigationController *) km_accessibility_navigationController {
-  UINavigationController * navigationController = [self km_accessibility_navigationController];
-  if (self.km_isFakeBar) {
-      // if it's fake navigation bar
-      // return previously bound navigationController.
-    return self.km_fakeController;
-  }
-  return navigationController;
-}
-
-- (UINavigationController *)km_fakeController
-{
-  return km_objc_getAssociatedWeakObject(self, @selector(km_fakeController));
-}
-
-- (void)setKm_fakeController:(UINavigationController *)km_fakeController
-{
-  km_objc_setAssociatedWeakObject(self, @selector(km_fakeController), km_fakeController);
 }
 
 @end
