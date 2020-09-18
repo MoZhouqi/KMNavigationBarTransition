@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0820"
+   LastUpgradeVersion = "1200"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CDC01B8F1E5CA42000F6F3E2"
-               BuildableName = "KMNavigationBarTransition.framework"
-               BlueprintName = "KMNavigationBarTransition"
+               BlueprintIdentifier = "CDA3726E1C3907CE00E39A6D"
+               BuildableName = "KMNavigationBarTransition-Example.app"
+               BlueprintName = "KMNavigationBarTransition-Example"
                ReferencedContainer = "container:KMNavigationBarTransition.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -40,15 +40,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CDC01B8F1E5CA42000F6F3E2"
-            BuildableName = "KMNavigationBarTransition.framework"
-            BlueprintName = "KMNavigationBarTransition"
+            BlueprintIdentifier = "CDA3726E1C3907CE00E39A6D"
+            BuildableName = "KMNavigationBarTransition-Example.app"
+            BlueprintName = "KMNavigationBarTransition-Example"
             ReferencedContainer = "container:KMNavigationBarTransition.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -56,15 +57,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CDC01B8F1E5CA42000F6F3E2"
-            BuildableName = "KMNavigationBarTransition.framework"
-            BlueprintName = "KMNavigationBarTransition"
+            BlueprintIdentifier = "CDA3726E1C3907CE00E39A6D"
+            BuildableName = "KMNavigationBarTransition-Example.app"
+            BlueprintName = "KMNavigationBarTransition-Example"
             ReferencedContainer = "container:KMNavigationBarTransition.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
