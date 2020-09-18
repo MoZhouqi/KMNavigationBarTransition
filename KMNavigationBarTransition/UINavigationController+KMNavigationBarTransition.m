@@ -94,9 +94,9 @@
         self.navigationBar.barTintColor = appearingNavigationBar.barTintColor;
         [self.navigationBar setBackgroundImage:[appearingNavigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
         self.navigationBar.shadowImage = appearingNavigationBar.shadowImage;
-    }
-    if (animated) {
-        disappearingViewController.navigationController.km_backgroundViewHidden = YES;
+        if (animated) {
+            disappearingViewController.navigationController.km_backgroundViewHidden = YES;
+        }
     }
     return [self km_popViewControllerAnimated:animated];
 }
@@ -112,9 +112,9 @@
         self.navigationBar.barTintColor = appearingNavigationBar.barTintColor;
         [self.navigationBar setBackgroundImage:[appearingNavigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
         self.navigationBar.shadowImage = appearingNavigationBar.shadowImage;
-    }
-    if (animated) {
-        disappearingViewController.navigationController.km_backgroundViewHidden = YES;
+        if (animated) {
+            disappearingViewController.navigationController.km_backgroundViewHidden = YES;
+        }
     }
     return [self km_popToViewController:viewController animated:animated];
 }
