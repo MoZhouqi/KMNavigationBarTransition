@@ -24,7 +24,7 @@
 #import "KMWeakObjectContainer.h"
 #import <objc/runtime.h>
 
-@interface KMWeakObjectContainer ()
+@interface KMWeakObjectContainer : NSObject
 @property (nonatomic, weak) id object;
 @end
 

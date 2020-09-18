@@ -26,6 +26,3 @@
 extern void km_objc_setAssociatedWeakObject(id container, void *key, id value);
 extern id km_objc_getAssociatedWeakObject(id container, void *key);
 
-@interface KMWeakObjectContainer : NSObject
-
-@end

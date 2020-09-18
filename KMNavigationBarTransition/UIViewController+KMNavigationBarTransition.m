@@ -26,7 +26,6 @@
 #import "UINavigationController+KMNavigationBarTransition_internal.h"
 #import "UINavigationBar+KMNavigationBarTransition_internal.h"
 #import "UIScrollView+KMNavigationBarTransition_internal.h"
-#import "KMNavigationBarTransitionUtils.h"
 #import "KMWeakObjectContainer.h"
 #import <objc/runtime.h>
 #import "KMSwizzle.h"
@@ -127,13 +126,7 @@
         return;
     }
     [self km_adjustScrollViewContentOffsetIfNeeded];
-    UINavigationBar *bar = nil;
-    if (@available(iOS 14, *)) {
-        NSBundle *bundle = [KMNavigationBarTransitionUtils getBundle];
-        bar = [bundle loadNibNamed:@"KMNavigationBar" owner:nil options:nil].firstObject;
-    } else {
-        bar = [[UINavigationBar alloc] init];
-    }
+    UINavigationBar *bar = [[UINavigationBar alloc] init];
     bar.km_isFakeBar = YES;
     bar.barStyle = self.navigationController.navigationBar.barStyle;
     if (bar.translucent != self.navigationController.navigationBar.translucent) {

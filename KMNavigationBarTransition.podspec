@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "KMNavigationBarTransition"
-  s.version      = "1.1.7"
+  s.version      = "1.1.6"
   s.summary      = "A drop-in universal library makes transition animations smooth between different navigation bar styles while pushing or popping."
 
   s.description  = <<-DESC
@@ -25,10 +25,6 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/MoZhouqi/KMNavigationBarTransition.git", :tag => s.version }
 
   s.source_files  = "KMNavigationBarTransition/*.{h,m}"
-
-  s.resource_bundles = {
-    'KMNavigationBarTransition' => ['KMNavigationBarTransition/*.{xib}']
-  }
 
   s.frameworks = "UIKit"
 

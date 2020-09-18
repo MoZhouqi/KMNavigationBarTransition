@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CD4209391F7A47CF00A1EAF5 /* UIScrollView+KMNavigationBarTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE74D801F7A457C003052BE /* UIScrollView+KMNavigationBarTransition.h */; };
-		CD7C7F2C2512238F009BC6D8 /* KMNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD7C7F2B2512238F009BC6D8 /* KMNavigationBar.xib */; };
 		CDA372851C39087D00E39A6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA372841C39087D00E39A6D /* AppDelegate.swift */; };
 		CDA372881C39089200E39A6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDA372861C39089200E39A6D /* Main.storyboard */; };
 		CDA3728A1C39089900E39A6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDA372891C39089900E39A6D /* Assets.xcassets */; };
@@ -38,8 +37,6 @@
 		CDC722B41F72599F0077084B /* NSObject+KMNavigationBarTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC722B21F72599F0077084B /* NSObject+KMNavigationBarTransition.m */; };
 		CDD35A4C1F94CABE00EFDBD8 /* UIScrollView+KMNavigationBarTransition_internal.h in Headers */ = {isa = PBXBuildFile; fileRef = CDD35A4B1F94CABE00EFDBD8 /* UIScrollView+KMNavigationBarTransition_internal.h */; };
 		CDE74D821F7A457C003052BE /* UIScrollView+KMNavigationBarTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE74D811F7A457C003052BE /* UIScrollView+KMNavigationBarTransition.m */; };
-		CDF63EAF25135CE500C3E646 /* KMNavigationBarTransitionUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = CDF63EAD25135CE500C3E646 /* KMNavigationBarTransitionUtils.h */; };
-		CDF63EB025135CE500C3E646 /* KMNavigationBarTransitionUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF63EAE25135CE500C3E646 /* KMNavigationBarTransitionUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +64,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CD7C7F2B2512238F009BC6D8 /* KMNavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KMNavigationBar.xib; sourceTree = "<group>"; };
 		CDA3726F1C3907CE00E39A6D /* KMNavigationBarTransition-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KMNavigationBarTransition-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA372841C39087D00E39A6D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Example/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		CDA372871C39089200E39A6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Example/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
@@ -100,8 +96,6 @@
 		CDDFA1F61C3921BD00BFBA1B /* UIViewController+KMNavigationBarTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+KMNavigationBarTransition.m"; sourceTree = "<group>"; };
 		CDE74D801F7A457C003052BE /* UIScrollView+KMNavigationBarTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+KMNavigationBarTransition.h"; sourceTree = "<group>"; };
 		CDE74D811F7A457C003052BE /* UIScrollView+KMNavigationBarTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+KMNavigationBarTransition.m"; sourceTree = "<group>"; };
-		CDF63EAD25135CE500C3E646 /* KMNavigationBarTransitionUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KMNavigationBarTransitionUtils.h; sourceTree = "<group>"; };
-		CDF63EAE25135CE500C3E646 /* KMNavigationBarTransitionUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KMNavigationBarTransitionUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,9 +190,6 @@
 				CDC1BA0D1CE1DFE8006BE1B6 /* KMWeakObjectContainer.m */,
 				CDDFA1F11C3921BD00BFBA1B /* KMSwizzle.h */,
 				CDDFA1F21C3921BD00BFBA1B /* KMSwizzle.m */,
-				CDF63EAD25135CE500C3E646 /* KMNavigationBarTransitionUtils.h */,
-				CDF63EAE25135CE500C3E646 /* KMNavigationBarTransitionUtils.m */,
-				CD7C7F2B2512238F009BC6D8 /* KMNavigationBar.xib */,
 				CDC01B9C1E5CA46400F6F3E2 /* KMNavigationBarTransition.h */,
 				CDC01B9E1E5CA46900F6F3E2 /* Info.plist */,
 			);
@@ -218,7 +209,6 @@
 				CDAA3BB31E5CB40E00666BB0 /* UIViewController+KMNavigationBarTransition_internal.h in Headers */,
 				CDC01B9F1E5CA48400F6F3E2 /* UINavigationController+KMNavigationBarTransition.h in Headers */,
 				CDC722B01F72590C0077084B /* UINavigationBar+KMNavigationBarTransition_internal.h in Headers */,
-				CDF63EAF25135CE500C3E646 /* KMNavigationBarTransitionUtils.h in Headers */,
 				CDD35A4C1F94CABE00EFDBD8 /* UIScrollView+KMNavigationBarTransition_internal.h in Headers */,
 				CD4209391F7A47CF00A1EAF5 /* UIScrollView+KMNavigationBarTransition.h in Headers */,
 				CDC01BA11E5CA48900F6F3E2 /* UIViewController+KMNavigationBarTransition.h in Headers */,
@@ -293,7 +283,6 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
@@ -323,7 +312,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD7C7F2C2512238F009BC6D8 /* KMNavigationBar.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +335,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDF63EB025135CE500C3E646 /* KMNavigationBarTransitionUtils.m in Sources */,
 				CDC722B41F72599F0077084B /* NSObject+KMNavigationBarTransition.m in Sources */,
 				CDC01BA41E5CA48F00F6F3E2 /* KMWeakObjectContainer.m in Sources */,
 				CDC722AE1F7257EE0077084B /* UINavigationBar+KMNavigationBarTransition.m in Sources */,
@@ -431,7 +418,6 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -472,7 +458,6 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -487,7 +472,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mo.KMNavigationBarTransition-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -500,7 +485,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mo.KMNavigationBarTransition-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
