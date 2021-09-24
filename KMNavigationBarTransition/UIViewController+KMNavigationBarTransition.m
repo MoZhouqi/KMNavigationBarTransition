@@ -136,8 +136,20 @@
         bar.translucent = self.navigationController.navigationBar.translucent;
     }
     bar.barTintColor = self.navigationController.navigationBar.barTintColor;
-    [bar setBackgroundImage:[self.navigationController.navigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
-    bar.shadowImage = self.navigationController.navigationBar.shadowImage;
+    if (@available(iOS 13, *)) {
+        UINavigationBarAppearance* navigationBarAppearance = [UINavigationBarAppearance new];
+        if (bar.translucent) {
+            [navigationBarAppearance configureWithTransparentBackground];
+        } else {
+            [navigationBarAppearance configureWithOpaqueBackground];
+        }
+        [navigationBarAppearance setBackgroundImage: self.navigationController.navigationBar.standardAppearance.backgroundImage];
+        [navigationBarAppearance setShadowImage: self.navigationController.navigationBar.standardAppearance.shadowImage];
+        bar.standardAppearance = navigationBarAppearance;
+    } else {
+        [bar setBackgroundImage:[self.navigationController.navigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
+        bar.shadowImage = self.navigationController.navigationBar.shadowImage;
+    }
     [self.km_transitionNavigationBar removeFromSuperview];
     self.km_transitionNavigationBar = bar;
     [self km_resizeTransitionNavigationBarFrame];
