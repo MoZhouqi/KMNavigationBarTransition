@@ -136,7 +136,7 @@
         bar.translucent = self.navigationController.navigationBar.translucent;
     }
     bar.barTintColor = self.navigationController.navigationBar.barTintColor;
-    if (@available(iOS 13, *)) {
+    if (@available(iOS 15, *)) {
         UINavigationBarAppearance* navigationBarAppearance = [UINavigationBarAppearance new];
         if (bar.translucent) {
             [navigationBarAppearance configureWithTransparentBackground];

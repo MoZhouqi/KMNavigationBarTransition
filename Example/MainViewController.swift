@@ -45,7 +45,7 @@ class MainViewController: UITableViewController {
         
         navigationController?.navigationBar.barTintColor = currentNavigationBarData.barTintColor.toUIColor
         
-        if #available(iOS 13.0, *) {
+        if #available(iOS 15.0, *) {
             let navigationBarAppearance = UINavigationBarAppearance()
             if navigationController?.navigationBar.isTranslucent ?? false {
                 navigationBarAppearance.configureWithTransparentBackground()
