@@ -71,9 +71,14 @@
     [self km_restoreScrollViewContentInsetAdjustmentBehaviorIfNeeded];
     UIViewController *transitionViewController = self.navigationController.km_transitionContextToViewController;
     if (self.km_transitionNavigationBar) {
-        self.navigationController.navigationBar.barTintColor = self.km_transitionNavigationBar.barTintColor;
-        [self.navigationController.navigationBar setBackgroundImage:[self.km_transitionNavigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
-        [self.navigationController.navigationBar setShadowImage:self.km_transitionNavigationBar.shadowImage];
+        if (@available(iOS 15, *)) {
+            self.navigationController.navigationBar.standardAppearance = self.km_transitionNavigationBar.standardAppearance;
+            self.navigationController.navigationBar.scrollEdgeAppearance = self.km_transitionNavigationBar.scrollEdgeAppearance;
+        } else {
+            self.navigationController.navigationBar.barTintColor = self.km_transitionNavigationBar.barTintColor;
+            [self.navigationController.navigationBar setBackgroundImage:[self.km_transitionNavigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
+            [self.navigationController.navigationBar setShadowImage:self.km_transitionNavigationBar.shadowImage];
+        }
         if (!transitionViewController || [transitionViewController isEqual:self]) {
             [self.km_transitionNavigationBar removeFromSuperview];
             self.km_transitionNavigationBar = nil; 
@@ -135,9 +140,14 @@
     if (bar.translucent != self.navigationController.navigationBar.translucent) {
         bar.translucent = self.navigationController.navigationBar.translucent;
     }
-    bar.barTintColor = self.navigationController.navigationBar.barTintColor;
-    [bar setBackgroundImage:[self.navigationController.navigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
-    bar.shadowImage = self.navigationController.navigationBar.shadowImage;
+    if (@available(iOS 15, *)) {
+        bar.scrollEdgeAppearance = self.navigationController.navigationBar.scrollEdgeAppearance;
+        bar.standardAppearance = self.navigationController.navigationBar.standardAppearance;
+    } else {
+        bar.barTintColor = self.navigationController.navigationBar.barTintColor;
+        [bar setBackgroundImage:[self.navigationController.navigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
+        bar.shadowImage = self.navigationController.navigationBar.shadowImage;
+    }
     [self.km_transitionNavigationBar removeFromSuperview];
     self.km_transitionNavigationBar = bar;
     [self km_resizeTransitionNavigationBarFrame];
