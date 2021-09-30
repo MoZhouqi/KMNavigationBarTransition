@@ -43,9 +43,24 @@ class MainViewController: UITableViewController {
         nextNavigationBarPrefersHiddenSwitch.isOn = nextNavigationBarData.prefersHidden
         nextNavigationBarPrefersShadowImageHiddenSwitch.isOn = nextNavigationBarData.prefersShadowImageHidden
         
-        navigationController?.navigationBar.barTintColor = currentNavigationBarData.barTintColor.toUIColor
-        navigationController?.navigationBar.setBackgroundImage(currentNavigationBarData.backgroundImageColor.toUIImage, for: .default)
-        navigationController?.navigationBar.shadowImage = (currentNavigationBarData.prefersShadowImageHidden) ? UIImage() : nil
+        if #available(iOS 15.0, *) {
+            let navigationBarAppearance = UINavigationBarAppearance()
+            if navigationController?.navigationBar.isTranslucent ?? false {
+                navigationBarAppearance.configureWithTransparentBackground()
+            } else {
+                navigationBarAppearance.configureWithOpaqueBackground()
+            }
+            navigationBarAppearance.backgroundColor = currentNavigationBarData.barTintColor.toUIColor
+            navigationBarAppearance.backgroundImage = currentNavigationBarData.backgroundImageColor.toUIImage
+            navigationBarAppearance.shadowImage = (currentNavigationBarData.prefersShadowImageHidden) ? UIImage() : nil
+            navigationController?.navigationBar.scrollEdgeAppearance = navigationBarAppearance
+            navigationController?.navigationBar.standardAppearance = navigationBarAppearance
+        } else {
+            navigationController?.navigationBar.barTintColor = currentNavigationBarData.barTintColor.toUIColor
+            navigationController?.navigationBar.setBackgroundImage(currentNavigationBarData.backgroundImageColor.toUIImage, for: .default)
+            navigationController?.navigationBar.shadowImage = (currentNavigationBarData.prefersShadowImageHidden) ? UIImage() : nil
+        }
+        
         
         title = "Title " + "\(navigationController!.viewControllers.count)"
     }
