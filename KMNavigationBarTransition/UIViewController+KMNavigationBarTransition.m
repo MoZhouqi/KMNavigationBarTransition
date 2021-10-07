@@ -149,7 +149,10 @@
         }
         navigationBarAppearance.backgroundColor = self.navigationController.navigationBar.standardAppearance.backgroundColor;
         navigationBarAppearance.backgroundImage = self.navigationController.navigationBar.standardAppearance.backgroundImage;
+        navigationBarAppearance.backgroundImageContentMode = self.navigationController.navigationBar.standardAppearance.backgroundImageContentMode;
+        navigationBarAppearance.backgroundEffect = self.navigationController.navigationBar.standardAppearance.backgroundEffect;
         navigationBarAppearance.shadowImage = self.navigationController.navigationBar.standardAppearance.shadowImage;
+        navigationBarAppearance.shadowColor = self.navigationController.navigationBar.standardAppearance.shadowColor;
         bar.standardAppearance = navigationBarAppearance;
         bar.scrollEdgeAppearance = navigationBarAppearance;
     } else {
