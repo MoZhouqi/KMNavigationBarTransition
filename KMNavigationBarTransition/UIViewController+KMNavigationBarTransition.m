@@ -141,15 +141,7 @@
         bar.translucent = self.navigationController.navigationBar.translucent;
     }
     if (@available(iOS 15, *)) {
-        UINavigationBarAppearance *navigationBarAppearance = [UINavigationBarAppearance new];
-        if (bar.translucent) {
-            [navigationBarAppearance configureWithTransparentBackground];
-        } else {
-            [navigationBarAppearance configureWithOpaqueBackground];
-        }
-        navigationBarAppearance.backgroundColor = self.navigationController.navigationBar.standardAppearance.backgroundColor;
-        navigationBarAppearance.backgroundImage = self.navigationController.navigationBar.standardAppearance.backgroundImage;
-        navigationBarAppearance.shadowImage = self.navigationController.navigationBar.standardAppearance.shadowImage;
+        UINavigationBarAppearance *navigationBarAppearance = [[UINavigationBarAppearance alloc] initWithBarAppearance:self.navigationController.navigationBar.standardAppearance];
         bar.standardAppearance = navigationBarAppearance;
         bar.scrollEdgeAppearance = navigationBarAppearance;
     } else {
