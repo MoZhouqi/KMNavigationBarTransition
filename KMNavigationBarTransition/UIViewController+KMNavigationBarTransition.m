@@ -72,8 +72,8 @@
     UIViewController *transitionViewController = self.navigationController.km_transitionContextToViewController;
     if (self.km_transitionNavigationBar) {
         if (@available(iOS 15, *)) {
-            self.navigationController.navigationBar.scrollEdgeAppearance = self.km_transitionNavigationBar.scrollEdgeAppearance;
             self.navigationController.navigationBar.standardAppearance = self.km_transitionNavigationBar.standardAppearance;
+            self.navigationController.navigationBar.scrollEdgeAppearance = self.km_transitionNavigationBar.scrollEdgeAppearance;
         } else {
             self.navigationController.navigationBar.barTintColor = self.km_transitionNavigationBar.barTintColor;
             [self.navigationController.navigationBar setBackgroundImage:[self.km_transitionNavigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
@@ -141,17 +141,8 @@
         bar.translucent = self.navigationController.navigationBar.translucent;
     }
     if (@available(iOS 15, *)) {
-        UINavigationBarAppearance *navigationBarAppearance = [UINavigationBarAppearance new];
-        if (bar.translucent) {
-            [navigationBarAppearance configureWithTransparentBackground];
-        } else {
-            [navigationBarAppearance configureWithOpaqueBackground];
-        }
-        navigationBarAppearance.backgroundColor = self.navigationController.navigationBar.standardAppearance.backgroundColor;
-        navigationBarAppearance.backgroundImage = self.navigationController.navigationBar.standardAppearance.backgroundImage;
-        navigationBarAppearance.shadowImage = self.navigationController.navigationBar.standardAppearance.shadowImage;
-        bar.standardAppearance = navigationBarAppearance;
-        bar.scrollEdgeAppearance = navigationBarAppearance;
+        bar.standardAppearance = self.navigationController.navigationBar.standardAppearance;
+        bar.scrollEdgeAppearance = self.navigationController.navigationBar.scrollEdgeAppearance;
     } else {
         bar.barTintColor = self.navigationController.navigationBar.barTintColor;
         [bar setBackgroundImage:[self.navigationController.navigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];

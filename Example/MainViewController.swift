@@ -53,8 +53,8 @@ class MainViewController: UITableViewController {
             navigationBarAppearance.backgroundColor = currentNavigationBarData.barTintColor.toUIColor
             navigationBarAppearance.backgroundImage = currentNavigationBarData.backgroundImageColor.toUIImage
             navigationBarAppearance.shadowImage = (currentNavigationBarData.prefersShadowImageHidden) ? UIImage() : nil
-            navigationController?.navigationBar.scrollEdgeAppearance = navigationBarAppearance
             navigationController?.navigationBar.standardAppearance = navigationBarAppearance
+            navigationController?.navigationBar.scrollEdgeAppearance = navigationBarAppearance
         } else {
             navigationController?.navigationBar.barTintColor = currentNavigationBarData.barTintColor.toUIColor
             navigationController?.navigationBar.setBackgroundImage(currentNavigationBarData.backgroundImageColor.toUIImage, for: .default)
