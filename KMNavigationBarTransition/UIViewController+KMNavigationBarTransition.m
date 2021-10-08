@@ -150,6 +150,7 @@
         navigationBarAppearance.backgroundColor = self.navigationController.navigationBar.standardAppearance.backgroundColor;
         navigationBarAppearance.backgroundImage = self.navigationController.navigationBar.standardAppearance.backgroundImage;
         navigationBarAppearance.shadowImage = self.navigationController.navigationBar.standardAppearance.shadowImage;
+        navigationBarAppearance.titleTextAttributes = self.navigationController.navigationBar.standardAppearance.titleTextAttributes;
         bar.standardAppearance = navigationBarAppearance;
         bar.scrollEdgeAppearance = navigationBarAppearance;
     } else {
