@@ -150,6 +150,11 @@
     }
     [self.km_transitionNavigationBar removeFromSuperview];
     self.km_transitionNavigationBar = bar;
+    if (@available(iOS 15, *)) {
+        if (bar.scrollEdgeAppearance == nil) {
+            self.km_transitionNavigationBar = nil;
+        }
+    }
     [self km_resizeTransitionNavigationBarFrame];
     if (!self.navigationController.navigationBarHidden && !self.navigationController.navigationBar.hidden) {
         [self.view addSubview:self.km_transitionNavigationBar];
