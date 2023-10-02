@@ -119,7 +119,7 @@
         return;
     }
     UIView *backgroundView = [self.navigationController.navigationBar valueForKey:@"_backgroundView"];
-    CGRect rect = [backgroundView.superview convertRect:backgroundView.frame toView:self.view];
+    CGRect rect = [self.navigationController.navigationBar convertRect:backgroundView.frame toView:self.view];
     self.km_transitionNavigationBar.frame = rect;
 }
 
